@@ -9,7 +9,7 @@ body {
 }
 
 .bg{
-    background-color: #212529;
+    background-color: #2f3349;
 }
 
 code {
@@ -18,19 +18,19 @@ code {
 }
 
 .offcanvas{
-  background-color: #212529!important;
+  background-color: #2f3349!important;
 }
 
 .mt-n2 {margin-top: -6em!important;}
 .mt-n4 {margin-top: -13em!important;}
 
-.bg-info h1, .bg-info h5, .home.content h1 {color:#fff!important;}
+.bg-info h1, .bg-info h5, .home.content h1 {color:#c5c5c5!important;}
 
-.bg-info {
-    color:#fff!important;
+.bg-sorrel {
+    color:#c5c5c5!important;
     min-height: 330px;
-background: rgb(62,57,133)!important;
-background: linear-gradient(180deg, rgba(62,57,133,1) 0%, rgba(91,98,244,1))!important;
+background: #2f3349!important;
+/*background: linear-gradient(180deg, rgba(53,27,109,1) 0%, #2f3349)!important;*/
 }
 
 .offcanvas-header.bg-info {
@@ -40,8 +40,9 @@ background: linear-gradient(180deg, rgba(62,57,133,1) 0%, rgba(91,98,244,1))!imp
 .navmenu i{color: #acb0ff;}
 
 .navmenu{
-  background-color: #1d2024!important;
+  background-color: #1d1b2e!important;
   position: fixed!important;
+/*  border-right: 3px solid #13c56b;*/
 
 }
 

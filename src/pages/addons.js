@@ -1,11 +1,11 @@
 import WalletConnect from '../components/walletconnect';
-import AddonItem from '../components/addon';
+import AddonItem from '../components/addons';
 
 const Addons = () => {
   return (
 
     <>
-    <div class="d-flex bg-info pb-8">
+    <div class="d-flex bg-sorrel pb-8">
       <div class="container content">
           <div class="row mt-3">
             <div class="col d-none d-lg-block">

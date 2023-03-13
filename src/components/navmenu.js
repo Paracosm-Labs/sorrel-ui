@@ -30,6 +30,10 @@ const NavMenu = () => {
 		 		<NavIcon><i className="fa-solid fa-money-bill-transfer" style={{fontSize: "1.5em"}}></i></NavIcon>
 		 		<NavText>Bridge</NavText>
 		 	</NavItem>
+		 	<NavItem eventKey="addons">
+		 		<NavIcon><i className="fa-solid fa-plus" style={{fontSize: "1.5em"}}></i></NavIcon>
+		 		<NavText>Addons</NavText>
+		 	</NavItem>
 		 </SideNav.Nav>
 	 </SideNav>
 

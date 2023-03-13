@@ -1,4 +1,5 @@
-import CurrencyAcc from "../components/currencyaccalt";
+// import CurrencyAcc from "../components/currencyaccalt";
+import CurrencyAcc from "../components/currency-accounts";
 import OffcanvasAddAccount from "../components/offcanvas-addaccount";
 import OffcanvasExchange from "../components/offcanvas-exchange";
 import OffcanvasDeposit from "../components/offcanvas-deposit";
@@ -9,7 +10,7 @@ const Accounts = () => {
   return (
 
 <>
-    <div class="d-flex bg-info pb-8">
+    <div class="d-flex bg-sorrel pb-8">
     <div class="container accounts-info content">
       <div class="row mt-3">
         <div class="col d-none d-lg-block">

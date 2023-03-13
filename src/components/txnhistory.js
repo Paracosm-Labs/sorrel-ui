@@ -9,32 +9,31 @@ const TxnHistory = () => {
 
 
 
-
-      <div class="row  mt-1 justify-contents-around border-bottom border-3">
-        <div class="col">
-            <p>Transfer to TL...xgQb</p>
+        <div className="row mt-5 transaction-history">
+            <h2 className="text-primary">Transaction History</h2>
+            <div className="table-responsive">
+                <table className="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Transaction</th>
+                            <th>Source</th>
+                            <th>Destination</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="col">
-          <p>$44,326.88</p>
-        </div>
-        <div class="col-12">
-          <p><span class="small text-muted">3 mins ago</span></p>
-        </div>
-
-      </div>
-
-      <div class="row  mt-1 justify-contents-around border-bottom border-3">
-        <div class="col">
-            <p>Deposit from TL...xgQb</p>
-        </div>
-        <div class="col">
-          <p>$8,326.88</p>
-        </div>
-        <div class="col-12">
-          <p><span class="small text-muted">3 mins ago</span></p>
-        </div>
-
-      </div>
 
 
 

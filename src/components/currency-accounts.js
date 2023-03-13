@@ -3,7 +3,6 @@ import gTTDImg from "../img/gttd.png";
 import USDDImg from "../img/usdd.png";
 import gEURImg from "../img/geur.png";
 import gGBPImg from "../img/ggbp.png";
-import gGELImg from "../img/ggel.png";
 
 
 const CurrencyAccounts = () => {

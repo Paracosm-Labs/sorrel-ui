@@ -1,5 +1,6 @@
 // import CurrencyAcc from "../components/currencyaccalt";
 import CurrencyAcc from "../components/currency-accounts";
+import TransactionHistory from "../components/txnhistory";
 import OffcanvasAddAccount from "../components/offcanvas-addaccount";
 import OffcanvasExchange from "../components/offcanvas-exchange";
 import OffcanvasDeposit from "../components/offcanvas-deposit";
@@ -93,6 +94,9 @@ const Accounts = () => {
 
       <div className="row mt-3 mx-3">
         <CurrencyAcc></CurrencyAcc>
+      </div>
+      <div className="row mt-3 mx-3">
+        <TransactionHistory></TransactionHistory>
       </div>
 
     </div>

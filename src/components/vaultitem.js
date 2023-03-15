@@ -3,6 +3,7 @@ import BTCImg from "../img/btc.png";
 import TRXImg from "../img/trx.png";
 import BNBImg from "../img/bnb.png";
 import ETHImg from "../img/eth.png";
+import React  from 'react';
 
 
 

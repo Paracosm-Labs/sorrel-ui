@@ -1,5 +1,6 @@
 import WalletConnect from '../components/walletconnect';
 import HomeCarousel from '../components/homecarousel';
+import React  from 'react';
 
 const Home = () => {
   return (

@@ -1,3 +1,4 @@
+import React  from 'react';
 // import CurrencyAcc from "../components/currencyaccalt";
 import CurrencyAcc from "../components/currency-accounts";
 import TransactionHistory from "../components/txnhistory";

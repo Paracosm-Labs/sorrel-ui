@@ -1,6 +1,7 @@
 import WalletConnect from '../components/walletconnect';
 import VaultItem from '../components/vaultitem';
 import OffcanvasVaultCreate from "../components/offcanvas-vaultcreate";
+import React  from 'react';
 
 
 const Vaults = () => {

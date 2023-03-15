@@ -1,4 +1,5 @@
 import WalletConnect from '../components/walletconnect';
+import React  from 'react';
 
 const Bridge = () => {
   return (

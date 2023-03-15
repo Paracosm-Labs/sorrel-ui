@@ -7,6 +7,7 @@ import Accounts from './pages/accounts';
 import Vaults from './pages/vaults';
 import Bridge from './pages/bridge';
 import Addons from './pages/addons';
+import React  from 'react';
 
 
 function App() {

@@ -1,9 +1,10 @@
+import React  from 'react';
 import WalletConnect from '../components/walletconnect';
 import AddonItem from '../components/addons';
 
+
 const Addons = () => {
   return (
-
     <>
     <div class="d-flex bg-sorrel pb-8">
       <div class="container content">

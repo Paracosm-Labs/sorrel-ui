@@ -38,7 +38,7 @@ const Depository = () => {
       </div>
       <div class="container accounts content">
         <div class="row mt-3 mx-3">
-          <div class="col justify-content-start">
+          <div class="col md-6 xs-12 justify-content-start">
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDeposit">
               <i class="fa-solid fa-cloud-arrow-down"></i>&nbsp;
               Deposit
@@ -48,15 +48,14 @@ const Depository = () => {
               Withdraw
             </button>
           </div>
-          <div class="col">
-          </div>
-          <div class="col">
+
+          <div class="col md-6 xs-12">
             <span class=" float-end">
               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExchange" aria-controls="offcanvasExchange">
                 <i class="fa-solid fa-repeat"></i>&nbsp;
                 Exchange
               </button>
-              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExchange" aria-controls="offcanvasExchange">
+              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTransfer" aria-controls="offcanvasTransfer">
                 <i class="fa-solid fa-repeat"></i>&nbsp;
                 Transfer
               </button>

@@ -6,6 +6,7 @@ import DappLogo from "../img/sorrel-logo.png";
 const NavMenu = () => {
   return (
     <>
+    <div className="d-flex bg-sorrel-nav">
     <div className="container justify-content-center py-1">
       <Navbar bg="" expand="lg">
         <Navbar.Brand href="/">
@@ -39,6 +40,7 @@ const NavMenu = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+    </div>
     </div>
     </>
   );

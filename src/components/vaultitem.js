@@ -12,10 +12,10 @@ const VaultItem = () => {
 
     <>
 
-        <div class="row mt-5">
           <div class="col text-center d-lg-none">
+              <h1>Vaults</h1>
+              <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
           </div>
-        </div>
 
         <div class="card-header d-none d-lg-block">
           <div class="row mt-4 mx-3 pt-3 pe-4 text-white">
@@ -35,7 +35,7 @@ const VaultItem = () => {
       <div class="accordion-item vault-item mt-3">
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            <div class="container row mx-1 pt-3">
+            <div class="container row mx-1 pt-2">
               <div class="col-md-4 col-sm-12">
                 <img
                   src={BTCImg}
@@ -81,12 +81,31 @@ const VaultItem = () => {
                       id="floatingInputGroup1"
                       placeholder="$"
                     />
-                    <label for="floatingInputGroup1">$</label>
+                    <label for="floatingInputGroup1">&#8383;</label>
                   </div>
                 </div>
-                <p class="small pb-3">Balance: 3.033369 BTC</p>
+                <p class="small">Balance: 3.033369 BTC</p>
             </div>
+
             <div class="col"></div>
+
+          </div>
+
+          <div class="row mb-4 mt-3">
+              <div class="col"></div>
+
+              <div class="col-md-6">
+              <p class="text-left">Select the asset you wish to earn</p>
+                <select class="mt-3 mb-1 form-select form-select-sm" aria-label="Select Currency">
+                  <option selected>gTTD $4,400.88</option>
+                  <option value="2">gTTD $4,400.88</option>
+                  <option value="3">gTTD $4,400.88</option>
+                  <option value="4">gGEL $44,000.88</option>
+                  <option value="5">gEUR $4,000.88</option>
+                  <option value="6">gGBP $444.88</option>
+                </select>
+              </div>
+              <div class="col"></div>
           </div>
 
             <div class="row mt-1 mb-3 text-center">
@@ -138,7 +157,7 @@ const VaultItem = () => {
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-              Addon description and whatever
+              Vault asset description
             <div class="row mt-5">
               <div class="col"></div>
               <div class="col">
@@ -180,7 +199,7 @@ const VaultItem = () => {
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-              Addon description and whatever
+              Vault asset description
             <div class="row mt-5">
               <div class="col"></div>
               <div class="col">
@@ -222,7 +241,7 @@ const VaultItem = () => {
         </h2>
         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-              Addon description and whatever
+              Vault asset description
             <div class="row mt-5">
               <div class="col"></div>
               <div class="col">

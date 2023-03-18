@@ -76,10 +76,8 @@ const WalletConnect = () => {
       <div class="btn-group float-end" role="group">
         <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
           <i class="fa-solid fa-wallet px-2"></i>
-          {getMaskedAddress(address)} | &nbsp;
-          <span class="small" style={{ fontSize: ".6rem" }}>
-            {getNetworkName(network)}
-          </span>
+          <span class="wallet-addr">{getMaskedAddress(address)}</span> | &nbsp;
+          <span class="small">{getNetworkName(network)}</span>
         </button>
       </div>
     );

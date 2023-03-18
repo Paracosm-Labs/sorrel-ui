@@ -66,7 +66,7 @@ background: #2f3349!important;
     color:#485785;
     padding: 3em;
     border-radius: 20px;
-    margin: 2em 1em;
+    margin: 2em 0em;
     background-color:var( --bs-body-bg);
 
 
@@ -81,9 +81,9 @@ background: #2f3349!important;
 margin-top:0px!important;
 }
 
-.currency-acc{
-  box-shadow: 1px 1px 8px #b7a3a570;
-  border-radius: 12px;
+.btn, .currency-acc{
+/*  box-shadow: 1px 1px 8px #b7a3a570;*/
+  border-radius: 12px!important;
 }
 
 .accounts .btn, .info-card .btn, .web3-connect .btn {
@@ -111,8 +111,33 @@ font-weight: bold;
     padding: 2px;
 }
 
-.web3-btn {height: 55px;}
+/*.btn-web3 {
+    background: #01948d;
+    color: #fff!important;
+    border-radius: 12px!important;
+    box-shadow: 0px 0px 3px #074643;
+    height: 55px;
+}*/
+
+.btn, .btn-group {box-shadow: none!important;}
+
+.nav-items .nav-item{padding: 0 1.5em 0 1.5em;}
+
 
 .currency-name, .account-name{display: inline-block!important;}
 
 
+.rowCard {
+    border-radius: 15px;
+    border: 1px solid #434968;
+}
+
+.rowCard:hover {
+    background-color: #1d1b2e;
+    color: aliceblue;
+    opacity: .7;
+}
+
+.border-green {
+  border:2px solid #43cc29!important;
+}

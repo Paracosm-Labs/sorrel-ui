@@ -6,11 +6,11 @@ import xcddImg from "../img/gxcd.png";
 import bbddImg from "../img/gbbd.png";
 import jmddImg from "../img/gjmd.png";
 import awgdImg from "../img/gawg.png";
-import dopImg from "../img/gDOP.png";
+import dopImg from "../img/gdop.png";
 import bsdImg from "../img/gbsd.png";
-import kydImg from "../img/gKYD.png";
+import kydImg from "../img/gkyd.png";
 import cupImg from "../img/gcup.png";
-import htgImg from "../img/gHTG.png";
+import htgImg from "../img/ghtg.png";
 import eurImg from "../img/geur.png";
 import gbpImg from "../img/ggbp.png";
 

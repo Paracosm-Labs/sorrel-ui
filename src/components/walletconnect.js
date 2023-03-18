@@ -64,7 +64,7 @@ const WalletConnect = () => {
   if (loginToTronlinkRequired) {
     return (
       <div class="btn-group float-end" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary btn-web3">
+        <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
           Please log in to TronLink
         </button>
       </div>
@@ -74,7 +74,7 @@ const WalletConnect = () => {
   if (address) {
     return (
       <div class="btn-group float-end" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary btn-web3">
+        <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
           <i class="fa-solid fa-wallet px-2"></i>
           {getMaskedAddress(address)} | &nbsp;
           <span class="small" style={{ fontSize: ".6rem" }}>
@@ -88,7 +88,7 @@ const WalletConnect = () => {
   if (connectRequired) {
     return (
       <div class="btn-group float-end" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary btn-web3">
+        <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
           Connect Wallet
         </button>
       </div>

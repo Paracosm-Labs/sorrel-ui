@@ -1,4 +1,3 @@
-import WalletConnect from '../components/walletconnect';
 import HomeCarousel from '../components/homecarousel';
 import React  from 'react';
 
@@ -12,9 +11,7 @@ const Home = () => {
                 <h1>Getting Started</h1>
                 <p>What can you do with Sorrel?</p>
               </div>
-              <div class="col">
-                <WalletConnect></WalletConnect>
-              </div>
+
             </div>
             <div class="row mt-4">
               <div class="col text-center d-lg-none pb-8">

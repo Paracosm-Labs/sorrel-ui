@@ -1,4 +1,3 @@
-import WalletConnect from '../components/walletconnect';
 import VaultItem from '../components/vaultitem';
 import OffcanvasVaultCreate from "../components/offcanvas-vaultcreate";
 import React  from 'react';
@@ -15,9 +14,7 @@ const Vaults = () => {
               <h1>Vaults</h1>
               <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
             </div>
-            <div class="col">
-              <WalletConnect></WalletConnect>
-            </div>
+
           </div>
           <div class="row mt-4">
             <div class="col text-center d-lg-none">

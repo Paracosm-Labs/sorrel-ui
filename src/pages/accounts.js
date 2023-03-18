@@ -6,7 +6,6 @@ import OffcanvasAddAccount from "../components/offcanvas-addaccount";
 import OffcanvasExchange from "../components/offcanvas-exchange";
 import OffcanvasDeposit from "../components/offcanvas-deposit";
 import OffcanvasTransfer from "../components/offcanvas-transfer";
-import WalletConnect from '../components/walletconnect';
 
 const Accounts = () => {
   return (
@@ -19,9 +18,7 @@ const Accounts = () => {
           <h1>Accounts</h1>
           <p>Easily manage your digital currencies.</p>
         </div>
-        <div class="col">
-          <WalletConnect></WalletConnect>
-        </div>
+
       </div>
 
       <div class="row mt-4">

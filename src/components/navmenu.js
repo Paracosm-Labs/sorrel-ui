@@ -1,48 +1,46 @@
-import SideNav,{Toggle, NavItem, NavIcon, NavText} from "@trendmicro/react-sidenav";
-import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-import { useNavigate } from "react-router-dom";
-import React  from 'react';
+import React from 'react';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import WalletConnect from '../components/walletconnect';
+import DappLogo from "../img/sorrel-logo.png";
+
 const NavMenu = () => {
-	const navigate = useNavigate();
   return (
-  	
-	<SideNav onSelect={selected=>{
-	 	console.log(selected);
-	 	navigate('/'+selected)
-	 }} className="navmenu"
-	 >	<SideNav.Toggle />
-	 	<div class="logo"><h5 class="text-white mx-2 mt-3">Sorrel</h5></div>
-		 
-		 <SideNav.Nav defaultSelected="accounts">
-		 	<NavItem eventKey="home">
-		 		<NavIcon><i class="fa-solid fa-home" style={{fontSize: "1.5em"}}></i></NavIcon>
-		 		<NavText>Home</NavText>
-		 	</NavItem>
-		 	{/* <NavItem eventKey="accounts">
-		 		<NavIcon><i class="fa-solid fa-user-astronaut" style={{fontSize: "1.5em"}}></i></NavIcon>
-		 		<NavText>Accounts</NavText>
-		 	</NavItem> */}
-		 	<NavItem eventKey="depository">
-		 		<NavIcon><i class="fa-solid fa-user-astronaut" style={{fontSize: "1.5em"}}></i></NavIcon>
-		 		<NavText>Depository</NavText>
-		 	</NavItem>			
-		 	<NavItem eventKey="vaults">
-		 		<NavIcon><i class="fa-solid fa-vault" style={{fontSize: "1.5em"}}></i></NavIcon>
-		 		<NavText>Vaults</NavText>
-		 	</NavItem>
-		 	<NavItem eventKey="bridge">
-		 		<NavIcon><i class="fa-solid fa-money-bill-transfer" style={{fontSize: "1.5em"}}></i></NavIcon>
-		 		<NavText>Bridge</NavText>
-		 	</NavItem>
-		 	<NavItem eventKey="addons">
-		 		<NavIcon><i class="fa-solid fa-plus" style={{fontSize: "1.5em"}}></i></NavIcon>
-		 		<NavText>Addons</NavText>
-		 	</NavItem>
-		 </SideNav.Nav>
-	 </SideNav>
-
-
-
+    <>
+    <div className="container justify-content-center py-1">
+      <Navbar bg="" expand="lg">
+        <Navbar.Brand href="/">
+          <img src={DappLogo}
+            width="60"
+            height="60"
+            alt="Sorrel Banq"
+          />
+          <b className="px-2">Sorrel</b>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="m-auto mb-lg-0 nav-items">
+            <NavItem>
+              <Nav.Link href="/accounts">Accounts</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <Nav.Link href="/vaults">Vaults</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <Nav.Link href="/bridge">Bridge</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <Nav.Link href="/addons">Addons</Nav.Link>
+            </NavItem>
+          </Nav>
+          <Nav className="ml-auto">
+            <NavItem>
+              <WalletConnect></WalletConnect>
+            </NavItem>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+    </>
   );
 };
 

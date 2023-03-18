@@ -19,9 +19,7 @@ const Depository = () => {
               <h1>Depository</h1>
               <p>Easily manage your digital currencies.</p>
             </div>
-            <div class="col">
-              <WalletConnect></WalletConnect>
-            </div>
+
           </div>
 
           <div class="row mt-4">

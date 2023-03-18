@@ -1,4 +1,3 @@
-import WalletConnect from '../components/walletconnect';
 import React  from 'react';
 
 const Bridge = () => {
@@ -12,9 +11,7 @@ const Bridge = () => {
               <h1>Bridge</h1>
               <p>Convert your stablecoins into the real world</p>
             </div>
-            <div class="col">
-              <WalletConnect></WalletConnect>
-            </div>
+
           </div>
           <div class="row mt-4">
             <div class="col text-center d-lg-none">

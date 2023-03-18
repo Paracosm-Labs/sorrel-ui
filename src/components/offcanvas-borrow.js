@@ -16,7 +16,7 @@ const OffcanvasBorrow = () => {
   <div class="offcanvas-body mx-3">
 
     <div class="mt-3">
-      <p className="text-left">Select Account</p>
+      <p class="text-left">Select Account</p>
       <select class="form-select form-select-sm" aria-label="Select Account">
         <option selected>Primary - gTTD $444,000.88</option>
         <option value="2">Primary - gGEL $44,000.88</option>
@@ -28,19 +28,19 @@ const OffcanvasBorrow = () => {
 
     <div class="row mt-5">
       <div class="col">
-      <p className="text-left">Enter Amount</p>
-          <div className="input-group mb-1 mt-3">
-            <div className="form-floating">
+      <p class="text-left">Enter Amount</p>
+          <div class="input-group mb-1 mt-3">
+            <div class="form-floating">
               <input
                 type="text"
-                className="form-control"
+                class="form-control"
                 id="floatingInputGroup1"
                 placeholder="$"
               />
               <label for="floatingInputGroup1">$</label>
             </div>
           </div>
-          <p className="small pb-3">Balance: 3,000,000.89</p>
+          <p class="small pb-3">Balance: 3,000,000.89</p>
       </div>
     </div>
 

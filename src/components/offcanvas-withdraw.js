@@ -1,16 +1,15 @@
 import React, { useState }  from 'react';
-import { getCurrencies, getCurrency } from '../utils/currencies';
+import { getCurrencies } from '../utils/currencies';
 import Select from "react-select";
 import { depositoryContract } from '../contracts/depositoryContract';
-import { DepositoryContractAddress } from '../utils/contractAddress';
 
-const OffcanvasDeposit = () => {
+const OffcanvasWithdraw = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [trxId, setTrxId] = useState("");
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
-    return {value : currency.key, label : currency.label}
+    return {value : currency.id, label : currency.label}
   });
 
 
@@ -26,14 +25,11 @@ const OffcanvasDeposit = () => {
     setGStableAmount(e.target.value);
   };
 
-  const deposit = async () => {
+  const withdraw = async () => {
     try {
       let dc = await depositoryContract();
-      let currency = getCurrency(selected.value);
-      let gStableContract = await currency.gStableContract();
-      await gStableContract.approve(DepositoryContractAddress, gStableAmount * 2);
-      console.log(`Depositing ${gStableAmount} in ${selected.label} (${selected.value})`);
-      let trxId = await dc.deposit(currency.id, gStableAmount);
+      console.log(`Withdrawing ${gStableAmount} in ${selected.label} (${selected.value})`);
+      let trxId = await dc.withdraw(selected.value, gStableAmount);
       setTrxId(trxId);
     } catch (error) {
       console.error(error);
@@ -43,9 +39,9 @@ const OffcanvasDeposit = () => {
 
   return (
     <>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDeposit" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithdraw" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header bg-info">
-    <h5 id="offcanvasRightLabel">Deposit</h5>
+    <h5 id="offcanvasRightLabel">Withdraw</h5>
     <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body mx-3">
@@ -74,7 +70,7 @@ const OffcanvasDeposit = () => {
 
     <div class="row mt-5">
       <div class="col text-center">
-      	<button class="btn btn-outline-info" onClick={deposit}>Deposit</button>
+      	<button class="btn btn-outline-info" onClick={withdraw}>Withdraw</button>
     	</div>
   	</div>
     <div>{trxId? <a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction</a> : <></>}</div>
@@ -85,4 +81,4 @@ const OffcanvasDeposit = () => {
   );
 };
 
-export default OffcanvasDeposit;
+export default OffcanvasWithdraw;

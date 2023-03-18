@@ -20,7 +20,7 @@ const OffcanvasExchange = () => {
     <div class="row mt-3">
 
       <div class="col">
-      <p className="text-left">Source</p>
+      <p class="text-left">Source</p>
       <select class="form-select form-select-sm" aria-label="Select Account">
         <option selected>Wallet Balance - gTTD $44,000.88</option>
         <option value="2">Primary - gTTD $4,400.88</option>
@@ -34,17 +34,17 @@ const OffcanvasExchange = () => {
     </div>
     <div class="row mt-3">
       <div class="col">
-        <div className="input-group mb-1" key={1}>
-          <div className="form-floating">
+        <div class="input-group mb-1" key={1}>
+          <div class="form-floating">
             <input
               type="text"
-              className="form-control"
+              class="form-control"
               id="floatingInputGroup1"
               placeholder="Enter Amount"
             />
             <label for="floatingInputGroup1">Enter Amount</label>
           </div>
-          <span className="input-group-text">
+          <span class="input-group-text">
             <img src={USDDImg}                
               width="32"
               height="32"
@@ -66,7 +66,7 @@ const OffcanvasExchange = () => {
     <div class="row mt-3">
 
       <div class="col">
-        <p className="text-left">Destination</p>
+        <p class="text-left">Destination</p>
         <select class="form-select form-select-sm" aria-label="Select Account">
           <option selected>Primary - gTTD $4,400.88</option>
           <option value="2">Primary - USDD $444,000.88</option>
@@ -81,17 +81,17 @@ const OffcanvasExchange = () => {
     <div class="row mt-3">
 
       <div class="col">
-        <div className="input-group mb-1" key={2}>
-          <div className="form-floating">
+        <div class="input-group mb-1" key={2}>
+          <div class="form-floating">
             <input
               type="text"
-              className="form-control"
+              class="form-control"
               id="floatingInputGroup1"
               placeholder="Value in gTTD"
             />
             <label for="floatingInputGroup1">Value in gTTD</label>
           </div>
-          <span className="input-group-text">
+          <span class="input-group-text">
             <img src={gTTDImg}                
               width="32"
               height="32"

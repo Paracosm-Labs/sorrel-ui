@@ -27,7 +27,7 @@ const Vaults = () => {
           </div>
           <div class="row">
             <div class="col"></div>
-            <div className="col text-center">
+            <div class="col text-center">
               <button class="btn btn-outline-secondary d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasVaultCreate" aria-controls="offcanvasVaultCreate"><i class="fa-solid fa-plus"></i>&nbsp;Create Vault</button>
             </div>
           <div class="col"></div>

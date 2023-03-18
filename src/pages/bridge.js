@@ -60,17 +60,17 @@ const Bridge = () => {
                     <option value="6">gGBP $444.88</option>
                   </select>
 
-                  <div className="input-group mb-1 mt-3">
-                    <div className="form-floating">
+                  <div class="input-group mb-1 mt-3">
+                    <div class="form-floating">
                       <input
                         type="text"
-                        className="form-control"
+                        class="form-control"
                         id="floatingInputGroup1"
                         placeholder="Value in USDD"
                       />
                       <label for="floatingInputGroup1">Enter Amount</label>
                     </div>
-                    <span className="input-group-text">
+                    <span class="input-group-text">
                       <i class="fa-solid fa-dollar"></i>
                     </span>
                   </div>

@@ -16,7 +16,7 @@ const OffcanvasTransfer = () => {
   <div class="offcanvas-body mx-3">
 
     <div class="mt-3">
-      <p className="text-left">Select Account</p>
+      <p class="text-left">Select Account</p>
         <select class="form-select form-select-sm" aria-label="Select Account">
           <option selected>My Wallet</option>
           <option value="2">Primary Account</option>
@@ -36,12 +36,12 @@ const OffcanvasTransfer = () => {
 
     <div class="row mt-5">
       <div class="col">
-      <p className="text-left">Enter Amount</p>
-          <div className="input-group mb-1 mt-3">
-            <div className="form-floating">
+      <p class="text-left">Enter Amount</p>
+          <div class="input-group mb-1 mt-3">
+            <div class="form-floating">
               <input
                 type="text"
-                className="form-control"
+                class="form-control"
                 id="floatingInputGroup1"
                 placeholder="$"
               />
@@ -54,18 +54,18 @@ const OffcanvasTransfer = () => {
 
     <div class="row mt-5">
     <div class="col">
-        <p className="text-left">Enter Destination</p>
+        <p class="text-left">Enter Destination</p>
         <select class="form-select form-select-sm" aria-label="Select Account">
           <option selected>Custom Address</option>
           <option value="2">Primary Account</option>
           <option value="3">Travel Account</option>
           <option value="4">Groceries & Food Account</option>
         </select>
-        <div className="input-group mb-1 mt-3">
-          <div className="form-floating">
+        <div class="input-group mb-1 mt-3">
+          <div class="form-floating">
             <input
               type="text"
-              className="form-control"
+              class="form-control"
               id="floatingInputGroup1"
               placeholder="$"
             />

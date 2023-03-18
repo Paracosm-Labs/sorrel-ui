@@ -9,10 +9,10 @@ const TxnHistory = () => {
 
 
 
-        <div className="row mt-5 transaction-history">
-            <h2 className="text-primary">Transaction History</h2>
-            <div className="table-responsive">
-                <table className="table table-striped table-bordered">
+        <div class="row mt-5 transaction-history">
+            <h2 class="text-primary">Transaction History</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Date</th>

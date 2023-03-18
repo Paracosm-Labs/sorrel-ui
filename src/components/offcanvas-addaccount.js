@@ -17,12 +17,12 @@ const OffcanvasAddAccount = () => {
 
     <div class="row mt-3">
 	    <div class="col">
-	    <p className="text-left">Enter Account Name</p>
-          <div className="input-group mb-1 mt-3">
-            <div className="form-floating">
+	    <p class="text-left">Enter Account Name</p>
+          <div class="input-group mb-1 mt-3">
+            <div class="form-floating">
               <input
                 type="text"
-                className="form-control"
+                class="form-control"
                 id="floatingInputGroup1"
                 placeholder=""
               />
@@ -30,7 +30,7 @@ const OffcanvasAddAccount = () => {
             </div>
           </div>
           <div class="mt-5">
-	          <p className="text-left">Select Currency</p>
+	          <p class="text-left">Select Currency</p>
 	          <select class="form-select" aria-label="Select Currency">
 	            <option selected>gTTD</option>
 	            <option value="2">gGEL</option>

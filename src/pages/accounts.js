@@ -30,12 +30,12 @@ const Accounts = () => {
           <p>Easily manage your digital currencies.</p>
         </div>
       </div>
-      <div className="row mt-3 mx-3">
-        <div className="col-sm bal-card text-center">
+      <div class="row mt-3 mx-3">
+        <div class="col-sm bal-card text-center">
           <h3>Balance</h3>
           <h3>$2,461,669.30</h3>
         </div>
-        <div className="col-sm info-card text-center">
+        <div class="col-sm info-card text-center">
 
             <div class="row">
               <div class="col">$136,000</div>
@@ -64,9 +64,9 @@ const Accounts = () => {
 
     
 
-    <div className="container accounts content">
+    <div class="container accounts content">
 
-      <div className="row mt-3 mx-3">
+      <div class="row mt-3 mx-3">
         <div class="col justify-content-start">
 
             <button class="btn btn-outline-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAddAccount" aria-controls="offcanvasAddAccount"><i class="fa-solid fa-plus"></i>&nbsp;Add Account</button>
@@ -93,10 +93,10 @@ const Accounts = () => {
         </div>   
       </div>
 
-      <div className="row mt-3 mx-3">
+      <div class="row mt-3 mx-3">
         <CurrencyAcc></CurrencyAcc>
       </div>
-      <div className="row mt-3 mx-3">
+      <div class="row mt-3 mx-3">
         <TransactionHistory></TransactionHistory>
       </div>
 

@@ -80,7 +80,7 @@ const HomeCarousel = () => {
 				    <h5>Your New Sorrel Savings Account Awaits!</h5>
 
 				    <div class="p-1 mt-5">
-				      	<h6 className="text-left">Select Your Home Country</h6>
+				      	<h6 class="text-left">Select Your Home Country</h6>
 				        <select class="mt-3 form-select" aria-label="Select Country">
 				          <option selected>Trinidad & Tobago</option>
 				          <option value="2">Georgia</option>

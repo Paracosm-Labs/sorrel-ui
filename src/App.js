@@ -8,6 +8,7 @@ import Vaults from './pages/vaults';
 import Bridge from './pages/bridge';
 import Addons from './pages/addons';
 import React  from 'react';
+import Depository from './pages/depository';
 
 
 function App() {
@@ -19,11 +20,11 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path = "/home" element={<Home/>} />
-        <Route path = "/accounts" element={<Accounts/>} />
+        <Route path = "/depository" element={<Depository/>} />
         <Route path = "/vaults" element={<Vaults/>} />
         <Route path = "/bridge" element={<Bridge/>} />
         <Route path = "/addons" element={<Addons/>} />
-        <Route path = "*" element={<Accounts/>} />
+        <Route path = "*" element={<Depository/>} />
       </Routes>
 
     </Router>

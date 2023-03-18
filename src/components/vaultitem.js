@@ -72,19 +72,19 @@ const VaultItem = () => {
 
             <div class="col"></div>
             <div class="col-md-6">
-            <p className="text-left">Enter Amount</p>
-                <div className="input-group mb-1 mt-3">
-                  <div className="form-floating">
+            <p class="text-left">Enter Amount</p>
+                <div class="input-group mb-1 mt-3">
+                  <div class="form-floating">
                     <input
                       type="text"
-                      className="form-control"
+                      class="form-control"
                       id="floatingInputGroup1"
                       placeholder="$"
                     />
                     <label for="floatingInputGroup1">$</label>
                   </div>
                 </div>
-                <p className="small pb-3">Balance: 3.033369 BTC</p>
+                <p class="small pb-3">Balance: 3.033369 BTC</p>
             </div>
             <div class="col"></div>
           </div>
@@ -102,7 +102,7 @@ const VaultItem = () => {
               
               </div>            
             </div>
-            <p className="small mt-5 mb-3 text-center">Deposit Locked till XXXXX.</p>
+            <p class="small mt-5 mb-3 text-center">Deposit Locked till XXXXX.</p>
           </div>
         </div>
       </div>

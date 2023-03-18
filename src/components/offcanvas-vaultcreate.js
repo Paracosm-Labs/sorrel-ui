@@ -18,12 +18,12 @@ const OffcanvasVaultCreate = () => {
 
     <div class="row mt-3">
       <div class="col">
-      <p className="text-left">Enter Vault Name</p>
-          <div className="input-group mb-1 mt-3">
-            <div className="form-floating">
+      <p class="text-left">Enter Vault Name</p>
+          <div class="input-group mb-1 mt-3">
+            <div class="form-floating">
               <input
                 type="text"
-                className="form-control"
+                class="form-control"
                 id="floatingInputGroup1"
                 placeholder="eg. Pizza Fund"
               />
@@ -35,19 +35,19 @@ const OffcanvasVaultCreate = () => {
 
     <div class="row mt-3">
       <div class="col">
-      <p className="text-left">Enter Amount</p>
-          <div className="input-group mb-1 mt-3">
-            <div className="form-floating">
+      <p class="text-left">Enter Amount</p>
+          <div class="input-group mb-1 mt-3">
+            <div class="form-floating">
               <input
                 type="text"
-                className="form-control"
+                class="form-control"
                 id="floatingInputGroup1"
                 placeholder="$"
               />
               <label for="floatingInputGroup1">$</label>
             </div>
           </div>
-          <p className="small pb-3">Balance: 3,000,000.89</p>
+          <p class="small pb-3">Balance: 3,000,000.89</p>
       </div>
     </div>
 

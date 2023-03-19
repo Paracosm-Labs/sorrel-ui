@@ -13,7 +13,7 @@ const Bridge = () => {
             </div>
 
           </div>
-          <div class="row mt-4">
+          <div class="row mt-3">
             <div class="col text-center d-lg-none">
               <h1>Bridge</h1>
               <p>Convert your stablecoins into the real world</p>
@@ -41,20 +41,12 @@ const Bridge = () => {
                 <div class="col">
                   <h4>Source</h4>
 
-                  <select class="form-select form-select-sm" aria-label="Select Account">
-                    <option selected>My Wallet</option>
-                    <option value="2">Primary Account</option>
-                    <option value="3">Travel Account</option>
-                    <option value="4">Groceries & Food Account</option>
-                  </select>
-
                   <select class="mt-3 form-select form-select-sm" aria-label="Select Currency">
                     <option selected>gTTD $4,400.88</option>
-                    <option value="2">gTTD $4,400.88</option>
-                    <option value="3">gTTD $4,400.88</option>
-                    <option value="4">gGEL $44,000.88</option>
-                    <option value="5">gEUR $4,000.88</option>
-                    <option value="6">gGBP $444.88</option>
+                    <option value="2">gXCD $4,400.88</option>
+                    <option value="3">gBBD $4,400.88</option>
+                    <option value="4">gJMD $44,000.88</option>
+                    <option value="5">gDOP $4,000.88</option>
                   </select>
 
                   <div class="input-group mb-1 mt-3">
@@ -76,11 +68,7 @@ const Bridge = () => {
 
                 </div>
                 <div class="row p-3 text-center">
-                <div class="col">
-                  <button class="btn btn-outline-info mt-5">
-                    <i class="fa-solid fa-repeat"></i>
-                  </button>
-                </div>
+
                 </div>
                 <div class="col mt-3">
                   <h4>Destination</h4>

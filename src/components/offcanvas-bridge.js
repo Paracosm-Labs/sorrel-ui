@@ -1,30 +1,22 @@
 import React  from 'react';
 
-const OffcanvasRepay = () => {
+
+
+const OffcanvasBridge = () => {
   return (
 
     <>
 
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRepay" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasVaultDeposit" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header bg-info">
-    <h5 id="offcanvasRightLabel">Repay</h5>
+    <h5 id="offcanvasRightLabel">Bridge</h5>
     <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body mx-3">
 
-    <div class="mt-3">
-      <p class="text-left">Select Account</p>
-      <select class="form-select form-select-sm" aria-label="Select Account">
-        <option selected>Primary - gTTD $444,000.88</option>
-        <option value="2">Primary - gGEL $44,000.88</option>
-        <option value="3">Primary - gEUR $4,000.88</option>
-        <option value="4">Primary - gGBP $444.88</option>
-        <option value="5">Primary - USDD $4,400.88</option>
-      </select>
-    </div>
 
-    <div class="row mt-5">
+    <div class="row mt-3">
       <div class="col">
       <p class="text-left">Enter Amount</p>
           <div class="input-group mb-1 mt-3">
@@ -33,7 +25,7 @@ const OffcanvasRepay = () => {
                 type="text"
                 class="form-control"
                 id="floatingInputGroup1"
-                placeholder="$"
+                placeholder="Value"
               />
               <label for="floatingInputGroup1">$</label>
             </div>
@@ -44,7 +36,7 @@ const OffcanvasRepay = () => {
 
     <div class="row mt-5">
       <div class="col text-center">
-      	<button class="btn btn-outline-info">Repay</button>
+      	<button class="btn btn-outline-info">Deposit</button>
     	</div>
   	</div>
   </div>
@@ -54,4 +46,4 @@ const OffcanvasRepay = () => {
   );
 };
 
-export default OffcanvasRepay;
+export default OffcanvasBridge;

@@ -1,4 +1,4 @@
-
+import React  from 'react';
 
 
 
@@ -25,7 +25,7 @@ const OffcanvasVaultDeposit = () => {
                 type="text"
                 class="form-control"
                 id="floatingInputGroup1"
-                placeholder="$"
+                placeholder="Value"
               />
               <label for="floatingInputGroup1">$</label>
             </div>

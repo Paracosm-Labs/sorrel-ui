@@ -16,7 +16,7 @@ const Vaults = () => {
             </div>
 
           </div>
-          <div class="row mt-4">
+          <div class="row mt-3">
             <div class="col text-center d-lg-none">
               <h1>Vaults</h1>
               <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
@@ -25,7 +25,7 @@ const Vaults = () => {
           <div class="row">
             <div class="col"></div>
             <div class="col text-center">
-              <button class="btn btn-outline-secondary d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasVaultCreate" aria-controls="offcanvasVaultCreate"><i class="fa-solid fa-plus"></i>&nbsp;Create Vault</button>
+              <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasVaultCreate" aria-controls="offcanvasVaultCreate"><i class="fa-solid fa-plus"></i>&nbsp;Create Vault</button>
             </div>
           <div class="col"></div>
           </div>

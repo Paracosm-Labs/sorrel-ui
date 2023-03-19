@@ -22,7 +22,7 @@ const Depository = () => {
 
           </div>
 
-          <div class="row mt-4">
+          <div class="row mt-3">
             <div class="col text-center d-lg-none">
               <h1>Depository</h1>
               <p>Easily manage your digital currencies.</p>

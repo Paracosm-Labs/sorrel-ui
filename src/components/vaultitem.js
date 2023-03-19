@@ -11,12 +11,6 @@ const VaultItem = () => {
   return (
 
     <>
-
-          <div class="col text-center d-lg-none">
-              <h1>Vaults</h1>
-              <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
-          </div>
-
         <div class="card-header d-none d-lg-block">
           <div class="row mt-4 mx-3 pt-3 pe-4 text-white">
             <div class="col text-center">
@@ -97,12 +91,11 @@ const VaultItem = () => {
               <div class="col-md-6">
               <p class="text-left">Select the asset you wish to earn</p>
                 <select class="mt-3 mb-1 form-select form-select-sm" aria-label="Select Currency">
-                  <option selected>gTTD $4,400.88</option>
-                  <option value="2">gTTD $4,400.88</option>
-                  <option value="3">gTTD $4,400.88</option>
-                  <option value="4">gGEL $44,000.88</option>
-                  <option value="5">gEUR $4,000.88</option>
-                  <option value="6">gGBP $444.88</option>
+                  <option selected>gTTD</option>
+                  <option value="2">gXCD</option>
+                  <option value="3">gBBD</option>
+                  <option value="4">gJMD</option>
+                  <option value="5">gDOP</option>
                 </select>
               </div>
               <div class="col"></div>

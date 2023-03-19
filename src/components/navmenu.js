@@ -19,7 +19,7 @@ const NavMenu = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto mb-lg-0 nav-items">
+          <Nav className="m-auto nav-items">
             <NavItem>
               <Nav.Link href="/accounts"><i class="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;Accounts</Nav.Link>
             </NavItem>

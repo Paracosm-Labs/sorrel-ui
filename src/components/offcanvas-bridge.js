@@ -32,7 +32,7 @@ const OffcanvasBridge = () => {
       </div>
     </div>
 
-    <div class="row mt-3">
+    <div class="row mt-4">
       <div class="col">
       <p class="text-left">Enter Account Number</p>
           <div class="input-group mb-1 mt-3">

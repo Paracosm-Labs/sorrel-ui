@@ -29,10 +29,10 @@ const AIASupport = () => {
       {showChat && (
         <Card className="position-fixed" style={{ bottom: '15px', right: '15px', width: '250px' }}>
           <Card.Body>
-            <Card.Title>Sorrel Concierge</Card.Title>
+            <Card.Title className="text-center">Sorrel Concierge</Card.Title>
             <Card.Text>
               <img src={JesAIA}
-                height="80"
+                height="100"
                 className="rounded-circle d-flex m-auto"
                 alt="Jes AIA Concierge"
               /> <br/>

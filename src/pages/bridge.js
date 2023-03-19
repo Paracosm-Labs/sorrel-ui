@@ -1,4 +1,7 @@
 import React  from 'react';
+import OffcanvasBridge  from '../components/offcanvas-bridge';
+
+
 
 const Bridge = () => {
   return (
@@ -11,14 +14,12 @@ const Bridge = () => {
               <h1>Bridge</h1>
               <p>Convert your stablecoins into the real world</p>
             </div>
-
-          </div>
-          <div class="row mt-3">
             <div class="col text-center d-lg-none">
               <h1>Bridge</h1>
               <p>Convert your stablecoins into the real world</p>
             </div>
           </div>
+
       </div>
 
 
@@ -98,7 +99,7 @@ const Bridge = () => {
                   <div class="row text-center mt-5">
                     <div class="col">
 
-                      <button class="btn btn-outline-info btn-lg">
+                      <button class="btn btn-outline-info btn-lg" data-bs-toggle="offcanvas" data-bs-target="#OffcanvasBridge" aria-controls="#OffcanvasBridge">
                         Next Step
                       </button>
 
@@ -112,7 +113,7 @@ const Bridge = () => {
       </div>
     </div>
 
-
+    <OffcanvasBridge></OffcanvasBridge>
 
 
 

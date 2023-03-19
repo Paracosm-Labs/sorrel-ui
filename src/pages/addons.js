@@ -12,13 +12,12 @@ const Addons = () => {
               <h1>Addons</h1>
               <p>Discover community addons that improve your Sorrel experience.</p>
             </div>
-          </div>
-          <div class="row mt-3">
             <div class="col text-center d-lg-none">
               <h1>Addons</h1>
               <p>Discover community addons that improve your Sorrel experience.</p>
             </div>
           </div>
+
       </div>
     </div>
 

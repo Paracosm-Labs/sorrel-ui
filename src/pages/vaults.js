@@ -14,14 +14,12 @@ const Vaults = () => {
               <h1>Vaults</h1>
               <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
             </div>
-
-          </div>
-          <div class="row mt-3">
             <div class="col text-center d-lg-none">
               <h1>Vaults</h1>
               <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
             </div>
           </div>
+
           <div class="row">
             <div class="col"></div>
             <div class="col text-center">

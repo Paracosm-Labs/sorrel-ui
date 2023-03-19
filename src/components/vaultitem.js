@@ -59,7 +59,8 @@ const VaultItem = () => {
           <div class="accordion-body">
           <div class="row">
             <div class="col border-bottom pb-3 border-width-2">
-              Vault harvests yields from the goStables protocol and automatically deposits it to your Primary account on the 1st of every month. Deposits are locked for a minimum of 3 months.
+              Vault yields are automatically credited to your Sorrel account on the 1st of every month. Deposits are locked for a minimum of 3 months.
+              Build with gSIP-01 in mind for access to future shared credit facility.
             </div>
           </div>
           <div class="row mt-3">

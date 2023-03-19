@@ -24,6 +24,9 @@ const NavMenu = () => {
               <Nav.Link href="/accounts"><i class="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;Accounts</Nav.Link>
             </NavItem>
             <NavItem>
+              <Nav.Link href="/accounts"><i class="fa-solid fa-credit-card"></i>&nbsp;&nbsp;Cards</Nav.Link>
+            </NavItem>
+            <NavItem>
               <Nav.Link href="/vaults"><i class="fa-solid fa-vault"></i>&nbsp;&nbsp;Vaults</Nav.Link>
             </NavItem>
             <NavItem>

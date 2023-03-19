@@ -68,7 +68,7 @@ code {
     padding: 3em;
     border-radius: 20px;
     margin: 2em 0em;
-    background-color:#8b3bdd66;
+/*    background-color:#8b3bdd66;*/
 
 
 }
@@ -121,7 +121,7 @@ font-weight: bold;
 
 .btn, .btn-group {box-shadow: none!important;}
 
-.nav-items .nav-item{padding: 0 1.5em 0 1.5em;}
+.nav-items .nav-item{padding: 0 1em 0 1em;}
 
 
 .currency-name, .account-name{display: inline-block!important;}

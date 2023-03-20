@@ -35,6 +35,9 @@ const OffcanvasDeposit = () => {
       console.log(`Depositing ${gStableAmount} in ${selected.label} (${selected.value})`);
       let trxId = await dc.deposit(currency.id, gStableAmount);
       setTrxId(trxId);
+      document.querySelectorAll('input').forEach(input => {
+          input.value = '';
+      });
     } catch (error) {
       console.error(error);
     }
@@ -43,7 +46,7 @@ const OffcanvasDeposit = () => {
 
   return (
     <>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDeposit" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDeposit" aria-labelledby="offcanvasRightLabel" >
   <div class="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">Deposit</h5>
     <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -77,7 +80,7 @@ const OffcanvasDeposit = () => {
       	<button class="btn btn-outline-info" onClick={deposit}>Deposit</button>
     	</div>
   	</div>
-    <div>{trxId? <a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction</a> : <></>}</div>
+    <div>{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction Successful!</a></div> : <></>}</div>
   </div>
 </div>
 

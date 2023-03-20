@@ -31,6 +31,9 @@ const OffcanvasWithdraw = () => {
       console.log(`Withdrawing ${gStableAmount} in ${selected.label} (${selected.value})`);
       let trxId = await dc.withdraw(selected.value, gStableAmount);
       setTrxId(trxId);
+      document.querySelectorAll('input').forEach(input => {
+          input.value = '';
+      });
     } catch (error) {
       console.error(error);
     }

@@ -49,6 +49,9 @@ const OffcanvasExchange = () => {
       console.log(`Exchanging ${gStableAmount} in ${selectedSource.label} (${selectedSource.value}) to ${selectedDest.label} (${selectedDest.value})`);
       let trxId = await swapGStableContract.swap(currencySource.id, gStableAmount, currencyDest.id);
       setTrxId(trxId);
+      document.querySelectorAll('input').forEach(input => {
+          input.value = '';
+      });
     } catch (error) {
       console.error(error);
     }

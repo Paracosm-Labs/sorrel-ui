@@ -39,6 +39,9 @@ const OffcanvasTransfer = () => {
       console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
       let trxId = await dc.transfer(currency.id, gStableAmount, toAddress);
       setTrxId(trxId);
+      document.querySelectorAll('input').forEach(input => {
+          input.value = '';
+      });
     } catch (error) {
       console.error(error);
     }

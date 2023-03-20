@@ -27,7 +27,7 @@ code {
 .bg-info h1, .bg-info h5, .home.content h1 {color:#c5c5c5!important;}
 
 .bg-sorrel-nav {background: #17121d73!important;}
-.bg-sorrel-nav b {color: #b65df4;}
+
 
 .bg-sorrel {
     color:#c5c5c5!important;
@@ -51,6 +51,13 @@ code {
 
 }
 
+.sorrel-success{background-color: #109e7747!important; text-align: center;}
+.sorrel-success a{color:#fff!important; text-decoration: none!important;}
+
+.text-sorrel-green{color: #109e77;}
+
+.bg-sorrel-nav b {color: #b65df4;}
+/*.bg-sorrel-nav b, .text-sorrel-purple {color: #b65df4;}*/
 
 .home .carousel .card{
   min-height: 600px!important;

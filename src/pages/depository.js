@@ -15,11 +15,11 @@ const Depository = () => {
         <div class="container accounts-info content">
           <div class="row mt-3">
             <div class="col d-none d-lg-block">
-              <h1>Depository</h1>
+              <h1>My Account</h1>
               <p>Easily manage your digital currencies.</p>
             </div>
             <div class="col text-center d-lg-none">
-              <h1>Depository</h1>
+              <h1>My Account</h1>
               <p>Easily manage your digital currencies.</p>
             </div>
           </div>
@@ -58,7 +58,7 @@ const Depository = () => {
         <div class="row mt-3 mx-3">
         <CurrencyAccounts></CurrencyAccounts>
         </div>
-        <div class="row mt-3 mx-3">
+        <div class="row mt-3 mx-3 d-none">
           <TransactionHistory></TransactionHistory>
         </div>
       </div>

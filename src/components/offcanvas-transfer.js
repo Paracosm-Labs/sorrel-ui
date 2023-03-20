@@ -8,6 +8,7 @@ const OffcanvasTransfer = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [toAddress, setToAddress] = useState("");
   const [trxId, setTrxId] = useState("");
+  const alertDiv = document.getElementById('alertTransferMsg');
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -32,6 +33,10 @@ const OffcanvasTransfer = () => {
     setToAddress(e.target.value);
   };
 
+  const showHideTransferAlert = () => {
+    alertDiv.style.display = 'none';
+  }
+
   const send = async () => {
     try {
       let dc = await depositoryContract();
@@ -42,6 +47,7 @@ const OffcanvasTransfer = () => {
       document.querySelectorAll('input').forEach(input => {
           input.value = '';
       });
+      alertDiv.style.display = 'block';
     } catch (error) {
       console.error(error);
     }
@@ -51,7 +57,7 @@ const OffcanvasTransfer = () => {
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTransfer" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header bg-info">
           <h5 id="offcanvasRightLabel">Transfer</h5>
-          <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={showHideTransferAlert}></button>
         </div>
         <div class="offcanvas-body mx-3">
         <div class="mt-3">
@@ -98,7 +104,7 @@ const OffcanvasTransfer = () => {
             <button class="btn btn-outline-info" onClick={send}>Send</button>
           </div>
           </div>
-          <div>{trxId? <a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction</a> : <></>}</div>
+          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={showHideTransferAlert} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction Successful! <br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
         </div>
       </div>
       </>

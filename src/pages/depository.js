@@ -15,11 +15,11 @@ const Depository = () => {
         <div class="container accounts-info content">
           <div class="row mt-3">
             <div class="col d-none d-lg-block">
-              <h1>Depository</h1>
+              <h1>Accounts</h1>
               <p>Easily manage your digital currencies.</p>
             </div>
             <div class="col text-center d-lg-none">
-              <h1>Depository</h1>
+              <h1>Accounts</h1>
               <p>Easily manage your digital currencies.</p>
             </div>
           </div>
@@ -49,7 +49,7 @@ const Depository = () => {
                 Exchange
               </button>
               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTransfer" aria-controls="offcanvasTransfer">
-                <i class="fa-solid fa-repeat"></i>&nbsp;
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;
                 Transfer
               </button>
             </span>
@@ -58,7 +58,7 @@ const Depository = () => {
         <div class="row mt-3 mx-3">
         <CurrencyAccounts></CurrencyAccounts>
         </div>
-        <div class="row mt-3 mx-3">
+        <div class="row mt-3 mx-3 d-none">
           <TransactionHistory></TransactionHistory>
         </div>
       </div>

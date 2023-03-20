@@ -8,6 +8,7 @@ const OffcanvasTransfer = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [toAddress, setToAddress] = useState("");
   const [trxId, setTrxId] = useState("");
+  const alertDiv = document.getElementById('alertTransferMsg');
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -101,7 +102,7 @@ const OffcanvasTransfer = () => {
             <button class="btn btn-outline-info" onClick={send}>Send</button>
           </div>
           </div>
-          <div>{trxId? <a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction</a> : <></>}</div>
+          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={showHideTransferAlert} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction Successful! <br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
         </div>
       </div>
       </>

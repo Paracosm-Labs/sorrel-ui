@@ -22,7 +22,7 @@ const Addons = () => {
     </div>
 
     <div class="container addons content">
-      <div class="row mt-n4">
+      <div class="row mt-n2">
         <div class="col"></div>
         <div class="col-md-8">
             <AddonItem></AddonItem>

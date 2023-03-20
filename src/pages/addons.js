@@ -28,7 +28,6 @@ const Addons = () => {
             <AddonItem></AddonItem>
             <AddonItem></AddonItem>
             <AddonItem></AddonItem>
-            <AddonItem></AddonItem>
         </div>
         <div class="col"></div>
       </div>

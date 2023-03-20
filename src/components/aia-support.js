@@ -38,7 +38,7 @@ const AIASupport = () => {
               /> <br/>
               Hi I'm Jes. Thank you for using Sorrel! How may I help you today?
             </Card.Text>
-            <Button variant="secondary" onClick={handleHideChat}>Close</Button>
+            <Button variant="outline-info" onClick={handleHideChat}>Close</Button>
           </Card.Body>
         </Card>
       )}

@@ -6,7 +6,7 @@ import { depositoryContract } from "../contracts/depositoryContract";
 class DepositoryPublisher {
   observers = [];
   walletDetails = {};
-  depositoryContract = null;
+  depositoryContract_ = null;
   depositoryData = {gStableBalances : []}
   timer = null;
   constructor() {
@@ -18,7 +18,7 @@ class DepositoryPublisher {
     for(let i = 0; i  < currencies.length; i++){
       let currency = currencies[i];
 
-      let gStableBal = await this.depositoryContract.balanceOf(
+      let gStableBal = await this.depositoryContract_.balanceOf(
         currency.id,
         this.walletDetails.address
       );
@@ -37,6 +37,9 @@ class DepositoryPublisher {
         if(walletDetails_.status == 1){
           this.walletDetails = walletDetails_;
         }
+        if(this.depositoryContract_ == null){
+          this.depositoryContract_ = await depositoryContract();
+        }
       } catch (error) {
         console.error(error);
       }
@@ -50,7 +53,7 @@ class DepositoryPublisher {
   init = async () => {
     try {
       this.walletDetails = await getWalletDetails();
-      this.depositoryContract = await depositoryContract();
+      this.depositoryContract_ = await depositoryContract();
     } catch (error) {
       console.error(error);
     }

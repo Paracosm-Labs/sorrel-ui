@@ -13,6 +13,8 @@ const CurrencyAccounts = () => {
         connectWallet();
         return () => {
             console.log("Unmounting CurrencyAccounts");
+            walletPublisher.detach(setWalletData);
+            depositoryPublisher.detach(setDepositoryData);
         }
     }, []);
 

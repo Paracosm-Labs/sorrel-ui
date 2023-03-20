@@ -1,3 +1,4 @@
+import { SwapUSDDContractAddress } from "../utils/contractAddress";
 import SmartContractBase from "./smartContractBase";
 
 class SwapContract extends SmartContractBase {
@@ -73,3 +74,15 @@ class SwapContract extends SmartContractBase {
 }
 
 export default SwapContract;
+
+const swapContract_ = new SwapContract(SwapUSDDContractAddress);
+
+let swapContractInitialized = null;
+
+export const swapContract = async () => {
+  if (!swapContractInitialized) {
+    console.log("initializing Swap contract");
+    swapContractInitialized = await swapContract_.init();
+  }
+  return swapContractInitialized;
+};

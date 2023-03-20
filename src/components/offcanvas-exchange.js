@@ -1,37 +1,71 @@
-import gTTDImg from "../img/gttd.png";
-import USDDImg from "../img/usdd.png";
-import React  from 'react';
+import React, { useState }  from 'react';
+import { getCurrencies, getCurrency } from '../utils/currencies';
+import Select from "react-select";
+import SwapGStableFactory from "../utils/swapGStableFactory";
+import {usddContract} from "../contracts/usdContract";
+import {SwapUSDDContractAddress} from "../utils/contractAddress";
 
 
 
 const OffcanvasExchange = () => {
+  const [gStableAmount, setGStableAmount] = useState(0);
+  const [trxId, setTrxId] = useState("");
+
+// Select Currency Dropdown related
+  const options = getCurrencies().map(currency => {
+    return {value : currency.key, label : currency.label}
+  });
+
+
+  const [selectedSource, setSelectedSource] = useState(null);
+  const [selectedDest, setSelectedDest] = useState(null);
+
+  const handleChangeSource = (selectedOption) => {
+    setSelectedSource(selectedOption);
+    console.log(`Option selected:`, selectedOption);
+  };
+  const handleChangeDestination = (selectedOption) => {
+    setSelectedDest(selectedOption);
+    console.log(`Option selected:`, selectedOption);
+  };
+
+  const updateAmount = (e) => {
+    console.log("DepositValue : ", e.target.value);
+    setGStableAmount(e.target.value);
+  };
+
+
+  const exchange = async () => {
+    try {
+      if(!selectedSource || !selectedDest){
+        return;
+      }
+      let usd = await usddContract();
+      await usd.approve(SwapUSDDContractAddress, 1000);
+      console.log("approved");
+      let swapGStableContract = await SwapGStableFactory.getSwapGStable();
+      let currencySource = getCurrency(selectedSource.value);
+      let currencyDest = getCurrency(selectedDest.value);
+      console.log(`Exchanging ${gStableAmount} in ${selectedSource.label} (${selectedSource.value}) to ${selectedDest.label} (${selectedDest.value})`);
+      let trxId = await swapGStableContract.swap(currencySource.id, gStableAmount, currencyDest.id);
+      setTrxId(trxId);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-
     <>
-
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">Exchange</h5>
     <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body mx-3">
-
-    <div class="row mt-3">
-
-      <div class="col">
+  <div class="mt-3">
       <p class="text-left">Source</p>
-      <select class="form-select form-select-sm" aria-label="Select Account">
-        <option selected>Wallet Balance - gTTD $44,000.88</option>
-        <option value="2">Primary - gTTD $4,400.88</option>
-        <option value="2">Primary - USDD $4,400.88</option>
-        <option value="3">Primary - gGEL $44,000.88</option>
-        <option value="4">Primary - gEUR $4,000.88</option>
-        <option value="5">Primary - gGBP $444.88</option>
-      </select>
-      </div>
-
-    </div>
+      <Select options={options} onChange={handleChangeSource} autoFocus={true} />
+  </div>
     <div class="row mt-3">
       <div class="col">
         <div class="input-group mb-1" key={1}>
@@ -41,85 +75,35 @@ const OffcanvasExchange = () => {
               class="form-control"
               id="floatingInputGroup1"
               placeholder="Enter Amount"
+              onChange={updateAmount}
             />
             <label for="floatingInputGroup1">Enter Amount</label>
           </div>
-          <span class="input-group-text">
-            <img src={USDDImg}                
-              width="32"
-              height="32"
-              />
-          </span>
         </div>
-
       </div>  
     </div>
-
-
-    <div class="row mt-5">
-        <div class="col text-center">
-              <i class="fa-solid fa-repeat"></i>
-        </div>
-    </div>
-
-
     <div class="row mt-3">
-
       <div class="col">
         <p class="text-left">Destination</p>
-        <select class="form-select form-select-sm" aria-label="Select Account">
-          <option selected>Primary - gTTD $4,400.88</option>
-          <option value="2">Primary - USDD $444,000.88</option>
-          <option value="3">Primary - gGEL $44,000.88</option>
-          <option value="4">Primary - gEUR $4,000.88</option>
-          <option value="5">Primary - gGBP $444.88</option>
-        </select>
-      </div>
-
-    </div>
-
-    <div class="row mt-3">
-
-      <div class="col">
-        <div class="input-group mb-1" key={2}>
-          <div class="form-floating">
-            <input
-              type="text"
-              class="form-control"
-              id="floatingInputGroup1"
-              placeholder="Value in gTTD"
-            />
-            <label for="floatingInputGroup1">Value in gTTD</label>
-          </div>
-          <span class="input-group-text">
-            <img src={gTTDImg}                
-              width="32"
-              height="32"
-              />
-          </span>
-        </div>
+        <Select options={options} onChange={handleChangeDestination} autoFocus={true} />
       </div>
     </div>
-
-
     <div class="row mt-3 text-center">
       <div class="col"><b>Rate</b>: 1 USDD ≈ 6.7598 gTTD</div>
     </div>
     <div class="row text-center">
       <div class="col"><b>Fee 0.4%</b>: ≈ 0.80</div>
     </div>
-
     <div class="row mt-5">
       <div class="col"></div>
       <div class="col justify-content-middle">
-      	<button class="btn btn-outline-info">Exchange</button>
+      	<button class="btn btn-outline-info" onClick={exchange}>Exchange</button>
     	</div>
       <div class="col"></div>
   	</div>
-
+    <div>{trxId? <a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction</a> : <></>}</div>
   </div>
 </div>
-
 </>
   );
 };

@@ -1,90 +1,104 @@
-import React  from 'react';
-
-
+import React, { useState }  from 'react';
+import { getCurrencies, getCurrency } from '../utils/currencies';
+import Select from "react-select";
+import { depositoryContract } from '../contracts/depositoryContract';
+import { DepositoryContractAddress } from '../utils/contractAddress';
 
 const OffcanvasTransfer = () => {
+  const [gStableAmount, setGStableAmount] = useState(0);
+  const [toAddress, setToAddress] = useState("");
+  const [trxId, setTrxId] = useState("");
+
+// Select Currency Dropdown related
+  const options = getCurrencies().map(currency => {
+    return {value : currency.key, label : currency.label}
+  });
+
+
+  const [selected, setSelected] = useState(null);
+
+  const handleChange = (selectedOption) => {
+    setSelected(selectedOption);
+    console.log(`Option selected:`, selectedOption);
+  };
+
+  const updateAmount = (e) => {
+    console.log("DepositValue : ", e.target.value);
+    setGStableAmount(e.target.value);
+  };
+
+  const updateAddress = (e) => {
+    console.log("Send To Address  : ", e.target.value);
+    setToAddress(e.target.value);
+  };
+
+  const send = async () => {
+    try {
+      let dc = await depositoryContract();
+      let currency = getCurrency(selected.value);
+      console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
+      let trxId = await dc.transfer(currency.id, gStableAmount, toAddress);
+      setTrxId(trxId);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
-
     <>
-
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTransfer" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header bg-info">
-    <h5 id="offcanvasRightLabel">Transfer</h5>
-    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body mx-3">
-
-    <div class="mt-3">
-      <p class="text-left">Select Account</p>
-        <select class="form-select form-select-sm" aria-label="Select Account">
-          <option selected>My Wallet</option>
-          <option value="2">Primary Account</option>
-          <option value="3">Travel Account</option>
-          <option value="4">Groceries & Food Account</option>
-        </select>
-
-        <select class="mt-3 form-select form-select-sm" aria-label="Select Currency">
-          <option selected>gTTD $4,400.88</option>
-          <option value="2">gTTD $4,400.88</option>
-          <option value="3">gTTD $4,400.88</option>
-          <option value="4">gGEL $44,000.88</option>
-          <option value="5">gEUR $4,000.88</option>
-          <option value="6">gGBP $444.88</option>
-        </select>
-    </div>
-
-    <div class="row mt-5">
-      <div class="col">
-      <p class="text-left">Enter Amount</p>
-          <div class="input-group mb-1 mt-3">
-            <div class="form-floating">
-              <input
-                type="text"
-                class="form-control"
-                id="floatingInputGroup1"
-                placeholder="$"
-              />
-              <label for="floatingInputGroup1">$</label>
-            </div>
-          </div>
-
-      </div>
-    </div>
-
-    <div class="row mt-5">
-    <div class="col">
-        <p class="text-left">Enter Destination</p>
-        <select class="form-select form-select-sm" aria-label="Select Account">
-          <option selected>Custom Address</option>
-          <option value="2">Primary Account</option>
-          <option value="3">Travel Account</option>
-          <option value="4">Groceries & Food Account</option>
-        </select>
-        <div class="input-group mb-1 mt-3">
-          <div class="form-floating">
-            <input
-              type="text"
-              class="form-control"
-              id="floatingInputGroup1"
-              placeholder="$"
-            />
-            <label for="floatingInputGroup1">TRC20 Address</label>
-          </div>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTransfer" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header bg-info">
+          <h5 id="offcanvasRightLabel">Transfer</h5>
+          <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-  	</div>
-    </div>
+        <div class="offcanvas-body mx-3">
+        <div class="mt-3">
+      <p class="text-left">Select Currency</p>
+      <Select options={options} onChange={handleChange} autoFocus={true} />
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+        <p class="text-left">Enter Amount</p>
+            <div class="input-group mb-1 mt-3">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="floatingInputGroup1"
+                  onChange={updateAmount}
+                />
+                <label for="floatingInputGroup1">{selected?selected.label:""}</label>
+              </div>
+            </div>
+        </div>
+      </div>
+          <div class="row mt-5">
+          <div class="col">
+              <p class="text-left">Enter Destination</p>
+              
+              <div class="input-group mb-1 mt-3">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInputGroup1"
+                    placeholder="$"
+                    onChange={updateAddress}
+                  />
+                  <label for="floatingInputGroup1">Address</label>
+                </div>
+              </div>
+          </div>
+          </div>
 
-    <div class="row mt-5">
-    <div class="col text-center">
-      <button class="btn btn-outline-info">Send</button>
-    </div>
-
-  	</div>
-  </div>
-</div>
-
-</>
+          <div class="row mt-5">
+          <div class="col text-center">
+            <button class="btn btn-outline-info" onClick={send}>Send</button>
+          </div>
+          </div>
+          <div>{trxId? <a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction</a> : <></>}</div>
+        </div>
+      </div>
+      </>
   );
 };
 

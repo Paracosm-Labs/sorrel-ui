@@ -60,6 +60,30 @@ class DepositoryContract extends SmartContractBase {
     }
   };
 
+  transfer = async (currencyId, _val, toAddress) => {
+    this.check();
+    if (!_val) throw new Error(`Number : ${_val}`);
+
+    console.log("transfer", this.web3.utils.toWei(String(_val), "ether"));
+
+    try {
+      let result  = await this.contract
+        .transfer(
+          currencyId,
+          this.web3.utils.toWei(String(_val), "ether"),
+          toAddress
+        )
+        .send({
+          feeLimit: 100_000_000,
+          callValue: 0,
+          shouldPollResponse: false,
+        });
+        return result;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   balanceOf = async (currencyId, hodlerAddress) => {
     this.check();
     const balHex = await this.contract

@@ -1,13 +1,12 @@
 import React from 'react';
-// import CurrencyAcc from "../components/currencyaccalt";
-import CurrencyAcc from "../components/currency-accounts";
+import CurrencyAccounts from "../components/currency-accounts";
 import TransactionHistory from "../components/txnhistory";
 import OffcanvasAddAccount from "../components/offcanvas-addaccount";
 import OffcanvasExchange from "../components/offcanvas-exchange";
 import OffcanvasDeposit from "../components/offcanvas-deposit";
 import OffcanvasWithdraw from "../components/offcanvas-withdraw";
 import OffcanvasTransfer from "../components/offcanvas-transfer";
-import WalletConnect from '../components/walletconnect';
+import BalanceCardUSDD from "../components/balancesUSDD";
 
 const Depository = () => {
   return (
@@ -26,10 +25,7 @@ const Depository = () => {
           </div>
 
           <div class="row mt-3 mx-3">
-            <div class="col-sm bal-card text-center">
-              <h3>Balance</h3>
-              <h3>$2,461,669.30</h3>
-            </div>
+          <BalanceCardUSDD></BalanceCardUSDD>
           </div>
         </div>
       </div>
@@ -60,7 +56,7 @@ const Depository = () => {
           </div>
         </div>
         <div class="row mt-3 mx-3">
-          <CurrencyAcc></CurrencyAcc>
+        <CurrencyAccounts></CurrencyAccounts>
         </div>
         <div class="row mt-3 mx-3">
           <TransactionHistory></TransactionHistory>

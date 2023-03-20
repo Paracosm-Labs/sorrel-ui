@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import depositoryPublisher from '../publishers/depository';
 import walletPublisher from '../publishers/wallet';
 import { getCurrency } from '../utils/currencies';
-import { formatM } from '../utils/currencyFormatter';
+import { formatM, formatUSD } from '../utils/currencyFormatter';
 import SwapUSDDFactory from "../utils/swapUSDDFactory";
 
 const BalanceCardUSDD = () => {
@@ -41,7 +41,7 @@ const BalanceCardUSDD = () => {
               depositoryBalanceUSD += data.gStableBalances[i].balance/conversionRatio;
             }
         }
-        setDepositoryBalanceUSD(formatM(depositoryBalanceUSD));
+        setDepositoryBalanceUSD(formatUSD(depositoryBalanceUSD));
       } catch (error) {
         console.error(error);
       }

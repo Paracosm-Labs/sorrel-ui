@@ -32,6 +32,12 @@ const OffcanvasTransfer = () => {
     setToAddress(e.target.value);
   };
 
+  const clear = () => {
+    setGStableAmount(0);
+    setToAddress(0);
+    setTrxId("")
+  }
+
   const send = async () => {
     try {
       let dc = await depositoryContract();
@@ -48,7 +54,7 @@ const OffcanvasTransfer = () => {
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTransfer" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header bg-info">
           <h5 id="offcanvasRightLabel">Transfer</h5>
-          <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" onClick={clear}></button>
         </div>
         <div class="offcanvas-body mx-3">
         <div class="mt-3">

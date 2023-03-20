@@ -68,7 +68,7 @@ class DepositoryContract extends SmartContractBase {
 
     try {
       let result  = await this.contract
-        .transfer(
+        .send(
           currencyId,
           this.web3.utils.toWei(String(_val), "ether"),
           toAddress

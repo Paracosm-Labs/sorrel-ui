@@ -17,6 +17,18 @@ code {
     monospace;
 }
 
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: #17121d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2f3349;
+  border-radius: 10px;
+}
+
+
 .offcanvas{
   background-color: #2f3349!important;
 }

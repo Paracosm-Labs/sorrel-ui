@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import WalletConnect from '../components/walletconnect';
-import DappLogo from "../img/sorrel-logo.png";
+import DappLogo from "../img/sorrel-logox.png";
 
 const NavMenu = () => {
   return (
@@ -11,11 +11,10 @@ const NavMenu = () => {
       <Navbar bg="" expand="lg">
         <Navbar.Brand href="/">
           <img src={DappLogo}
-            width="60"
-            height="60"
+            height="55"
             alt="Sorrel Banq"
           />
-          <b className="px-2">Sorrel</b>
+          
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

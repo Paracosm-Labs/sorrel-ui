@@ -132,6 +132,8 @@ font-weight: bold;
   margin-right: 10px!important;
 }
 
+.mt-n10 {margin-top: -10rem !important;}
+
 .currency-acc .fa-user-astronaut{font-size: 35px;width: 40px;}
 
 

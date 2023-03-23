@@ -27,7 +27,7 @@ const Addons = ({ key, item }) => {
               <h4>{item.label}</h4>
               {item.details}
             </span><br/>
-              <a href="{item.link}">
+              <a href={item.link}>
               <button 
                 className="btn btn-sm btn-outline-secondary mt-4"
               >Read More...</button>

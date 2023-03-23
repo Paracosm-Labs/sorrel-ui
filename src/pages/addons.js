@@ -1,4 +1,5 @@
 import React  from 'react';
+import { addonsData } from "../components/addonsData";
 import AddonItem from '../components/addons';
 
 
@@ -10,11 +11,11 @@ const Addons = () => {
           <div class="row mt-3">
             <div class="col d-none d-lg-block">
               <h1>Addons</h1>
-              <p>Discover community addons that improve your Sorrel experience.</p>
+              <p>Stake your gStables to crowdfund addons that improve your Sorrel experience.</p>
             </div>
             <div class="col text-center d-lg-none">
               <h1>Addons</h1>
-              <p>Discover community addons that improve your Sorrel experience.</p>
+              <p>Stake your gStables to crowdfund addons that improve your Sorrel experience.</p>
             </div>
           </div>
 
@@ -25,9 +26,9 @@ const Addons = () => {
       <div class="row mt-n2">
         <div class="col"></div>
         <div class="col-md-8">
-            <AddonItem></AddonItem>
-            <AddonItem></AddonItem>
-            <AddonItem></AddonItem>
+            {addonsData.map((item, key) => (
+              <AddonItem key={key} item={item} />
+            ))}
         </div>
         <div class="col"></div>
       </div>

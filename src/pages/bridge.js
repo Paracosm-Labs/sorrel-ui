@@ -33,7 +33,7 @@ const Bridge = () => {
           <div class="col text-center d-lg-none">
           </div>
         </div>
-      <div class="row mt-n4">
+      <div class="row mt-n10">
         <div class="col"></div>
         <div class="col-md-6">
           <div class="card bg-secondary p-3">

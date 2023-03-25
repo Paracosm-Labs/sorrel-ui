@@ -175,3 +175,9 @@ font-weight: bold;
 .border-green {
   border:2px solid #43cc29!important;
 }
+
+
+.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show{
+
+  background-color: #7a45a5!important;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { getNetworkName } from "../utils/network";
 import { getMaskedAddress } from "../utils/shorten";
+import TronLinkLogo from "../img/tronlink-logo.png";
 
 const WalletConnect = () => {
   const [address, setAddress] = useState(null);
@@ -65,6 +66,12 @@ const WalletConnect = () => {
     return (
       <div class="btn-group float-end" role="group">
         <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
+          <img
+            width="16"
+            height="16"
+            alt="Tronlink"
+            src={TronLinkLogo}
+          />
           Please log in to TronLink
         </button>
       </div>
@@ -75,7 +82,12 @@ const WalletConnect = () => {
     return (
       <div class="btn-group float-end" role="group">
         <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
-          <i class="fa-solid fa-wallet px-2"></i>
+          <img
+            width="16"
+            height="16"
+            alt="Tronlink"
+            src={TronLinkLogo}
+          />
           <span class="text-sorrel-purple">{getMaskedAddress(address)}</span> | &nbsp;
           <span class="small">{getNetworkName(network)}</span>
         </button>
@@ -87,6 +99,12 @@ const WalletConnect = () => {
     return (
       <div class="btn-group float-end" role="group">
         <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
+          <img
+            width="16"
+            height="16"
+            alt="Tronlink"
+            src={TronLinkLogo}
+          />
           Connect Wallet
         </button>
       </div>

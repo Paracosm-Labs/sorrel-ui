@@ -181,3 +181,14 @@ font-weight: bold;
 
   background-color: #7a45a5!important;
 }
+
+
+.btn-web3:first-child:active {
+    background-color: #2f3349!important;
+    color: #7b8ab8!important;
+}
+
+.btn-web3 img {
+    margin-top: -4px;
+    margin-right: 8px;
+}

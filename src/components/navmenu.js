@@ -23,10 +23,13 @@ const NavMenu = () => {
               <Nav.Link href="/accounts"><i class="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;Accounts</Nav.Link>
             </NavItem>
             <NavItem>
-              <Nav.Link href="/cards"><i class="fa-solid fa-credit-card"></i>&nbsp;&nbsp;Cards</Nav.Link>
+              <Nav.Link href="/vaults"><i class="fa-solid fa-vault"></i>&nbsp;&nbsp;Vaults</Nav.Link>
             </NavItem>
             <NavItem>
-              <Nav.Link href="/vaults"><i class="fa-solid fa-vault"></i>&nbsp;&nbsp;Vaults</Nav.Link>
+              <Nav.Link href="/cards"><i class="fa-solid fa-credit-card"></i>&nbsp;&nbsp;Cards</Nav.Link>
+            </NavItem>
+            <NavItem  className="d-none">
+              <Nav.Link href="/bridge"><i class="fa-solid fa-money-bill-transfer"></i>&nbsp;&nbsp;Bridge</Nav.Link>
             </NavItem>
             <NavItem>
               <Nav.Link href="/addons"><i class="fa-solid fa-puzzle-piece"></i>&nbsp;&nbsp;Addons</Nav.Link>

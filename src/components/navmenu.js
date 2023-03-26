@@ -29,9 +29,6 @@ const NavMenu = () => {
               <Nav.Link href="/vaults"><i class="fa-solid fa-vault"></i>&nbsp;&nbsp;Vaults</Nav.Link>
             </NavItem>
             <NavItem>
-              <Nav.Link href="/bridge"><i class="fa-solid fa-money-bill-transfer"></i>&nbsp;&nbsp;Bridge</Nav.Link>
-            </NavItem>
-            <NavItem>
               <Nav.Link href="/addons"><i class="fa-solid fa-puzzle-piece"></i>&nbsp;&nbsp;Addons</Nav.Link>
             </NavItem>
           </Nav>

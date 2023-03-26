@@ -192,3 +192,16 @@ font-weight: bold;
     margin-top: -4px;
     margin-right: 8px;
 }
+
+
+.btn-outline-vault-withdraw {
+    background-color: transparent!important;
+    border: 1px solid #109e77!important;
+    color: #109e77!important;
+}
+
+.btn-outline-vault-withdraw:first-child:active {
+  background-color: transparent!important;
+  color: #2f3349!important;
+  border: 1px solid #2f3349!important;
+}

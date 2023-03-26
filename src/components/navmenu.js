@@ -9,7 +9,7 @@ const NavMenu = () => {
     <div className="d-flex bg-sorrel-nav">
     <div className="container justify-content-center py-1">
       <Navbar bg="" expand="lg">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="https://sorrelbanq.org">
           <img src={DappLogo}
             height="55"
             alt="Sorrel Banq"

@@ -32,15 +32,15 @@ const VaultItem = () => {
             <div class="container row mx-1 pt-2">
               <div class="col-md-4 col-sm-12">
                 <img
-                  src={BTCImg}
-                  alt="gStable"
+                  src={TRXImg}
+                  alt="TRX"
                   width="32"
                   height="32"
                   class="flex-shrink-0"
                 />
                 <div class="currency-name">
-                  <b>BTC</b>
-                  <p class="small">Bitcoin</p>
+                  <b>TRX</b>
+                  <p class="small">Tron</p>
                 </div>
               </div>
               <div class="col text-center apr-info">
@@ -50,7 +50,7 @@ const VaultItem = () => {
 
               <div class="col text-center">
                 <b class="d-lg-none">My Deposit</b>
-                <h6>21.369 BTC</h6>
+                <h6>213690.588</h6>
               </div>
             </div>
           </button>
@@ -76,10 +76,10 @@ const VaultItem = () => {
                       id="floatingInputGroup1"
                       placeholder="$"
                     />
-                    <label for="floatingInputGroup1">&#8383;</label>
+                    <label for="floatingInputGroup1">TRX</label>
                   </div>
                 </div>
-                <p class="small">Balance: 3.033369 BTC</p>
+                <p class="small">Balance: 30333.69 TRX</p>
             </div>
 
             <div class="col"></div>
@@ -120,90 +120,7 @@ const VaultItem = () => {
         </div>
       </div>
 
-      <div class="accordion-item vault-item mt-3">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <div class="container row mx-1 pt-3">
-              <div class="col-md-4 col-sm-12">
-                <img
-                  src={TRXImg}
-                  alt="gStable"
-                  width="32"
-                  height="32"
-                  class="flex-shrink-0"
-                />
-                <div class="currency-name">
-                  <b>TRX</b>
-                  <p class="small">Tron</p>
-                </div>
-              </div>
-              <div class="col text-center apr-info">
-                <b class="d-lg-none">APR</b>
-                <h6>3.69%</h6>
-              </div>
 
-              <div class="col text-center">
-                <b class="d-lg-none">My Deposit</b>
-                <h6>408,006 TRX</h6>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-              Vault asset description
-            <div class="row mt-5">
-              <div class="col"></div>
-              <div class="col">
-              <button class="btn btn-outline-info" type="button">Deposit</button>
-              </div>
-              <div class="col"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item vault-item mt-3">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <div class="container row mx-1 pt-3">
-              <div class="col-md-4 col-sm-12">
-                <img
-                  src={BNBImg}
-                  alt="gStable"
-                  width="32"
-                  height="32"
-                  class="flex-shrink-0"
-                />
-                <div class="currency-name">
-                  <b>BNB</b>
-                  <p class="small">Binance Coin</p>
-                </div>
-              </div>
-              <div class="col text-center apr-info">
-                <b class="d-lg-none">APR</b>
-                <h6>3.69%</h6>
-              </div>
-
-              <div class="col text-center">
-                <b class="d-lg-none">My Deposit</b>
-                <h6>8,006 BNB</h6>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-              Vault asset description
-            <div class="row mt-5">
-              <div class="col"></div>
-              <div class="col">
-              <button class="btn btn-outline-info" type="button">Deposit</button>
-              </div>
-              <div class="col"></div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="accordion-item vault-item mt-3">
         <h2 class="accordion-header" id="headingFour">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">

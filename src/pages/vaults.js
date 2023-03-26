@@ -12,11 +12,11 @@ const Vaults = () => {
           <div class="row mt-3">
             <div class="col d-none d-lg-block">
               <h1>Vaults</h1>
-              <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
+              <p>Earn gStables by staking your digital assets to support Sorrel Banq and goStables Protocol.</p>
             </div>
             <div class="col text-center d-lg-none">
               <h1>Vaults</h1>
-              <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
+              <p>Earn gStables by staking your digital assets to support Sorrel Banq and goStables Protocol.</p>
             </div>
           </div>
 

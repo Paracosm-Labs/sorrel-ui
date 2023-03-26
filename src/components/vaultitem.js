@@ -62,7 +62,7 @@ const VaultItem = () => {
               Support Sorrel Banq by adding TRX into this vault to facilitate energy free transactions for Sorrel members. Vault yields are automatically credited to your Sorrel account every week. Deposits are locked for a minimum of 7 days. Build with gSIP-01 in mind for access to future shared credit facility.
             </div>
           </div>
-          <div class="row mt-3">
+          <div class="row mt-3 text-center">
 
             <div class="col"></div>
             <div class="col-md-6">
@@ -155,7 +155,7 @@ const VaultItem = () => {
             </div>
           </div>
 
-          <div class="row mt-3">
+          <div class="row mt-3 text-center">
 
             <div class="col"></div>
             <div class="col-md-6">

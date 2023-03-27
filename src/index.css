@@ -159,6 +159,9 @@ font-weight: bold;
 
 .currency-name, .account-name{display: inline-block!important;}
 
+.card-title{
+  font-weight: 600;
+}
 
 .rowCard {
     border-radius: 15px;

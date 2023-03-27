@@ -13,14 +13,14 @@ const CurrencyDeposit = ({currency, walletData, depositoryData}) => {
         <div class="row">
             <div class="col-md-3">
                 <img src={currency.icon}
-                width="32"
-                height="32"
+                width="42"
+                height="42"
                 class="flex-shrink-0" />
             </div>
             <div class="col-md-9">
                 <h5 class="card-title">{currency.label}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Sorrel: {depositoryBalance}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Wallet: {walletBalance}</h6>
+                <h6 class="card-subtitle mb-2">Sorrel: {depositoryBalance}</h6>
+                <h6 class="card-subtitle mb-2">Wallet: {walletBalance}</h6>
             </div>
         </div>
     </div>

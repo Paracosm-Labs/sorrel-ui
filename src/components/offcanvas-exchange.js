@@ -5,12 +5,9 @@ import SwapGStableFactory from "../utils/swapGStableFactory";
 import {usddContract} from "../contracts/usdContract";
 import {SwapUSDDContractAddress} from "../utils/contractAddress";
 
-
-
 const OffcanvasExchange = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [trxId, setTrxId] = useState("");
-  const alertDiv = document.getElementById('alertExchangeMsg');
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -35,9 +32,12 @@ const OffcanvasExchange = () => {
     setGStableAmount(e.target.value);
   };
 
-
-  const showHideExchangeAlert = () => {
-    alertDiv.style.display = 'none';
+  const clear = () => {
+    setGStableAmount(0);
+    setTrxId("");
+    document.querySelectorAll('input').forEach(input => {
+        input.value = '';
+    });
   }
 
   const exchange = async () => {
@@ -57,7 +57,6 @@ const OffcanvasExchange = () => {
       document.querySelectorAll('input').forEach(input => {
           input.value = '';
       });
-      alertDiv.style.display = 'block';
     } catch (error) {
       console.error(error);
     }
@@ -65,15 +64,15 @@ const OffcanvasExchange = () => {
 
   return (
     <>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel" onHide={clear}>
   <div class="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">Exchange</h5>
-    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={showHideExchangeAlert}></button>
+    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
   <div class="offcanvas-body mx-3">
   <div class="mt-3">
       <p class="text-left">Source</p>
-      <Select options={options} onChange={handleChangeSource} autoFocus={true} />
+      <Select options={options} onChange={handleChangeSource} autoFocus={true}/>
   </div>
     <div class="row mt-3">
       <div class="col">
@@ -110,7 +109,7 @@ const OffcanvasExchange = () => {
     	</div>
       <div class="col"></div>
   	</div>
-    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={showHideExchangeAlert} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
+    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
   </div>
 </div>
 </>

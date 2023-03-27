@@ -1,11 +1,6 @@
 import USDDImg from "../img/usdd.png";
-import BTCImg from "../img/btc.png";
 import TRXImg from "../img/trx.png";
-import BNBImg from "../img/bnb.png";
-import ETHImg from "../img/eth.png";
 import React  from 'react';
-
-
 
 const VaultItem = () => {
   return (
@@ -112,7 +107,10 @@ const VaultItem = () => {
               </div>
               <div class="col"></div>            
             </div>
-            <p class="small mt-5 mb-3 text-center">Deposit Locked till XXXXX.</p>
+
+            <p class="small mt-5 mb-3 text-center">
+              <i class="fa-solid fa-lock"></i><br/>
+              Deposit Locked till XXXXX.</p>
           </div>
         </div>
       </div>
@@ -206,7 +204,11 @@ const VaultItem = () => {
               </div>
               <div class="col"></div>
             </div>
-            <p class="small mt-5 mb-3 text-center">Deposit Locked till XXXXX.</p>            
+            
+            <p class="small mt-5 mb-3 text-center">
+              <i class="fa-solid fa-lock"></i><br/>
+              Deposit Locked till XXXXX.
+            </p>            
           </div>
         </div>
       </div>

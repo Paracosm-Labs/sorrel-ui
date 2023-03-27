@@ -205,3 +205,8 @@ font-weight: bold;
   color: #2f3349!important;
   border: 1px solid #2f3349!important;
 }
+
+.fa-lock, .fa-lock-open, .fa-unlock {
+    font-size: 3em;
+    margin-bottom: 1rem;
+}

@@ -46,7 +46,7 @@ const Vaults = () => {
               <div class="row p-3">
                 <div class="col">
 
-                  <div class="accordion" id="accordionExample">
+                  <div class="accordion" id="accordionVaults">
                     <VaultItem></VaultItem>
 
 

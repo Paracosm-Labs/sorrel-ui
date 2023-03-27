@@ -109,7 +109,7 @@ const OffcanvasExchange = () => {
     	</div>
       <div class="col"></div>
   	</div>
-    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
+    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
   </div>
 </div>
 </>

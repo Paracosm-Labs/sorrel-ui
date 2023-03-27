@@ -50,7 +50,7 @@ const VaultItem = () => {
             </div>
           </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionVaults">
           <div class="accordion-body">
           <div class="row">
             <div class="col border-bottom pb-3 border-width-2">
@@ -145,7 +145,7 @@ const VaultItem = () => {
             </div>
           </button>
         </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionVaults">
           <div class="accordion-body">
           <div class="row">
             <div class="col border-bottom pb-3 border-width-2">

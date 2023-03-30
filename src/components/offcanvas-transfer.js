@@ -8,7 +8,6 @@ const OffcanvasTransfer = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [toAddress, setToAddress] = useState("");
   const [trxId, setTrxId] = useState("");
-  const alertDiv = document.getElementById('alertTransferMsg');
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -35,8 +34,11 @@ const OffcanvasTransfer = () => {
 
   const clear = () => {
     setGStableAmount(0);
-    setToAddress(0);
-    setTrxId("")
+    setTrxId("");
+    setToAddress("");
+    document.querySelectorAll('input').forEach(input => {
+        input.value = '';
+    });
   }
 
   const send = async () => {
@@ -46,13 +48,16 @@ const OffcanvasTransfer = () => {
       console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
       let trxId = await dc.transfer(currency.id, gStableAmount, toAddress);
       setTrxId(trxId);
+      document.querySelectorAll('input').forEach(input => {
+          input.value = '';
+      });
     } catch (error) {
       console.error(error);
     }
   };
   return (
     <>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTransfer" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTransfer" aria-labelledby="offcanvasRightLabel" onHide={clear}>
         <div class="offcanvas-header bg-info">
           <h5 id="offcanvasRightLabel">Transfer</h5>
           <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" onClick={clear}></button>
@@ -102,7 +107,7 @@ const OffcanvasTransfer = () => {
             <button class="btn btn-outline-info" onClick={send}>Send</button>
           </div>
           </div>
-          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction Successful! <br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
+          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction Successful! <br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
         </div>
       </div>
       </>

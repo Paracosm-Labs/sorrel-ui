@@ -7,7 +7,6 @@ import { DepositoryContractAddress } from '../utils/contractAddress';
 const OffcanvasDeposit = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [trxId, setTrxId] = useState("");
-  const alertDiv = document.getElementById('alertDepositMsg');
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -27,8 +26,12 @@ const OffcanvasDeposit = () => {
     setGStableAmount(e.target.value);
   };
 
-  const showHideDepositAlert = () => {
-    alertDiv.style.display = 'none';
+  const clear = () => {
+    setGStableAmount(0);
+    setTrxId("");
+    document.querySelectorAll('input').forEach(input => {
+        input.value = '';
+    });
   }
 
   const deposit = async () => {
@@ -43,7 +46,6 @@ const OffcanvasDeposit = () => {
       document.querySelectorAll('input').forEach(input => {
           input.value = '';
       });
-      alertDiv.style.display = 'block';
     } catch (error) {
       console.error(error);
     }
@@ -52,10 +54,10 @@ const OffcanvasDeposit = () => {
 
   return (
     <>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDeposit" aria-labelledby="offcanvasRightLabel" >
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDeposit" aria-labelledby="offcanvasRightLabel" onHide={clear}>
   <div class="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">Deposit</h5>
-    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={showHideDepositAlert}></button>
+    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
   <div class="offcanvas-body mx-3">
 
@@ -86,7 +88,7 @@ const OffcanvasDeposit = () => {
       	<button class="btn btn-outline-info" onClick={deposit}>Deposit</button>
     	</div>
   	</div>
-    <div id="alertDepositMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={showHideDepositAlert} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
+    <div id="alertDepositMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
   </div>
 </div>
 

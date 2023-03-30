@@ -9,7 +9,7 @@ const NavMenu = () => {
     <div className="d-flex bg-sorrel-nav">
     <div className="container justify-content-center py-1">
       <Navbar bg="" expand="lg">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="https://sorrelbanq.org">
           <img src={DappLogo}
             height="55"
             alt="Sorrel Banq"
@@ -23,12 +23,12 @@ const NavMenu = () => {
               <Nav.Link href="/accounts"><i class="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;Accounts</Nav.Link>
             </NavItem>
             <NavItem>
-              <Nav.Link href="/cards"><i class="fa-solid fa-credit-card"></i>&nbsp;&nbsp;Cards</Nav.Link>
-            </NavItem>
-            <NavItem>
               <Nav.Link href="/vaults"><i class="fa-solid fa-vault"></i>&nbsp;&nbsp;Vaults</Nav.Link>
             </NavItem>
             <NavItem>
+              <Nav.Link href="/cards"><i class="fa-solid fa-credit-card"></i>&nbsp;&nbsp;Cards</Nav.Link>
+            </NavItem>
+            <NavItem  className="d-none">
               <Nav.Link href="/bridge"><i class="fa-solid fa-money-bill-transfer"></i>&nbsp;&nbsp;Bridge</Nav.Link>
             </NavItem>
             <NavItem>

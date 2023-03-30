@@ -1,11 +1,6 @@
 import USDDImg from "../img/usdd.png";
-import BTCImg from "../img/btc.png";
 import TRXImg from "../img/trx.png";
-import BNBImg from "../img/bnb.png";
-import ETHImg from "../img/eth.png";
 import React  from 'react';
-
-
 
 const VaultItem = () => {
   return (
@@ -32,102 +27,8 @@ const VaultItem = () => {
             <div class="container row mx-1 pt-2">
               <div class="col-md-4 col-sm-12">
                 <img
-                  src={BTCImg}
-                  alt="gStable"
-                  width="32"
-                  height="32"
-                  class="flex-shrink-0"
-                />
-                <div class="currency-name">
-                  <b>BTC</b>
-                  <p class="small">Bitcoin</p>
-                </div>
-              </div>
-              <div class="col text-center apr-info">
-                <b class="d-lg-none">APR</b>
-                <h6>3.69%</h6>
-              </div>
-
-              <div class="col text-center">
-                <b class="d-lg-none">My Deposit</b>
-                <h6>21.369 BTC</h6>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-          <div class="row">
-            <div class="col border-bottom pb-3 border-width-2">
-              Vault yields are automatically credited to your Sorrel account on the 1st of every month. Deposits are locked for a minimum of 3 months.
-              Build with gSIP-01 in mind for access to future shared credit facility.
-            </div>
-          </div>
-          <div class="row mt-3">
-
-            <div class="col"></div>
-            <div class="col-md-6">
-            <p class="text-left">Enter Amount</p>
-                <div class="input-group mb-1 mt-3">
-                  <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="floatingInputGroup1"
-                      placeholder="$"
-                    />
-                    <label for="floatingInputGroup1">&#8383;</label>
-                  </div>
-                </div>
-                <p class="small">Balance: 3.033369 BTC</p>
-            </div>
-
-            <div class="col"></div>
-
-          </div>
-
-          <div class="row mb-4 mt-3">
-              <div class="col"></div>
-
-              <div class="col-md-6">
-              <p class="text-left">Select the asset you wish to earn</p>
-                <select class="mt-3 mb-1 form-select form-select-sm" aria-label="Select Currency">
-                  <option selected>gTTD</option>
-                  <option value="2">gXCD</option>
-                  <option value="3">gBBD</option>
-                  <option value="4">gJMD</option>
-                  <option value="5">gDOP</option>
-                </select>
-              </div>
-              <div class="col"></div>
-          </div>
-
-            <div class="row mt-1 mb-3 text-center">
-              <div class="col"></div>
-              <div class="col">
-                <button class="btn btn-outline-info" type="button">Deposit</button>
-              
-              </div>
-              <div class="col">
-                <button class="btn btn-outline-secondary disabled" type="button">Withdraw</button>
-              </div>
-              <div class="col">
-              
-              </div>            
-            </div>
-            <p class="small mt-5 mb-3 text-center">Deposit Locked till XXXXX.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item vault-item mt-3">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <div class="container row mx-1 pt-3">
-              <div class="col-md-4 col-sm-12">
-                <img
                   src={TRXImg}
-                  alt="gStable"
+                  alt="TRX"
                   width="32"
                   height="32"
                   class="flex-shrink-0"
@@ -144,66 +45,77 @@ const VaultItem = () => {
 
               <div class="col text-center">
                 <b class="d-lg-none">My Deposit</b>
-                <h6>408,006 TRX</h6>
+                <h6>213690.588</h6>
               </div>
             </div>
           </button>
         </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionVaults">
           <div class="accordion-body">
-              Vault asset description
-            <div class="row mt-5">
-              <div class="col"></div>
-              <div class="col">
-              <button class="btn btn-outline-info" type="button">Deposit</button>
-              </div>
-              <div class="col"></div>
+          <div class="row">
+            <div class="col border-bottom pb-3 border-width-2">
+              Support Sorrel Banq by adding TRX into this vault to facilitate energy free transactions for Sorrel members. Vault yields are automatically credited to your Sorrel account every week. Deposits are locked for a minimum of 7 days. Build with gSIP-01 in mind for access to future shared credit facility.
             </div>
           </div>
-        </div>
-      </div>
-      <div class="accordion-item vault-item mt-3">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <div class="container row mx-1 pt-3">
-              <div class="col-md-4 col-sm-12">
-                <img
-                  src={BNBImg}
-                  alt="gStable"
-                  width="32"
-                  height="32"
-                  class="flex-shrink-0"
-                />
-                <div class="currency-name">
-                  <b>BNB</b>
-                  <p class="small">Binance Coin</p>
-                </div>
-              </div>
-              <div class="col text-center apr-info">
-                <b class="d-lg-none">APR</b>
-                <h6>3.69%</h6>
-              </div>
+          <div class="row mt-3 text-center">
 
-              <div class="col text-center">
-                <b class="d-lg-none">My Deposit</b>
-                <h6>8,006 BNB</h6>
-              </div>
+            <div class="col"></div>
+            <div class="col-md-6">
+              <p class="text-left">Select the gStable you wish to earn</p>
+                <select class="mt-3 mb-1 form-select form-select-sm" aria-label="Select Currency">
+                  <option selected>gTTD</option>
+                  <option value="2">gXCD</option>
+                  <option value="3">gBBD</option>
+                  <option value="4">gJMD</option>
+                  <option value="5">gDOP</option>
+                </select>
             </div>
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-              Vault asset description
-            <div class="row mt-5">
+
+            <div class="col"></div>
+
+          </div>
+
+          <div class="row mb-4 mt-3">
+              <div class="col"></div>
+
+              <div class="col-md-6">
+                <p class="text-left">Enter Amount</p>
+                  <div class="input-group mb-1 mt-3">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="floatingInputGroup1"
+                        placeholder="$"
+                      />
+                      <label for="floatingInputGroup1">TRX</label>
+                    </div>
+                  </div>
+                  <p class="small">Balance: 30333.69 TRX</p>
+              </div>
+              <div class="col"></div>
+          </div>
+
+            <div class="row mt-1 mb-3 text-center">
               <div class="col"></div>
               <div class="col">
-              <button class="btn btn-outline-info" type="button">Deposit</button>
+                <button class="btn btn-outline-info" type="button">Deposit</button>
+              
               </div>
-              <div class="col"></div>
+              <div class="col">
+                <button class="btn btn-outline-vault-withdraw" type="button">Withdraw</button>
+              </div>
+              <div class="col"></div>            
             </div>
+
+            <p class="small mt-5 mb-3 text-center">
+              <i class="fa-solid fa-lock"></i><br/>
+              Deposit Locked till XXXXX.</p>
           </div>
         </div>
       </div>
+
+
       <div class="accordion-item vault-item mt-3">
         <h2 class="accordion-header" id="headingFour">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -233,16 +145,70 @@ const VaultItem = () => {
             </div>
           </button>
         </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionVaults">
           <div class="accordion-body">
-              Vault asset description
+          <div class="row">
+            <div class="col border-bottom pb-3 border-width-2">
+              Support goStables Protocol by adding USDD to this vault to help increase the Protocol's over-collateralization and stability. Vault yields are automatically credited to your Sorrel account on the 1st of every month. Deposits are locked for a minimum of 7 days.
+            </div>
+          </div>
+
+          <div class="row mt-3 text-center">
+
+            <div class="col"></div>
+            <div class="col-md-6">
+
+              <p class="text-left">Select the gStable you wish to earn</p>
+                <select class="mt-3 mb-1 form-select form-select-sm" aria-label="Select Currency">
+                  <option selected>gTTD</option>
+                  <option value="2">gXCD</option>
+                  <option value="3">gBBD</option>
+                  <option value="4">gJMD</option>
+                  <option value="5">gDOP</option>
+                </select>
+            </div>
+
+            <div class="col"></div>
+
+          </div>
+
+          <div class="row mb-4 mt-3">
+              <div class="col"></div>
+
+              <div class="col-md-6">
+                <p class="text-left">Enter Amount</p>
+                <div class="input-group mb-1 mt-3">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="floatingInputGroup1"
+                      placeholder="$"
+                    />
+                    <label for="floatingInputGroup1">$</label>
+                  </div>
+                </div>
+                <p class="small">Balance: $30333.69</p>
+              </div>
+              <div class="col"></div>
+          </div>
+
+
             <div class="row mt-5">
               <div class="col"></div>
               <div class="col">
               <button class="btn btn-outline-info" type="button">Deposit</button>
               </div>
+              <div class="col">
+                <button class="btn btn-outline-vault-withdraw" type="button">Withdraw</button>
+              </div>
               <div class="col"></div>
             </div>
+            
+            <p class="small mt-5 mb-3 text-center">
+              <i class="fa-solid fa-lock"></i><br/>
+              Deposit Locked till XXXXX.
+            </p>            
           </div>
         </div>
       </div>

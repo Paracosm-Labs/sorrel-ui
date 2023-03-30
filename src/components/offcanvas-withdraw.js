@@ -6,7 +6,6 @@ import { depositoryContract } from '../contracts/depositoryContract';
 const OffcanvasWithdraw = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [trxId, setTrxId] = useState("");
-  const alertDiv = document.getElementById('alertWithdrawMsg');
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -26,9 +25,13 @@ const OffcanvasWithdraw = () => {
     setGStableAmount(e.target.value);
   };
 
-const showHideWithdrawAlert = () => {
-  alertDiv.style.display = 'none';
-}
+  const clear = () => {
+    setGStableAmount(0);
+    setTrxId("");
+    document.querySelectorAll('input').forEach(input => {
+        input.value = '';
+    });
+  }
 
   const withdraw = async () => {
     try {
@@ -39,7 +42,6 @@ const showHideWithdrawAlert = () => {
       document.querySelectorAll('input').forEach(input => {
           input.value = '';
       });
-      alertDiv.style.display = 'block';
     } catch (error) {
       console.error(error);
     }
@@ -48,10 +50,10 @@ const showHideWithdrawAlert = () => {
 
   return (
     <>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithdraw" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithdraw" aria-labelledby="offcanvasRightLabel" onHide={clear}>
   <div class="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">Withdraw</h5>
-    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={showHideWithdrawAlert}></button>
+    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
   <div class="offcanvas-body mx-3">
 
@@ -82,7 +84,7 @@ const showHideWithdrawAlert = () => {
       	<button class="btn btn-outline-info" onClick={withdraw}>Withdraw</button>
     	</div>
   	</div>
-    <div id="alertWithdrawMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={showHideWithdrawAlert} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank">Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
+    <div id="alertWithdrawMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
   </div>
 </div>
 

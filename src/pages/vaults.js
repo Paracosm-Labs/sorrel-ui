@@ -12,17 +12,17 @@ const Vaults = () => {
           <div class="row mt-3">
             <div class="col d-none d-lg-block">
               <h1>Vaults</h1>
-              <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
+              <p>Earn gStables by staking your digital assets to support Sorrel Banq and goStables Protocol.</p>
             </div>
             <div class="col text-center d-lg-none">
               <h1>Vaults</h1>
-              <p>Earn stablecoins by staking your digital assets over fixed periods.</p>
+              <p>Earn gStables by staking your digital assets to support Sorrel Banq and goStables Protocol.</p>
             </div>
           </div>
 
           <div class="row">
             <div class="col"></div>
-            <div class="col text-center">
+            <div class="col text-center d-none">
               <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasVaultCreate" aria-controls="offcanvasVaultCreate"><i class="fa-solid fa-plus"></i>&nbsp;Create Vault</button>
             </div>
           <div class="col"></div>
@@ -37,7 +37,7 @@ const Vaults = () => {
 
 
     <div class="container vaults content">
-      <div class="row mt-n4">
+      <div class="row mt-n10">
         <div class="col"></div>
         <div class="col-md-8">
 
@@ -46,7 +46,7 @@ const Vaults = () => {
               <div class="row p-3">
                 <div class="col">
 
-                  <div class="accordion" id="accordionExample">
+                  <div class="accordion" id="accordionVaults">
                     <VaultItem></VaultItem>
 
 

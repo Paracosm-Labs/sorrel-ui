@@ -1,8 +1,10 @@
 import React  from 'react';
 import { Row, Col, ProgressBar, Button } from 'react-bootstrap';
+import { addonsData } from "../components/addonsData";
 import DappLogo from "../img/sorrel-logo.png";
 
-const Addons = () => {
+const Addons = ({ key, item }) => {
+
   return (
     <>
    <Row className="rowCard text-left mb-2 mt-4 p-4 m-2">
@@ -22,11 +24,10 @@ const Addons = () => {
           </Col>
           <Col md={10}>
             <span className="text-justify">
-              <h4>Sorrel Branch Lounges</h4>
-              With Sorrel Lounges, prospective and existing customers can explore our services in an immersive and
-              interactive environment across all devices including VR. Lounges also serve as a virtual events hosting space for anyone to use.
+              <h4>{item.label}</h4>
+              {item.details}
             </span><br/>
-              <a href="https://docs.sorrelbanq.org/addons/core/[stub]">
+              <a href={item.link}>
               <button 
                 className="btn btn-sm btn-outline-secondary mt-4"
               >Read More...</button>
@@ -46,7 +47,7 @@ const Addons = () => {
                     </span>
                   </Col>
                   <Col xs={12}>
-                    <h5 className="mt-3">$9 of $15,000</h5>
+                    <h5 className="mt-3">$9 of {item.fundGoal}</h5>
                   </Col>
                 </Row>
 

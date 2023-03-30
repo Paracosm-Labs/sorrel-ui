@@ -36,7 +36,7 @@ const AIASupport = () => {
                 className="rounded-circle d-flex m-auto"
                 alt="Jes AIA Concierge"
               /> <br/>
-              Hi I'm Jes. Thank you for using Sorrel! How may I help you today?
+              Hi I'm Jes. Thank you for using Sorrel! Please visit the <a href="/addons">Addons page</a> to crowdfund me.
             </Card.Text>
             <Button variant="outline-info" onClick={handleHideChat}>Close</Button>
           </Card.Body>

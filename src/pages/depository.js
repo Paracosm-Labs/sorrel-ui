@@ -1,7 +1,6 @@
 import React from 'react';
 import CurrencyAccounts from "../components/currency-accounts";
 import TransactionHistory from "../components/txnhistory";
-import OffcanvasAddAccount from "../components/offcanvas-addaccount";
 import OffcanvasExchange from "../components/offcanvas-exchange";
 import OffcanvasDeposit from "../components/offcanvas-deposit";
 import OffcanvasWithdraw from "../components/offcanvas-withdraw";
@@ -62,7 +61,6 @@ const Depository = () => {
           <TransactionHistory></TransactionHistory>
         </div>
       </div>
-      <OffcanvasAddAccount></OffcanvasAddAccount>
       <OffcanvasExchange></OffcanvasExchange>
       <OffcanvasDeposit></OffcanvasDeposit>
       <OffcanvasWithdraw></OffcanvasWithdraw>

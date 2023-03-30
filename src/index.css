@@ -132,6 +132,8 @@ font-weight: bold;
   margin-right: 10px!important;
 }
 
+.mt-n10 {margin-top: -10rem !important;}
+
 .currency-acc .fa-user-astronaut{font-size: 35px;width: 40px;}
 
 
@@ -157,6 +159,9 @@ font-weight: bold;
 
 .currency-name, .account-name{display: inline-block!important;}
 
+.card-title{
+  font-weight: 600;
+}
 
 .rowCard {
     border-radius: 15px;
@@ -172,4 +177,39 @@ font-weight: bold;
 
 .border-green {
   border:2px solid #43cc29!important;
+}
+
+
+.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show{
+
+  background-color: #7a45a5!important;
+}
+
+
+.btn-web3:first-child:active {
+    background-color: #2f3349!important;
+    color: #7b8ab8!important;
+}
+
+.btn-web3 img {
+    margin-top: -4px;
+    margin-right: 8px;
+}
+
+
+.btn-outline-vault-withdraw {
+    background-color: transparent!important;
+    border: 1px solid #109e77!important;
+    color: #109e77!important;
+}
+
+.btn-outline-vault-withdraw:first-child:active {
+  background-color: transparent!important;
+  color: #2f3349!important;
+  border: 1px solid #2f3349!important;
+}
+
+.fa-lock, .fa-lock-open, .fa-unlock {
+    font-size: 3em;
+    margin-bottom: 1rem;
 }

@@ -59,7 +59,10 @@ const OffcanvasTransfer = () => {
     <>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTransfer" aria-labelledby="offcanvasRightLabel" onHide={clear}>
         <div class="offcanvas-header bg-info">
-          <h5 id="offcanvasRightLabel">Transfer</h5>
+          <h5 id="offcanvasRightLabel">
+            <i class="fa-solid fa-arrow-right-from-bracket" data-toggle="tooltip" title="Transfer assets between Sorrel Members"></i>&nbsp;&nbsp;Transfer&nbsp;&nbsp;
+            <i class="fa-solid fa-bolt" data-toggle="tooltip" title="Enjoy Energy Free!"></i>
+          </h5>
           <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" onClick={clear}></button>
         </div>
         <div class="offcanvas-body mx-3">

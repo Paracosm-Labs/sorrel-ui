@@ -14,7 +14,7 @@ const addonsData = [
   {
     id: 2,
     label: "Administrative Services",
-    details: "Generate official statements, bank letters and other administrative documents for your Sorrel account for proofs and possible use in the real world.",
+    details: "Generate official statements, bank letters and other administrative tasks on your Sorrel account for extended utility and possible use in the real world.",
     fundGoal: "$5,000+",
     link: "https://docs.sorrelbanq.org/addons/administrative",
   },

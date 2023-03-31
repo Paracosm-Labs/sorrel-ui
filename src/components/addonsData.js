@@ -30,7 +30,7 @@ const addonsData = [
   {
     id: 4,
     label: "Sorrel Branch Lounges",
-    details: "Sorrel Lounges are powered by WebXR, where anyone can explore our services in an 3D immersive and interactive environment across all devices including VR. Sorrel lounges will be designed to provide an engaging and personalized experience for our members along with a virtual events hosting space in the metaverse for anyone to use.",
+    details: "Sorrel Lounges are powered by WebXR, where anyone can explore our services in a 3D immersive and interactive environment across all devices including VR. Sorrel Lounges will be designed to provide an engaging and personalized experience for our members along with a virtual events hosting space in the metaverse for anyone to use.",
     fundGoal: "$15,000+",
     link: "https://docs.sorrelbanq.org/addons/lounges",
   },

@@ -183,6 +183,10 @@ font-weight: bold;
     right: 0px;
 }
 
+.offcanvas .fa-bolt {
+    color: #7a45a5;
+}
+
 .rowCard {
     border-radius: 15px;
     border: 1px solid #434968;

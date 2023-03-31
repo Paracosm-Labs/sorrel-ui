@@ -3,6 +3,10 @@ import { getCurrencies, getCurrency } from '../utils/currencies';
 import Select from "react-select";
 import { depositoryContract } from '../contracts/depositoryContract';
 import { DepositoryContractAddress } from '../utils/contractAddress';
+import { useEffect } from 'react';
+import axios from 'axios';
+import serverURL from '../utils/server';
+import Web3Signer from '../utils/web3Signer';
 
 const OffcanvasTransfer = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
@@ -36,21 +40,48 @@ const OffcanvasTransfer = () => {
     setGStableAmount(0);
     setTrxId("");
     setToAddress("");
-    document.querySelectorAll('input').forEach(input => {
-        input.value = '';
-    });
   }
 
   const send = async () => {
+    debugger;
     try {
-      let dc = await depositoryContract();
-      let currency = getCurrency(selected.value);
-      console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
-      let trxId = await dc.transfer(currency.id, gStableAmount, toAddress);
-      setTrxId(trxId);
-      document.querySelectorAll('input').forEach(input => {
-          input.value = '';
-      });
+      if (window.tronWeb.ready && selected) {
+        let currency = getCurrency(selected.value);
+        console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
+
+        axios.post(`${serverURL}/txn/init`,{
+          from : window.tronWeb.defaultAddress.base58,
+          to: toAddress,
+          gStableId: currency.id,
+          value: gStableAmount,
+        })
+        .then(async(response) => {
+          console.log(response);
+
+          let tx = {from : response.data.from, to : response.data.to, gStableId : response.data.gStableId, value : response.data.value, nonce : response.data.nonce};
+
+          let signer = new Web3Signer();
+          let sig = await signer.sign(tx);
+          if(sig){
+            axios.post(`${serverURL}/txn/execute`,{...tx, sig})
+            .then(async(response) => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+            }); 
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });        
+      }
+      
+      // let dc = await depositoryContract();
+      // let currency = getCurrency(selected.value);
+      // console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
+      // let trxId = await dc.transfer(currency.id, gStableAmount, toAddress);
+      // setTrxId(trxId);
     } catch (error) {
       console.error(error);
     }
@@ -110,7 +141,7 @@ const OffcanvasTransfer = () => {
             <button class="btn btn-outline-info" onClick={send}>Send</button>
           </div>
           </div>
-          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction Successful! <br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
+          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction Successful! <br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
         </div>
       </div>
       </>

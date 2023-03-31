@@ -1,14 +1,27 @@
-import React  from 'react';
-
+import React, { useEffect, useState } from 'react';
+import TransferComptroller from "../contracts/transferComptroller";
 
 
 const TxnHistory = () => {
+    const [trxs, setTrxs] = useState([]);
+    useEffect(() => {
+        readTxns();
+        return () => {
+          console.log("Unmounting TxnHistory");
+        };
+    }, []);
+
+    const readTxns = async () => {
+        let trxs = [];
+        let tc = new TransferComptroller();
+        await tc.init();
+        debugger;
+        trxs = await tc.getTransactions();
+    }
+
+
   return (
-
     <>
-
-
-
         <div class="row mt-5 transaction-history">
             <h2 class="text-sorrel-green">Transaction History</h2>
             <div class="table-responsive">
@@ -23,23 +36,20 @@ const TxnHistory = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
-                        </tr>
+                        {trxs.map((trx,index) => {
+                            return (<tr key={index}>
+                                <td>{trx.from}</td>
+                                <td>{trx.from}</td>
+                                <td>{trx.from}</td>
+                                <td>{trx.from}</td>
+                                <td>{trx.from}</td>
+                            </tr>)
+                        })}
                     </tbody>
                 </table>
             </div>
         </div>
-
-
-
-
-</>
-
+    </>
   );
 };
 

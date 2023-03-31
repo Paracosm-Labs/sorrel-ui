@@ -61,7 +61,7 @@ const Depository = () => {
         <div class="row mt-3 mx-3">
         <CurrencyAccounts></CurrencyAccounts>
         </div>
-        <div class="row mt-3 mx-3 d-none">
+        <div class="row mt-3 mx-3">
           <TransactionHistory></TransactionHistory>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import gStableContract from "../contracts/gStableContract";
 
 
+import usddImg from "../img/usdd.png";
+
 import ttddImg from "../img/gttd.png";
 import xcddImg from "../img/gxcd.png";
 import bbddImg from "../img/gbbd.png";
@@ -48,6 +50,14 @@ class Currency {
 }
 
 const CurrencyList = {
+  USDD: new Currency(
+    1001,
+    "USDD",
+    "USDD",
+    "US Dollar",
+    usddImg,
+    "THJ6CYd8TyNzHFrdLTYQ1iAAZDrf5sEsZU" /*gStableAddress*/,
+  ),
   TTDD: new Currency(
     1,
     "TTDD",

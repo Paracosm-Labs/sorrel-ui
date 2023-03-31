@@ -52,7 +52,10 @@ const OffcanvasWithdraw = () => {
     <>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithdraw" aria-labelledby="offcanvasRightLabel" onHide={clear}>
   <div class="offcanvas-header bg-info">
-    <h5 id="offcanvasRightLabel">Withdraw</h5>
+    <h5 id="offcanvasRightLabel">
+      <i class="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Withdraw your assets from Sorrel to your Wallet"></i>
+      &nbsp;&nbsp;Withdraw
+    </h5>
     <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
   <div class="offcanvas-body mx-3">

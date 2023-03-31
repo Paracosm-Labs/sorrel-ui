@@ -66,7 +66,10 @@ const OffcanvasExchange = () => {
     <>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel" onHide={clear}>
   <div class="offcanvas-header bg-info">
-    <h5 id="offcanvasRightLabel">Exchange</h5>
+    <h5 id="offcanvasRightLabel">
+      <i class="fa-solid fa-repeat" data-toggle="tooltip" title="Convert your gStables to another easily"></i>&nbsp;&nbsp;Convert&nbsp;&nbsp;
+      <i class="fa-solid fa-bolt" data-toggle="tooltip" title="Enjoy Energy Free!"></i>
+    </h5>
     <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
   <div class="offcanvas-body mx-3">
@@ -100,12 +103,12 @@ const OffcanvasExchange = () => {
       <div class="col"><b>Rate</b>: 1 USDD ≈ 6.7598 gTTD</div>
     </div>
     <div class="row text-center">
-      <div class="col"><b>Fee 0.4%</b>: ≈ 0.80</div>
+      <div class="col"><b>Fee 0.3%</b>: ≈ 0.80</div>
     </div>
     <div class="row mt-5">
       <div class="col"></div>
       <div class="col justify-content-middle">
-      	<button class="btn btn-outline-info" onClick={exchange}>Exchange</button>
+      	<button class="btn btn-outline-info" onClick={exchange}>Convert</button>
     	</div>
       <div class="col"></div>
   	</div>

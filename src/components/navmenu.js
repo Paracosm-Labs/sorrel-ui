@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import WalletConnect from '../components/walletconnect';
-import DappLogo from "../img/sorrel-logox.png";
+import DappLogo from "../img/sorrel-logo2x.png";
 
 const NavMenu = () => {
   return (

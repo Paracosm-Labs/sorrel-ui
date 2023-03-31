@@ -56,7 +56,10 @@ const OffcanvasDeposit = () => {
     <>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDeposit" aria-labelledby="offcanvasRightLabel" onHide={clear}>
   <div class="offcanvas-header bg-info">
-    <h5 id="offcanvasRightLabel">Deposit</h5>
+    <h5 id="offcanvasRightLabel">
+      <i class="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Deposit assets to your Sorrel Account"></i>
+      &nbsp;&nbsp;Deposit
+    </h5>
     <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
   <div class="offcanvas-body mx-3">

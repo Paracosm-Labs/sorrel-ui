@@ -27,7 +27,7 @@ const Addons = ({ key, item }) => {
               <h4>{item.label}</h4>
               {item.details}
             </span><br/>
-              <a href={item.link}>
+              <a href={item.link} className="d-none">
               <button 
                 className="btn btn-sm btn-outline-secondary mt-4"
               >Read More...</button>
@@ -55,8 +55,8 @@ const Addons = ({ key, item }) => {
                 <Row>
                   <Col xs={12}>
                     <button 
-                        className="btn btn-outline-info mt-2"
-                      >Crowdfund This</button>
+                        className="btn btn-outline-info mt-2 disabled"
+                      >Coming Soon</button>
                   </Col>
                 </Row>
 

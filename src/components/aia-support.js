@@ -17,7 +17,7 @@ const AIASupport = () => {
     <>
       {!showChat && (
         <div className="position-fixed" style={{ bottom: '15px', right: '15px' }}>
-          <Button variant="outline-secondary" size="sm" onClick={handleShowChat}>
+          <Button variant="concierge outline-secondary" size="sm" onClick={handleShowChat}>
             <img src={JesAIA}
               height="50"
               className="rounded-circle"

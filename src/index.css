@@ -178,7 +178,7 @@ font-weight: bold;
     border-radius: 30px;
     color: white;
     padding: 6px 8px;
-    font-size: 10px;
+    font-size: 8px;
     top: -5px;
     right: 0px;
 }
@@ -241,4 +241,8 @@ font-weight: bold;
 
 .wallet-card h4 {
     color: #7b8ab8;
+}
+
+.addons .btn.disabled {
+    color: #c5c5c5;
 }

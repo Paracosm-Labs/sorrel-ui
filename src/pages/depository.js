@@ -45,13 +45,13 @@ const Depository = () => {
             <span class=" float-end">
             
               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExchange" aria-controls="offcanvasExchange">
-                <i class="fa-solid fa-bolt" data-toggle="tooltip" title="Enjoy Energy Free!"></i>
+                <i class="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free!"></i>
                 <i class="fa-solid fa-repeat" data-toggle="tooltip" title="Convert your gStables to another easily"></i>&nbsp;
                 Convert
               </button>
 
               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTransfer" aria-controls="offcanvasTransfer">
-                <i class="fa-solid fa-bolt" data-toggle="tooltip" title="Enjoy Energy Free!"></i>
+                <i class="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free!"></i>
                 <i class="fa-solid fa-arrow-right-from-bracket" data-toggle="tooltip" title="Transfer assets between Sorrel Members"></i>&nbsp;
                 Transfer
               </button>

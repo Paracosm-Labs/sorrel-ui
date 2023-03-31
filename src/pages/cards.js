@@ -10,7 +10,7 @@ const Cards = () => {
             <div class="row mt-3">
               <div class="col d-none d-lg-block">
                 <h1>Cards</h1>
-                <p>Get you Sorrel NFC Card</p>
+                <p>Get you Sorrel NFC Wallet Card</p>
               </div>
               <div class="col text-center d-lg-none pb-8">
                 <h1>Cards</h1>

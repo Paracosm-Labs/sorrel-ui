@@ -32,11 +32,11 @@ const Depository = () => {
         <div class="row mt-3 mx-3">
           <div class="col md-6 xs-12 justify-content-start">
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDeposit">
-              <i class="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Deposit assets to your Sorrel Account"></i>&nbsp;
+              <i class="fa-solid fa-cloud-arrow-down"></i>&nbsp;
               Deposit
             </button>
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithdraw">
-              <i class="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Withdraw assets from Sorrel to your Wallet"></i>&nbsp;
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
               Withdraw
             </button>
           </div>
@@ -46,13 +46,13 @@ const Depository = () => {
             
               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExchange" aria-controls="offcanvasExchange">
                 <i class="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free transactions when available!"></i>
-                <i class="fa-solid fa-repeat" data-toggle="tooltip" title="Convert your gStables to another easily"></i>&nbsp;
+                <i class="fa-solid fa-repeat"></i>&nbsp;
                 Convert
               </button>
 
               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTransfer" aria-controls="offcanvasTransfer">
                 <i class="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free transactions when available!"></i>
-                <i class="fa-solid fa-arrow-right-from-bracket" data-toggle="tooltip" title="Transfer assets between Sorrel Members"></i>&nbsp;
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;
                 Transfer
               </button>
             </span>

@@ -21,7 +21,7 @@ const addonsData = [
 
   {
     id: 3,
-    label: "Sorrel AIA Conclerge",
+    label: "Sorrel AIA Concierge",
     details: "Jes, Sorrel's AIA Concierge will be able to provide our customers with support, tailored advice and recommendations based on their individual needs and preferences.",
     fundGoal: "$15,000+",
     link: "https://docs.sorrelbanq.org/addons/concierge",
@@ -38,7 +38,7 @@ const addonsData = [
   {
     id: 5,
     label: "Sorrel Pay",
-    details: "Send to anyone, with or without a Sorrel account. Accept gStables for new and existing products/services - boosting local and inter-regional commerce. Peer 2 Peer Powered.",
+    details: "Send to anyone, with or without a Sorrel account. Accept gStables for new and existing products/services - boosting local and inter-regional commerce. Peer-to-Peer Powered.",
     fundGoal: "$25,000+",
     link: "https://docs.sorrelbanq.org/addons/sorrelpay",
   },

@@ -30,7 +30,6 @@ const TxnHistory = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>gStable</th>
                             <th>Amount</th>
                             <th>Initiated</th>
                             <th>Executed</th>

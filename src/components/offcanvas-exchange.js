@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useEffect, useRef, useState }  from 'react';
 import { getCurrencies, getCurrency } from '../utils/currencies';
 import Select from "react-select";
 import SwapGStableFactory from "../utils/swapGStableFactory";
@@ -8,6 +8,26 @@ import {SwapUSDDContractAddress} from "../utils/contractAddress";
 const OffcanvasExchange = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [trxId, setTrxId] = useState("");
+
+  // Canvas related
+  const offCanvasExchangeRef = useRef(null);
+  useEffect(() => {
+    const offCanvasExchangeElement = offCanvasExchangeRef.current;
+    offCanvasExchangeElement.addEventListener('hidden.bs.offcanvas', () => {
+      // Handle onHide event here
+      console.log('Off-canvas menu has been hidden');
+      clear();
+    });
+
+    // Remove the event listener when the component is unmounted
+    return () => {
+      offCanvasExchangeElement.removeEventListener('hidden.bs.offcanvas', () => {
+        console.log("OffcanvasTransfer event listener removed");
+      });
+    };
+  }, []);
+  // Canvas related ends
+
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -35,9 +55,6 @@ const OffcanvasExchange = () => {
   const clear = () => {
     setGStableAmount(0);
     setTrxId("");
-    document.querySelectorAll('input').forEach(input => {
-        input.value = '';
-    });
   }
 
   const exchange = async () => {
@@ -64,7 +81,7 @@ const OffcanvasExchange = () => {
 
   return (
     <>
-    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel">
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel" ref={offCanvasExchangeRef}>
   <div className="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">
       <i className="fa-solid fa-repeat" data-toggle="tooltip" title="Convert your gStables to another easily"></i>&nbsp;&nbsp;Convert&nbsp;&nbsp;

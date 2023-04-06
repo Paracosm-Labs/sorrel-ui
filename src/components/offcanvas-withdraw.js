@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useEffect, useRef, useState }  from 'react';
 import { getCurrencies } from '../utils/currencies';
 import Select from "react-select";
 import { depositoryContract } from '../contracts/depositoryContract';
@@ -6,6 +6,26 @@ import { depositoryContract } from '../contracts/depositoryContract';
 const OffcanvasWithdraw = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [trxId, setTrxId] = useState("");
+
+  // Canvas related
+  const offCanvasWithdrawRef = useRef(null);
+  useEffect(() => {
+    const offCanvasWithdrawElement = offCanvasWithdrawRef.current;
+    offCanvasWithdrawElement.addEventListener('hidden.bs.offcanvas', () => {
+      // Handle onHide event here
+      console.log('Off-canvas menu has been hidden');
+      clear();
+    });
+
+    // Remove the event listener when the component is unmounted
+    return () => {
+      offCanvasWithdrawElement.removeEventListener('hidden.bs.offcanvas', () => {
+        console.log("OffcanvasTransfer event listener removed");
+      });
+    };
+  }, []);
+  // Canvas related ends
+
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -28,9 +48,6 @@ const OffcanvasWithdraw = () => {
   const clear = () => {
     setGStableAmount(0);
     setTrxId("");
-    document.querySelectorAll('input').forEach(input => {
-        input.value = '';
-    });
   }
 
   const withdraw = async () => {
@@ -50,7 +67,7 @@ const OffcanvasWithdraw = () => {
 
   return (
     <>
-    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasWithdraw" aria-labelledby="offcanvasRightLabel">
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasWithdraw" aria-labelledby="offcanvasRightLabel" ref={offCanvasWithdrawRef}>
   <div className="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">
       <i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Withdraw your assets from Sorrel to your Wallet"></i>

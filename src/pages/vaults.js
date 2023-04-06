@@ -1,5 +1,5 @@
-import VaultItem from '../components/vaultitem';
-import OffcanvasVaultCreate from "../components/offcanvas-vaultcreate";
+import TRXVault from "../components/trxVaultitem";
+// import USDDVault from "../components/usddVaultitem";
 import React  from 'react';
 
 
@@ -19,21 +19,8 @@ const Vaults = () => {
               <p>Earn gStables by staking your digital assets to support Sorrel Banq and goStables Protocol.</p>
             </div>
           </div>
-
-          <div className="row">
-            <div className="col"></div>
-            <div className="col text-center d-none">
-              <button className="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasVaultCreate" aria-controls="offcanvasVaultCreate"><i className="fa-solid fa-plus"></i>&nbsp;Create Vault</button>
-            </div>
-          <div className="col"></div>
-          </div>
-
-
       </div>
     </div>
-
-
-
 
 
     <div className="container vaults content">
@@ -41,39 +28,36 @@ const Vaults = () => {
         <div className="col"></div>
         <div className="col-md-8">
 
-
-
               <div className="row p-3">
                 <div className="col">
-
                   <div className="accordion" id="accordionVaults">
-                    <VaultItem></VaultItem>
+                    
 
+                    <div className="card-header d-none d-lg-block">
+                      <div className="row mt-4 mx-3 pt-3 pe-4 text-white">
+                        <div className="col text-center">
+                          Asset
+                        </div>
+                        <div className="col text-center">
+                          APR
+                        </div>
+                        <div className="col text-center">
+                          My Deposit
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <TRXVault></TRXVault>
 
                   </div>
-
-
-                </div>
-                <div className="row p-3">
-                <div className="col">
-
-
-                </div>
-                </div>
-                <div className="col">
-
-
                 </div>
               </div>
 
-
-            </div>
-
+        </div>
         <div className="col"></div>
+        
       </div>
     </div>
-
-<OffcanvasVaultCreate></OffcanvasVaultCreate>
 
 
     </>

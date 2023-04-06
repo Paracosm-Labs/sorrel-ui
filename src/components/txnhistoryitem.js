@@ -49,7 +49,7 @@ const TxnHistoryItem = ({tx}) => {
           case 3:
             return (<><span className='text-danger'>Failed</span></>)
             case 4:
-              return (<><span className='text-success'>{getDate(tx.executedTime)}</span></>)                        
+              return (<><span className='text-sorrel-green'>{getDate(tx.executedTime)}</span></>)                        
         default:
           <></>
           break;
@@ -63,8 +63,8 @@ const TxnHistoryItem = ({tx}) => {
                 <td><img src={getCurrencyById(tx.gStableId).icon}
                 width="22"
                 height="22"
-                className="flex-shrink-0" /></td>
-                <td>{tx.value}</td>
+                className="flex-shrink-0" /> ${tx.value}
+                </td>
                 <td>{getDate(tx.initiatedTime)}</td>
                 <td>{getStatusJSX(tx)}</td>
             </tr>)

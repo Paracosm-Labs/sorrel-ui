@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useEffect, useRef, useState }  from 'react';
 import { getCurrencies, getCurrency } from '../utils/currencies';
 import Select from "react-select";
 import { depositoryContract } from '../contracts/depositoryContract';
@@ -7,6 +7,25 @@ import { DepositoryContractAddress } from '../utils/contractAddress';
 const OffcanvasDeposit = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [trxId, setTrxId] = useState("");
+
+  // Canvas related
+  const offCanvasDepositRef = useRef(null);
+  useEffect(() => {
+    const offCanvasDepositElement = offCanvasDepositRef.current;
+    offCanvasDepositElement.addEventListener('hidden.bs.offcanvas', () => {
+      // Handle onHide event here
+      console.log('Off-canvas menu has been hidden');
+      clear();
+    });
+
+    // Remove the event listener when the component is unmounted
+    return () => {
+      offCanvasDepositElement.removeEventListener('hidden.bs.offcanvas', () => {
+        console.log("OffcanvasTransfer event listener removed");
+      });
+    };
+  }, []);
+  // Canvas related ends
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
@@ -29,9 +48,6 @@ const OffcanvasDeposit = () => {
   const clear = () => {
     setGStableAmount(0);
     setTrxId("");
-    document.querySelectorAll('input').forEach(input => {
-        input.value = '';
-    });
   }
 
   const deposit = async () => {
@@ -54,7 +70,7 @@ const OffcanvasDeposit = () => {
 
   return (
     <>
-    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasDeposit" aria-labelledby="offcanvasRightLabel">
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasDeposit" aria-labelledby="offcanvasRightLabel"  ref={offCanvasDepositRef}>
   <div className="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">
       <i className="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Deposit assets to your Sorrel Account"></i>

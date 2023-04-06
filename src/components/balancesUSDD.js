@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import depositoryPublisher from '../publishers/depository';
 import walletPublisher from '../publishers/wallet';
@@ -52,7 +51,7 @@ const BalanceCardUSDD = () => {
 
     return(
     <div className="col-sm text-center">
-        <h3>Balance</h3>
+        <h3>Sorrel Balance</h3>
         <h2>{depositoryBalanceUSD}</h2>
     </div>
     )

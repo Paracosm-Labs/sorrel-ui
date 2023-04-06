@@ -14,10 +14,10 @@ const OffcanvasTransfer = () => {
   const [executeTrxId, setExecuteTrxId] = useState("");
 
   // Canvas related
-  const offCanvasRef = useRef(null);
+  const offCanvasTransferRef = useRef(null);
   useEffect(() => {
-    const offCanvasElement = offCanvasRef.current;
-    offCanvasElement.addEventListener('hidden.bs.offcanvas', () => {
+    const offCanvasTransferElement = offCanvasTransferRef.current;
+    offCanvasTransferElement.addEventListener('hidden.bs.offcanvas', () => {
       // Handle onHide event here
       console.log('Off-canvas menu has been hidden');
       clear();
@@ -25,7 +25,7 @@ const OffcanvasTransfer = () => {
 
     // Remove the event listener when the component is unmounted
     return () => {
-      offCanvasElement.removeEventListener('hidden.bs.offcanvas', () => {
+      offCanvasTransferElement.removeEventListener('hidden.bs.offcanvas', () => {
         console.log("OffcanvasTransfer event listener removed");
       });
     };
@@ -105,7 +105,7 @@ const OffcanvasTransfer = () => {
   };
   return (
     <>
-      <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasTransfer" ref={offCanvasRef}>
+      <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasTransfer" ref={offCanvasTransferRef}>
         <div className="offcanvas-header bg-info">
           <h5 id="offcanvasRightLabel">
             <i className="fa-solid fa-arrow-right-from-bracket" data-toggle="tooltip" title="Transfer assets between Sorrel Members"></i>&nbsp;&nbsp;Transfer&nbsp;&nbsp;

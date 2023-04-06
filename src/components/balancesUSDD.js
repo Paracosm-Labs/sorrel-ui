@@ -52,7 +52,7 @@ const BalanceCardUSDD = () => {
 
 
     return(
-    <div className="col-sm text-center">
+    <div class="col-sm text-center">
         <h3>Balance</h3>
         <h2>{depositoryBalanceUSD}</h2>
     </div>

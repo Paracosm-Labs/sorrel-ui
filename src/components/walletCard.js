@@ -109,7 +109,6 @@ const WalletCard = () => {
             <div className="col border-bottom pb-3 border-width-2">
               Please ensure you are viewing this page on an NFC enabled device such as an Android smartphone. Card Activation is done in 4 steps: <br/><br/>
                 <ul>
-                  <li>Enter the Activation code recieved with your card.</li>
                   <li>Click the Activate button.</li>
                   <li>Place your Sorrel Card to your phone near its NFC reader.</li>
                   <li>Wait for the message confirming a successful activation. (Usually within 2 - 5 seconds)</li>

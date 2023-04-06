@@ -34,7 +34,6 @@ const BalanceCardUSDD = () => {
         let depositoryBalanceUSD = 0; 
       try {
         let swapContract = await SwapUSDDFactory.getSwapUSDD();
-        debugger;
         for(let i = 0; i < data.gStableBalances.length; i++){
             let currency = getCurrency(data.gStableBalances[i].currencyKey);
             let conversionRatio = await swapContract.getConversion(currency.id);
@@ -52,7 +51,7 @@ const BalanceCardUSDD = () => {
 
 
     return(
-    <div class="col-sm text-center">
+    <div className="col-sm text-center">
         <h3>Balance</h3>
         <h2>{depositoryBalanceUSD}</h2>
     </div>

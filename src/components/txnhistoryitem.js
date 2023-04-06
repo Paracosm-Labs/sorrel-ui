@@ -34,11 +34,16 @@ const TxnHistoryItem = ({tx}) => {
 
     const getStatusJSX = (tx) => {
       switch (tx.status) {
-        case 1:
-          return (<>
-            <button type="button" className="btn btn-outline-primary btn-sm" style={{fontSize : ".8rem"}} onClick={confirm}>Confirm</button>
+        case 1: {
+          let returnJSX = (<>
+          <button type="button" className="btn btn-outline-primary btn-sm" style={{fontSize : ".8rem"}} onClick={confirm}>Confirm</button>
             <button type="button" className="btn btn-outline-danger btn-sm" style={{fontSize : ".8rem"}}  onClick={cancel}>Cancel</button>
             </>)
+            if(window.tronLink.tronWeb.address.fromHex(tx.from).localeCompare(window.tronWeb.defaultAddress.base58) != 0) {
+              returnJSX = <><span>Not yet confirmed...</span></>;
+            }
+            return returnJSX;
+           }
          case 2:
           return (<><span className='text-danger'>Cancelled!</span></>)
           case 3:

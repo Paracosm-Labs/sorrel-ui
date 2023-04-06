@@ -28,15 +28,15 @@ const Depository = () => {
           </div>
         </div>
       </div>
-      <div class="container accounts content">
-        <div class="row mt-3 mx-3">
-          <div class="col md-6 xs-12 justify-content-start">
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDeposit">
-              <i class="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Deposit assets to your Sorrel Account"></i>&nbsp;
+      <div className="container accounts content">
+        <div className="row mt-3 mx-3">
+          <div className="col md-6 xs-12 justify-content-start">
+            <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDeposit">
+              <i className="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Deposit assets to your Sorrel Account"></i>&nbsp;
               Deposit
             </button>
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithdraw">
-              <i class="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Withdraw assets from Sorrel to your Wallet"></i>&nbsp;
+            <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithdraw">
+              <i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Withdraw assets from Sorrel to your Wallet"></i>&nbsp;
               Withdraw
             </button>
           </div>

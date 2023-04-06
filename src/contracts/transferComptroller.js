@@ -22,7 +22,7 @@ class TransferComptroller extends SmartContractBase {
     try {
       this.check();
       if (window.tronWeb.ready) {
-        let response  = await this.contract.cancelTransaction(from, to, id, value, nonce).send(sendParams);
+        let response  = await this.contract.cancelTransaction(from, to, id, this.web3.utils.toWei(String(value)), nonce).send(sendParams);
         return response;
       }
     } catch (error) {

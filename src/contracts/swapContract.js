@@ -1,11 +1,14 @@
 import { SwapUSDDContractAddress } from "../utils/contractAddress";
+import { gStableManagerContract } from "./gStableManagerContract";
 import SmartContractBase from "./smartContractBase";
 
 class SwapContract extends SmartContractBase {
+  gStableManagerContract_;
   init = async () => {
     try {
       if (!this.contract) {
         this.contract = await window.tronWeb.contract().at(this.address);
+        this.gStableManagerContract_ = await gStableManagerContract();
       }
       return this;
     } catch (error) {
@@ -16,7 +19,10 @@ class SwapContract extends SmartContractBase {
 
   getConversion = async (currencyId) => {
     this.check();
-    let cr = await this.contract.gStableConversionRatioMap(currencyId).call();
+    if(!this.gStableManagerContract_){
+      this.gStableManagerContract_ = await gStableManagerContract();
+    }
+    let cr = await this.gStableManagerContract_.getConversion(currencyId);
     return String(cr) / 10000;
   };
   getSwapFeesFactor = async (currencyId) => {

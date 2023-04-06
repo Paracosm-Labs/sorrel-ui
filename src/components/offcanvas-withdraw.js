@@ -50,41 +50,41 @@ const OffcanvasWithdraw = () => {
 
   return (
     <>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithdraw" aria-labelledby="offcanvasRightLabel" onHide={clear}>
-  <div class="offcanvas-header bg-info">
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasWithdraw" aria-labelledby="offcanvasRightLabel">
+  <div className="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">
-      <i class="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Withdraw your assets from Sorrel to your Wallet"></i>
+      <i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Withdraw your assets from Sorrel to your Wallet"></i>
       &nbsp;&nbsp;Withdraw
     </h5>
-    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
+    <button type="button" className="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
-  <div class="offcanvas-body mx-3">
+  <div className="offcanvas-body mx-3">
 
-    <div class="mt-3">
-      <p class="text-left">Select Currency</p>
+    <div className="mt-3">
+      <p className="text-left">Select Currency</p>
       <Select options={options} onChange={handleChange} autoFocus={true} />
     </div>
 
-    <div class="row mt-5">
-      <div class="col">
-      <p class="text-left">Enter Amount</p>
-          <div class="input-group mb-1 mt-3">
-            <div class="form-floating">
+    <div className="row mt-5">
+      <div className="col">
+      <p className="text-left">Enter Amount</p>
+          <div className="input-group mb-1 mt-3">
+            <div className="form-floating">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="floatingInputGroup1"
                 onChange={updateAmount}
               />
-              <label for="floatingInputGroup1">{selected?selected.label:""}</label>
+              <label htmlFor="floatingInputGroup1">{selected?selected.label:""}</label>
             </div>
           </div>
       </div>
     </div>
 
-    <div class="row mt-5">
-      <div class="col text-center">
-      	<button class="btn btn-outline-info" onClick={withdraw}>Withdraw</button>
+    <div className="row mt-5">
+      <div className="col text-center">
+      	<button className="btn btn-outline-info" onClick={withdraw}>Withdraw</button>
     	</div>
   	</div>
     <div id="alertWithdrawMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>

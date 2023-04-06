@@ -8,19 +8,19 @@ const CurrencyDeposit = ({currency, walletData, depositoryData}) => {
     if(depositoryBalance == 0 && walletBalance == 0 ){
         return <></>
     }
-    return (<div class="card m-3 col-md-3">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-3">
+    return (<div className="card m-3 col-md-3 p-0">
+    <div className="card-body">
+        <div className="row">
+            <div className="col-md-3">
                 <img src={currency.icon}
                 width="42"
                 height="42"
-                class="flex-shrink-0" />
+                className="flex-shrink-0" />
             </div>
-            <div class="col-md-9">
-                <h5 class="card-title">{currency.label}</h5>
-                <h6 class="card-subtitle mb-2">Sorrel: {depositoryBalance}</h6>
-                <h6 class="card-subtitle mb-2">Wallet: {walletBalance}</h6>
+            <div className="col-md-9">
+                <h5 className="card-title">{currency.label}</h5>
+                <h6 className="card-subtitle mb-2">Sorrel: {depositoryBalance}</h6>
+                <h6 className="card-subtitle mb-2">Wallet: {walletBalance}</h6>
             </div>
         </div>
     </div>

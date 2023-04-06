@@ -3,7 +3,7 @@ import './App.css';
 import NavMenu from './components/navmenu';
 import AIASupport from './components/aia-support';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Home from './pages/home';
+// import Home from './pages/home';
 import Cards from './pages/cards';
 import Vaults from './pages/vaults';
 import Bridge from './pages/bridge';
@@ -20,7 +20,7 @@ function App() {
 
       <NavMenu />
       <Routes>
-        <Route path = "/home" element={<Home/>} />
+        {/* <Route path = "/home" element={<Home/>} /> */}
         <Route path = "/accounts" element={<Accounts/>} />
         <Route path = "/cards" element={<Cards/>} />
         <Route path = "/vaults" element={<Vaults/>} />

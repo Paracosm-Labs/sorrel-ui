@@ -5,14 +5,14 @@ import CardsImg from "../img/cards-mockup-alpha.png";
 const Cards = () => {
   return (
     <>
-    <div class="d-flex bg-sorrel pb-8">
-        <div class="container content">
-            <div class="row mt-3">
-              <div class="col d-none d-lg-block">
+    <div className="d-flex bg-sorrel pb-8">
+        <div className="container content">
+            <div className="row mt-3">
+              <div className="col d-none d-lg-block">
                 <h1>Cards</h1>
                 <p>Get you Sorrel NFC Wallet Card</p>
               </div>
-              <div class="col text-center d-lg-none pb-8">
+              <div className="col text-center d-lg-none pb-8">
                 <h1>Cards</h1>
                 <p>Get you Sorrel NFC Wallet Card</p>
               </div>
@@ -22,29 +22,29 @@ const Cards = () => {
     </div>
 
 
-    <div class="container cards content">
-      <div class="row mt-n10">
-        <div class="col"></div>
-        <div class="col-md-8 text-center">
+    <div className="container cards content">
+      <div className="row mt-n10">
+        <div className="col"></div>
+        <div className="col-md-8 text-center">
                 <img
                   src={CardsImg}
                   alt="Sorrel Wallet NFC Card"
                   width="550"
-                  class="sorrel-card"
+                  className="sorrel-card"
                 />
         </div>
-        <div class="col"></div>
+        <div className="col"></div>
       </div>
-      <div class="row mt-1">
-        <div class="col"></div>
-        <div class="col-md-8">
+      <div className="row mt-1">
+        <div className="col"></div>
+        <div className="col-md-8">
 
 
 
-              <div class="row p-3">
-                <div class="col">
+              <div className="row p-3">
+                <div className="col">
 
-                  <div class="accordion" id="accordionCards">
+                  <div className="accordion" id="accordionCards">
                     <WalletCard></WalletCard>
 
 
@@ -52,13 +52,13 @@ const Cards = () => {
 
 
                 </div>
-                <div class="row p-3">
-                <div class="col">
+                <div className="row p-3">
+                <div className="col">
 
 
                 </div>
                 </div>
-                <div class="col">
+                <div className="col">
 
 
                 </div>
@@ -67,7 +67,7 @@ const Cards = () => {
 
             </div>
 
-        <div class="col"></div>
+        <div className="col"></div>
       </div>
     </div>
 

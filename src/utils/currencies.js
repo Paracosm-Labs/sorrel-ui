@@ -200,3 +200,11 @@ export const getCurrencies = () => {
 export const getCurrency = (currKey) => {
   return CurrencyList[currKey];
 };
+
+export const getCurrencyById = (id) => {
+  let list = getCurrencies().filter(curr => curr.id == id);
+  if(list.length > 0){
+    return list[0];
+  }
+  return null;
+};

@@ -1,31 +1,52 @@
-import React, { useState }  from 'react';
+import React, { useEffect, useRef, useState }  from 'react';
 import { getCurrencies, getCurrency } from '../utils/currencies';
 import Select from "react-select";
 import { depositoryContract } from '../contracts/depositoryContract';
 import { DepositoryContractAddress } from '../utils/contractAddress';
-import { useEffect } from 'react';
 import axios from 'axios';
 import serverURL from '../utils/server';
-import Web3Signer from '../utils/web3Signer';
+// import { tcListener } from './deleted/transferComptrollerListener';
 
 const OffcanvasTransfer = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [toAddress, setToAddress] = useState("");
   const [trxId, setTrxId] = useState("");
+  const [executeTrxId, setExecuteTrxId] = useState("");
+
+  // Canvas related
+  const offCanvasRef = useRef(null);
+  useEffect(() => {
+    const offCanvasElement = offCanvasRef.current;
+    offCanvasElement.addEventListener('hidden.bs.offcanvas', () => {
+      // Handle onHide event here
+      console.log('Off-canvas menu has been hidden');
+      clear();
+    });
+
+    // Remove the event listener when the component is unmounted
+    return () => {
+      offCanvasElement.removeEventListener('hidden.bs.offcanvas', () => {
+        console.log("OffcanvasTransfer event listener removed");
+      });
+    };
+  }, []);
+  // Canvas related ends
 
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
     return {value : currency.key, label : currency.label}
   });
 
+  let defaultCurrency = getCurrency("BBD");
+  const selectDefault = {value : defaultCurrency.key, label : defaultCurrency.label}
 
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(selectDefault);
 
   const handleChange = (selectedOption) => {
     setSelected(selectedOption);
     console.log(`Option selected:`, selectedOption);
   };
-
+// Select Currency Dropdown related ends
   const updateAmount = (e) => {
     console.log("DepositValue : ", e.target.value);
     setGStableAmount(e.target.value);
@@ -40,37 +61,33 @@ const OffcanvasTransfer = () => {
     setGStableAmount(0);
     setTrxId("");
     setToAddress("");
+    // setSelected(selectDefault);
   }
 
-  const send = async () => {
-    debugger;
+  const updateExecutionTrxData = (trx, sig, executeTrxId_) => {
+    setExecuteTrxId(executeTrxId_);
+  }
+
+  const send = () => {
     try {
       if (window.tronWeb.ready && selected) {
         let currency = getCurrency(selected.value);
         console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
 
-        axios.post(`${serverURL}/txn/init`,{
+        let tx = {
           from : window.tronWeb.defaultAddress.base58,
           to: toAddress,
           gStableId: currency.id,
           value: gStableAmount,
-        })
-        .then(async(response) => {
+        };
+
+        axios.post(`${serverURL}/txn/init`,tx)
+        .then((response) => {
           console.log(response);
+          setTrxId(response.data.trxId);
 
-          let tx = {from : response.data.from, to : response.data.to, gStableId : response.data.gStableId, value : response.data.value, nonce : response.data.nonce};
+          // tcListener.listenForTrxhash(response.data.trxId, tx, updateExecutionTrxData);
 
-          let signer = new Web3Signer();
-          let sig = await signer.sign(tx);
-          if(sig){
-            axios.post(`${serverURL}/txn/execute`,{...tx, sig})
-            .then(async(response) => {
-              console.log(response);
-            })
-            .catch((error) => {
-              console.log(error);
-            }); 
-          }
         })
         .catch((error) => {
           console.log(error);
@@ -88,60 +105,62 @@ const OffcanvasTransfer = () => {
   };
   return (
     <>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTransfer" aria-labelledby="offcanvasRightLabel" onHide={clear}>
-        <div class="offcanvas-header bg-info">
+      <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasTransfer" ref={offCanvasRef}>
+        <div className="offcanvas-header bg-info">
           <h5 id="offcanvasRightLabel">
-            <i class="fa-solid fa-arrow-right-from-bracket" data-toggle="tooltip" title="Transfer assets between Sorrel Members"></i>&nbsp;&nbsp;Transfer&nbsp;&nbsp;
-            <i class="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free transactions when available!"></i>
+            <i className="fa-solid fa-arrow-right-from-bracket" data-toggle="tooltip" title="Transfer assets between Sorrel Members"></i>&nbsp;&nbsp;Transfer&nbsp;&nbsp;
+            <i className="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free transactions when available!"></i>
           </h5>
-          <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" onClick={clear}></button>
+          <button type="button" className="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" onClick={clear}></button>
         </div>
-        <div class="offcanvas-body mx-3">
-        <div class="mt-3">
-      <p class="text-left">Select Currency</p>
-      <Select options={options} onChange={handleChange} autoFocus={true} />
+        <div className="offcanvas-body mx-3">
+        <div className="mt-3">
+      <p className="text-left">Select Currency</p>
+      <Select options={options} onChange={handleChange} autoFocus={true} defaultValue={selectDefault}/>
       </div>
-      <div class="row mt-5">
-        <div class="col">
-        <p class="text-left">Enter Amount</p>
-            <div class="input-group mb-1 mt-3">
-              <div class="form-floating">
+      <div className="row mt-5">
+        <div className="col">
+        <p className="text-left">Enter Amount</p>
+            <div className="input-group mb-1 mt-3">
+              <div className="form-floating">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="floatingInputGroup1"
                   onChange={updateAmount}
+                  value={gStableAmount}
                 />
-                <label for="floatingInputGroup1">{selected?selected.label:""}</label>
+                <label htmlFor="floatingInputGroup1">{selected?selected.label:""}</label>
               </div>
             </div>
         </div>
       </div>
-          <div class="row mt-5">
-          <div class="col">
-              <p class="text-left">Enter Destination</p>
+          <div className="row mt-5">
+          <div className="col">
+              <p className="text-left">Enter Destination</p>
               
-              <div class="input-group mb-1 mt-3">
-                <div class="form-floating">
+              <div className="input-group mb-1 mt-3">
+                <div className="form-floating">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="floatingInputGroup1"
                     placeholder="$"
                     onChange={updateAddress}
+                    value={toAddress}
                   />
-                  <label for="floatingInputGroup1">Address</label>
+                  <label htmlFor="floatingInputGroup1">Address</label>
                 </div>
               </div>
           </div>
           </div>
 
-          <div class="row mt-5">
-          <div class="col text-center">
-            <button class="btn btn-outline-info" onClick={send}>Send</button>
+          <div className="row mt-5">
+          <div className="col text-center">
+            <button className="btn btn-outline-info" onClick={send}>Send</button>
           </div>
           </div>
-          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction Successful! <br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
+          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction has been initiated!<br/><span className="small text-decoration-underline">View this on Tronscan</span></a></div> : <></>}</div>
         </div>
       </div>
       </>

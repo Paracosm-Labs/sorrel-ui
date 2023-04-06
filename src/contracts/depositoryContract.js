@@ -1,4 +1,5 @@
 import { DepositoryContractAddress } from "../utils/contractAddress";
+import sendParams from "../utils/sendParams";
 import SmartContractBase from "./smartContractBase";
 
 class DepositoryContract extends SmartContractBase {
@@ -29,11 +30,7 @@ class DepositoryContract extends SmartContractBase {
           currencyId,
           this.web3.utils.toWei(String(_val), "ether")
         )
-        .send({
-          feeLimit: 100_000_000,
-          callValue: 0,
-          shouldPollResponse: false,
-        });
+        .send(sendParams);
         return result;
     } catch (error) {
       console.error(error);
@@ -49,11 +46,7 @@ class DepositoryContract extends SmartContractBase {
     try {
       let result  = await this.contract
         .withdraw(currencyId, this.web3.utils.toWei(String(_val), "ether"))
-        .send({
-          feeLimit: 100_000_000,
-          callValue: 0,
-          shouldPollResponse: false,
-        });
+        .send(sendParams);
         return result;
     } catch (error) {
       console.error(error);
@@ -73,11 +66,7 @@ class DepositoryContract extends SmartContractBase {
           this.web3.utils.toWei(String(_val), "ether"),
           toAddress
         )
-        .send({
-          feeLimit: 100_000_000,
-          callValue: 0,
-          shouldPollResponse: false,
-        });
+        .send(sendParams);
         return result;
     } catch (error) {
       console.error(error);

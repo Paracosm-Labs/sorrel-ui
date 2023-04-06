@@ -64,8 +64,8 @@ const WalletConnect = () => {
 
   if (loginToTronlinkRequired) {
     return (
-      <div class="btn-group float-end" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
+      <div className="btn-group float-end" role="group">
+        <button id="btnGroupDrop1" type="button" className="btn btn-outline-secondary btn-web3">
           <img
             width="16"
             height="16"
@@ -80,16 +80,16 @@ const WalletConnect = () => {
 
   if (address) {
     return (
-      <div class="btn-group float-end" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
+      <div className="btn-group float-end" role="group">
+        <button id="btnGroupDrop1" type="button" className="btn btn-outline-secondary btn-web3">
           <img
             width="16"
             height="16"
             alt="Tronlink"
             src={TronLinkLogo}
           />
-          <span class="text-sorrel-purple">{getMaskedAddress(address)}</span> | &nbsp;
-          <span class="small">{getNetworkName(network)}</span>
+          <span className="text-sorrel-purple">{getMaskedAddress(address)}</span> | &nbsp;
+          <span className="small">{getNetworkName(network)}</span>
         </button>
       </div>
     );
@@ -97,8 +97,8 @@ const WalletConnect = () => {
 
   if (connectRequired) {
     return (
-      <div class="btn-group float-end" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary btn-web3">
+      <div className="btn-group float-end" role="group">
+        <button id="btnGroupDrop1" type="button" className="btn btn-outline-secondary btn-web3">
           <img
             width="16"
             height="16"

@@ -7,25 +7,25 @@ const Vaults = () => {
   return (
     <>
 
-    <div class="d-flex bg-sorrel pb-8">
-      <div class="container vaults content">
-          <div class="row mt-3">
-            <div class="col d-none d-lg-block">
+    <div className="d-flex bg-sorrel pb-8">
+      <div className="container vaults content">
+          <div className="row mt-3">
+            <div className="col d-none d-lg-block">
               <h1>Vaults</h1>
               <p>Earn gStables by staking your digital assets to support Sorrel Banq and goStables Protocol.</p>
             </div>
-            <div class="col text-center d-lg-none">
+            <div className="col text-center d-lg-none">
               <h1>Vaults</h1>
               <p>Earn gStables by staking your digital assets to support Sorrel Banq and goStables Protocol.</p>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col"></div>
-            <div class="col text-center d-none">
-              <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasVaultCreate" aria-controls="offcanvasVaultCreate"><i class="fa-solid fa-plus"></i>&nbsp;Create Vault</button>
+          <div className="row">
+            <div className="col"></div>
+            <div className="col text-center d-none">
+              <button className="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasVaultCreate" aria-controls="offcanvasVaultCreate"><i className="fa-solid fa-plus"></i>&nbsp;Create Vault</button>
             </div>
-          <div class="col"></div>
+          <div className="col"></div>
           </div>
 
 
@@ -36,17 +36,17 @@ const Vaults = () => {
 
 
 
-    <div class="container vaults content">
-      <div class="row mt-n10">
-        <div class="col"></div>
-        <div class="col-md-8">
+    <div className="container vaults content">
+      <div className="row mt-n10">
+        <div className="col"></div>
+        <div className="col-md-8">
 
 
 
-              <div class="row p-3">
-                <div class="col">
+              <div className="row p-3">
+                <div className="col">
 
-                  <div class="accordion" id="accordionVaults">
+                  <div className="accordion" id="accordionVaults">
                     <VaultItem></VaultItem>
 
 
@@ -54,13 +54,13 @@ const Vaults = () => {
 
 
                 </div>
-                <div class="row p-3">
-                <div class="col">
+                <div className="row p-3">
+                <div className="col">
 
 
                 </div>
                 </div>
-                <div class="col">
+                <div className="col">
 
 
                 </div>
@@ -69,7 +69,7 @@ const Vaults = () => {
 
             </div>
 
-        <div class="col"></div>
+        <div className="col"></div>
       </div>
     </div>
 

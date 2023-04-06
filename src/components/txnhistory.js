@@ -1,50 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import TransferComptroller from "../contracts/transferComptroller";
+import transactionPublisher from '../publishers/txns';
+import TxnHistoryItem from './txnhistoryitem';
 
 
 const TxnHistory = () => {
     const [trxs, setTrxs] = useState([]);
     useEffect(() => {
-        readTxns();
+        transactionPublisher.attach(updateTrxs);
         return () => {
-          console.log("Unmounting TxnHistory");
+            transactionPublisher.detach(updateTrxs);
+            console.log("Unmounting TxnHistory");
         };
     }, []);
 
-    const readTxns = async () => {
-        let trxs = [];
-        let tc = new TransferComptroller();
-        await tc.init();
-        debugger;
-        trxs = await tc.getTransactions();
-    }
+    const updateTrxs = (trxs) => {
+        if(trxs && Array.isArray(trxs)){
+            setTrxs(trxs);
+        } else {
+            console.error(`trxs ${trxs}`);
+        }
 
-
+    } 
   return (
     <>
-        <div class="row mt-5 transaction-history">
-            <h2 class="text-sorrel-green">Transaction History</h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered">
+        <div className="row mt-5 transaction-history">
+            <h4 className="text-sorrel-green">Transfers</h4>
+            <div className="table-responsive">
+                <table className="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Transaction</th>
-                            <th>Source</th>
-                            <th>Destination</th>
+                            <th></th>
+                            <th>gStable</th>
                             <th>Amount</th>
+                            <th>Initiated</th>
+                            <th>Executed</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {trxs.map((trx,index) => {
-                            return (<tr key={index}>
-                                <td>{trx.from}</td>
-                                <td>{trx.from}</td>
-                                <td>{trx.from}</td>
-                                <td>{trx.from}</td>
-                                <td>{trx.from}</td>
-                            </tr>)
-                        })}
+                        {trxs.map((trx,index) => <TxnHistoryItem key={index} tx={trx}/>)}
                     </tbody>
                 </table>
             </div>

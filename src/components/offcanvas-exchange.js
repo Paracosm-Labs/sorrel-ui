@@ -64,53 +64,53 @@ const OffcanvasExchange = () => {
 
   return (
     <>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel" onHide={clear}>
-  <div class="offcanvas-header bg-info">
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel">
+  <div className="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">
-      <i class="fa-solid fa-repeat" data-toggle="tooltip" title="Convert your gStables to another easily"></i>&nbsp;&nbsp;Convert&nbsp;&nbsp;
-      <i class="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free transactions when available!"></i>
+      <i className="fa-solid fa-repeat" data-toggle="tooltip" title="Convert your gStables to another easily"></i>&nbsp;&nbsp;Convert&nbsp;&nbsp;
+      <i className="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free transactions when available!"></i>
     </h5>
-    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
+    <button type="button" className="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
-  <div class="offcanvas-body mx-3">
-  <div class="mt-3">
-      <p class="text-left">Source</p>
+  <div className="offcanvas-body mx-3">
+  <div className="mt-3">
+      <p className="text-left">Source</p>
       <Select options={options} onChange={handleChangeSource} autoFocus={true}/>
   </div>
-    <div class="row mt-3">
-      <div class="col">
-        <div class="input-group mb-1" key={1}>
-          <div class="form-floating">
+    <div className="row mt-3">
+      <div className="col">
+        <div className="input-group mb-1" key={1}>
+          <div className="form-floating">
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="floatingInputGroup1"
               placeholder="Enter Amount"
               onChange={updateAmount}
             />
-            <label for="floatingInputGroup1">Enter Amount</label>
+            <label htmlFor="floatingInputGroup1">Enter Amount</label>
           </div>
         </div>
       </div>  
     </div>
-    <div class="row mt-3">
-      <div class="col">
-        <p class="text-left">Destination</p>
+    <div className="row mt-3">
+      <div className="col">
+        <p className="text-left">Destination</p>
         <Select options={options} onChange={handleChangeDestination} autoFocus={true} />
       </div>
     </div>
-    <div class="row mt-3 text-center">
-      <div class="col"><b>Rate</b>: 1 USDD ≈ 6.7859 gTTD</div>
+    <div className="row mt-3 text-center">
+      <div className="col"><b>Rate</b>: 1 USDD ≈ 6.7859 gTTD</div>
     </div>
-    <div class="row text-center">
-      <div class="col"><b>Fee 0.4%</b>: ≈ 0.80</div>
+    <div className="row text-center">
+      <div className="col"><b>Fee 0.4%</b>: ≈ 0.80</div>
     </div>
-    <div class="row mt-5">
-      <div class="col"></div>
-      <div class="col justify-content-middle">
-      	<button class="btn btn-outline-info" onClick={exchange}>Convert</button>
+    <div className="row mt-5">
+      <div className="col"></div>
+      <div className="col justify-content-middle">
+      	<button className="btn btn-outline-info" onClick={exchange}>Convert</button>
     	</div>
-      <div class="col"></div>
+      <div className="col"></div>
   	</div>
     <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
   </div>

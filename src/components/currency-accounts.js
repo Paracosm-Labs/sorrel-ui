@@ -24,7 +24,7 @@ const CurrencyAccounts = () => {
     }
 
     return (<>
-        <div class="row d-flex justify-content-center">
+        <div className="row d-flex justify-content-center">
             {
                 getCurrencies().map(currency => <CurrencyDeposit key={currency.id} currency={currency} walletData={walletData} depositoryData={depositoryData} />)
             }

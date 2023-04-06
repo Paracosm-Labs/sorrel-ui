@@ -20,19 +20,19 @@ const NavMenu = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto nav-items">
             <NavItem>
-              <Nav.Link href="/accounts"><i class="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;Accounts</Nav.Link>
+              <Nav.Link href="/accounts"><i className="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;Accounts</Nav.Link>
             </NavItem>
             <NavItem>
-              <Nav.Link href="/vaults"><i class="fa-solid fa-vault"></i>&nbsp;&nbsp;Vaults</Nav.Link>
+              <Nav.Link href="/vaults"><i className="fa-solid fa-vault"></i>&nbsp;&nbsp;Vaults</Nav.Link>
             </NavItem>
             <NavItem>
-              <Nav.Link href="/cards"><i class="fa-solid fa-credit-card"></i>&nbsp;&nbsp;Cards</Nav.Link>
+              <Nav.Link href="/cards"><i className="fa-solid fa-credit-card"></i>&nbsp;&nbsp;Cards</Nav.Link>
             </NavItem>
             <NavItem  className="d-none">
-              <Nav.Link href="/bridge"><i class="fa-solid fa-money-bill-transfer"></i>&nbsp;&nbsp;Bridge</Nav.Link>
+              <Nav.Link href="/bridge"><i className="fa-solid fa-money-bill-transfer"></i>&nbsp;&nbsp;Bridge</Nav.Link>
             </NavItem>
             <NavItem>
-              <Nav.Link href="/addons"><i class="fa-solid fa-puzzle-piece"></i>&nbsp;&nbsp;Addons</Nav.Link>
+              <Nav.Link href="/addons"><i className="fa-solid fa-puzzle-piece"></i>&nbsp;&nbsp;Addons</Nav.Link>
             </NavItem>
           </Nav>
           <Nav className="ml-auto">

@@ -6,14 +6,14 @@ import AddonItem from '../components/addons';
 const Addons = () => {
   return (
     <>
-    <div class="d-flex bg-sorrel pb-8">
-      <div class="container content">
-          <div class="row mt-3">
-            <div class="col d-none d-lg-block">
+    <div className="d-flex bg-sorrel pb-8">
+      <div className="container content">
+          <div className="row mt-3">
+            <div className="col d-none d-lg-block">
               <h1>Addons</h1>
               <p>Use your gStables to crowdfund addons that improve your Sorrel experience.</p>
             </div>
-            <div class="col text-center d-lg-none">
+            <div className="col text-center d-lg-none">
               <h1>Addons</h1>
               <p>Use your gStables to crowdfund addons that improve your Sorrel experience.</p>
             </div>
@@ -22,15 +22,15 @@ const Addons = () => {
       </div>
     </div>
 
-    <div class="container addons content mb-5">
-      <div class="row mt-n2">
-        <div class="col"></div>
-        <div class="col-md-8">
+    <div className="container addons content mb-5">
+      <div className="row mt-n2">
+        <div className="col"></div>
+        <div className="col-md-8">
             {addonsData.map((item, key) => (
               <AddonItem key={key} item={item} />
             ))}
         </div>
-        <div class="col"></div>
+        <div className="col"></div>
       </div>
     </div>
 

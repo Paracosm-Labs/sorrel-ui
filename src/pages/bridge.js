@@ -7,14 +7,14 @@ const Bridge = () => {
   return (
 
     <>
-    <div class="d-flex bg-sorrel pb-8">
-      <div class="container content">
-          <div class="row mt-3">
-            <div class="col d-none d-lg-block">
+    <div className="d-flex bg-sorrel pb-8">
+      <div className="container content">
+          <div className="row mt-3">
+            <div className="col d-none d-lg-block">
               <h1>Bridge</h1>
               <p>Convert your stablecoins into the real world</p>
             </div>
-            <div class="col text-center d-lg-none">
+            <div className="col text-center d-lg-none">
               <h1>Bridge</h1>
               <p>Convert your stablecoins into the real world</p>
             </div>
@@ -28,21 +28,21 @@ const Bridge = () => {
 
 
 
-    <div class="container bridge content">
-        <div class="row mt-5">
-          <div class="col text-center d-lg-none">
+    <div className="container bridge content">
+        <div className="row mt-5">
+          <div className="col text-center d-lg-none">
           </div>
         </div>
-      <div class="row mt-n10">
-        <div class="col"></div>
-        <div class="col-md-6">
-          <div class="card bg-secondary p-3">
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
+      <div className="row mt-n10">
+        <div className="col"></div>
+        <div className="col-md-6">
+          <div className="card bg-secondary p-3">
+            <div className="card-body">
+              <div className="row">
+                <div className="col">
                   <h4>Source</h4>
 
-                  <select class="mt-3 form-select form-select-sm" aria-label="Select Currency">
+                  <select className="mt-3 form-select form-select-sm" aria-label="Select Currency">
                     <option selected>gTTD $4,400.88</option>
                     <option value="2">gXCD $4,400.88</option>
                     <option value="3">gBBD $4,400.88</option>
@@ -50,31 +50,31 @@ const Bridge = () => {
                     <option value="5">gDOP $4,000.88</option>
                   </select>
 
-                  <div class="input-group mb-1 mt-3">
-                    <div class="form-floating">
+                  <div className="input-group mb-1 mt-3">
+                    <div className="form-floating">
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         id="floatingInputGroup1"
                         placeholder="Value in USDD"
                       />
                       <label for="floatingInputGroup1">Enter Amount</label>
                     </div>
-                    <span class="input-group-text">
-                      <i class="fa-solid fa-dollar"></i>
+                    <span className="input-group-text">
+                      <i className="fa-solid fa-dollar"></i>
                     </span>
                   </div>
 
 
 
                 </div>
-                <div class="row p-3 text-center">
+                <div className="row p-3 text-center">
 
                 </div>
-                <div class="col mt-3">
+                <div className="col mt-3">
                   <h4>Destination</h4>
 
-                  <select class="form-select mt-3" aria-label="Select Method">
+                  <select className="form-select mt-3" aria-label="Select Method">
                     <option selected>Available Methods</option>
                     <option value="1">Western Union</option>
                     <option value="2">Moneygram</option>
@@ -96,10 +96,10 @@ const Bridge = () => {
                 </div>
               </div>
 
-                  <div class="row text-center mt-5">
-                    <div class="col">
+                  <div className="row text-center mt-5">
+                    <div className="col">
 
-                      <button class="btn btn-outline-info btn-lg" data-bs-toggle="offcanvas" data-bs-target="#OffcanvasBridge" aria-controls="#OffcanvasBridge">
+                      <button className="btn btn-outline-info btn-lg" data-bs-toggle="offcanvas" data-bs-target="#OffcanvasBridge" aria-controls="#OffcanvasBridge">
                         Next Step
                       </button>
 
@@ -109,7 +109,7 @@ const Bridge = () => {
             </div>
           </div>
         </div>
-        <div class="col"></div>
+        <div className="col"></div>
       </div>
     </div>
 

@@ -250,6 +250,6 @@ font-weight: bold;
 
 .form-floating.address input{height: 100px;}
 
-.addons .btn.disabled {
-    color: #c5c5c5;
+.addons .btn.disabled, .btn-outline-light:active {
+    color: #c5c5c5!important;
 }

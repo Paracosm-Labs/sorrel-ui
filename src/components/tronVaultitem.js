@@ -41,12 +41,14 @@ const TRXVaultItem = () => {
      setShowLock(true);
      setTRXBalance(trxBalance - trxValue);
      setTRXMyDeposits(trxMyDeposits + trxValue);
+     clear();
   };
 
   const withdraw = async () => {
      setShowLock(false);
      setTRXBalance(trxBalance + trxValue);
      setTRXMyDeposits(trxMyDeposits - trxValue);
+     clear();
   };
 
 
@@ -56,7 +58,7 @@ const TRXVaultItem = () => {
 
       <div className="accordion-item vault-item mt-3">
         <h2 className="accordion-header" id="headingOne">
-          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onClick={clear}>
+          <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onClick={clear}>
             <div className="container row mx-1 pt-2">
               <div className="col-md-4 col-sm-12">
                 <img
@@ -83,7 +85,7 @@ const TRXVaultItem = () => {
             </div>
           </button>
         </h2>
-        <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionVaults">
+        <div id="collapseOne" className="accordion-collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionVaults">
           <div className="accordion-body">
           <div className="row">
             <div className="col border-bottom pb-3 border-width-2 text-center">
@@ -96,8 +98,8 @@ const TRXVaultItem = () => {
               <div className="col"></div>
 
               <div className="col-md-6">
-                <p className="text-left">Enter Amount</p>
-                  <div className="input-group mb-1 mt-3">
+                <p className="small">Balance: <b>{trxBalance} TRX</b></p>
+                  <div className="input-group mb-2 mt-3">
                     <div className="form-floating">
                       <input
                         type="text"
@@ -107,10 +109,24 @@ const TRXVaultItem = () => {
                         onChange={updateTRXValue}
                         value={trxValue}
                       />
-                      <label htmlFor="floatingInputGroup1">TRX</label>
+                      <label htmlFor="floatingInputGroup1">Enter Amount</label>
                     </div>
                   </div>
-                  <p className="small">Balance: <b>{trxBalance} TRX</b></p>
+                  <div className="row">
+                    <div className="col text-center">
+                      <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setTRXValue(trxBalance * 0.25)}>25%</button>
+                    </div>
+                    <div className="col text-center">
+                      <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setTRXValue(trxBalance * 0.5)}>50%</button>
+                    </div>
+                    <div className="col text-center">
+                      <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setTRXValue(trxBalance * 0.75)}>75%</button>
+                    </div>
+                    <div className="col text-center">
+                      <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setTRXValue(trxBalance * 0.95)}>95%</button>
+                    </div>
+                  </div>
+                  
               </div>
               <div className="col"></div>
           </div>

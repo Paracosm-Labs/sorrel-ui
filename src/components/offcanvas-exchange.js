@@ -55,7 +55,7 @@ const OffcanvasExchange = () => {
   const clear = () => {
     setGStableAmount(0);
     setTrxId("");
-  }
+  };
 
   const exchange = async () => {
     try {
@@ -81,7 +81,7 @@ const OffcanvasExchange = () => {
 
   return (
     <>
-    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel" ref={offCanvasExchangeRef}>
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExchange" ref={offCanvasExchangeRef}>
   <div className="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">
       <i className="fa-solid fa-repeat" data-toggle="tooltip" title="Convert your gStables to another easily"></i>&nbsp;&nbsp;Convert&nbsp;&nbsp;
@@ -104,6 +104,7 @@ const OffcanvasExchange = () => {
               id="floatingInputGroup1"
               placeholder="Enter Amount"
               onChange={updateAmount}
+              value={gStableAmount}
             />
             <label htmlFor="floatingInputGroup1">Enter Amount</label>
           </div>

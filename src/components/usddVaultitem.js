@@ -36,7 +36,7 @@ const USDDVaultItem = () => {
                 />
                 <div className="currency-name">
                   <b>USDD</b>
-                  <p className="small">Decentralized US Dollar</p>
+                  <p className="small">Decentralized USD</p>
                 </div>
               </div>
               <div className="col text-center apr-info">
@@ -59,24 +59,6 @@ const USDDVaultItem = () => {
             </div>
           </div>
 
-          <div className="row mt-3 text-center">
-
-            <div className="col"></div>
-            <div className="col-md-6">
-
-              <p className="text-left">Select the gStable you wish to earn</p>
-                <select className="mt-3 mb-1 form-select form-select-sm" aria-label="Select Currency">
-                  <option selected>gTTD</option>
-                  <option value="2">gXCD</option>
-                  <option value="3">gBBD</option>
-                  <option value="4">gJMD</option>
-                  <option value="5">gDOP</option>
-                </select>
-            </div>
-
-            <div className="col"></div>
-
-          </div>
 
           <div className="row mb-4 mt-3">
               <div className="col"></div>

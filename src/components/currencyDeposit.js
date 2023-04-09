@@ -8,7 +8,7 @@ const CurrencyDeposit = ({currency, walletData, depositoryData}) => {
     if(depositoryBalance == 0 && walletBalance == 0 ){
         return <></>
     }
-    return (<div className="card m-3 col-md-3 p-0">
+    return (<div className="card m-3 col-md-3 p-0" id={currency.label}>
     <div className="card-body">
         <div className="row">
             <div className="col-md-3">

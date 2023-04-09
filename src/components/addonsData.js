@@ -14,7 +14,7 @@ const addonsData = [
   {
     id: 2,
     label: "Administrative Services",
-    details: "Generate official statements, bank letters and other administrative tasks on your Sorrel account for extended utility and possible use in the real world.",
+    details: "Generate official e-statements, bank letters and other administrative tasks on your Sorrel account for extended utility and possible use in the real world.",
     fundGoal: "$5,000+",
     link: "https://docs.sorrelbanq.org/addons/administrative",
   },
@@ -38,7 +38,7 @@ const addonsData = [
   {
     id: 5,
     label: "Sorrel Pay",
-    details: "Send to anyone, with or without a Sorrel account. Accept gStables for new and existing products/services - boosting local and inter-regional commerce. Peer-to-Peer Powered.",
+    details: "Send to anyone, with or without a Sorrel account. Accept gStables for new and existing products/services - boosting local to global commerce. Peer-to-Peer Powered.",
     fundGoal: "$25,000+",
     link: "https://docs.sorrelbanq.org/addons/sorrelpay",
   },

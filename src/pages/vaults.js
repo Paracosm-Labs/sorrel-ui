@@ -1,9 +1,10 @@
 import TRXVault from "../components/tronVaultitem";
-// import USDDVault from "../components/usddVaultitem";
+import USDDVault from "../components/usddVaultitem";
+// import CurrencyVaultList from "../components/currencyVaultList";
 import React  from 'react';
 
 
-const Vaults = () => {
+const Vaults = ()  => {
   return (
     <>
 
@@ -48,6 +49,7 @@ const Vaults = () => {
                     </div>
                     
                     <TRXVault></TRXVault>
+                    <USDDVault></USDDVault>
 
                   </div>
                 </div>

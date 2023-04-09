@@ -4,7 +4,7 @@ import TRXImg from "../img/trx.png";
 
 const TRXVaultItem = () => {
   const [display, setDisplay] = useState(true);
-  const [trxValue, setTRXValue] = useState();
+  const [trxValue, setTRXValue] = useState(0);
   const [trxBalance, setTRXBalance] = useState(30333.69);
   const [trxMyDeposits, setTRXMyDeposits] = useState(0);
   const [showLock, setShowLock] = useState(false);
@@ -52,6 +52,12 @@ const TRXVaultItem = () => {
   };
 
 
+  const callVault = async () => {
+    display ? await deposit() : await withdraw();
+  };
+
+  const active = "active";
+
   return (
 
     <>
@@ -85,68 +91,91 @@ const TRXVaultItem = () => {
             </div>
           </button>
         </h2>
-        <div id="collapseOne" className="accordion-collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionVaults">
+        <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionVaults">
           <div className="accordion-body">
           <div className="row">
-            <div className="col border-bottom pb-3 border-width-2 text-center">
-              Support Sorrel Banq by adding TRX into this vault to facilitate energy free transactions for fellow Sorrel members. Earn Vault rewards in a variety of stablecoins which are credited to your Sorrel account monthly.<br/><br/><b>New Deposits are locked for 30 days.</b>
+            <div className="col border-bottom pb-3">
+              Support Sorrel Banq by adding TRX into this vault to facilitate energy free transactions for fellow Sorrel members. Earn Vault rewards in a variety of stablecoins which are credited to your Sorrel account monthly.<br/><br/>
+              <div className="text-center"><b>New Deposits are locked for 30 days.</b></div>
             </div>
           </div>
 
+    <div className="row">
+        <div className="col"></div>
+          <div className="col-md-10">
+            <ul className="nav nav-tabs text-center">
+              <li className="nav-item w-50">
+                <a className={`nav-link ${display ? active : ""}`} href="#"
+                onClick={() => setDisplay(true)}
+                >Deposit</a>
+              </li>
+              <li className="nav-item w-50">
+                <a className={`nav-link ${display ? "" : active}`} href="#"
+                onClick={() => setDisplay(false)}
+                >Withdraw</a>
+              </li>
+            </ul>
 
-          <div className="row mb-4 mt-3">
-              <div className="col"></div>
 
-              <div className="col-md-6">
-                <p className="small">Balance: <b>{trxBalance} TRX</b></p>
-                  <div className="input-group mb-2 mt-3">
-                    <div className="form-floating">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="floatingInputGroup1"
-                        placeholder=""
-                        onChange={updateTRXValue}
-                        value={trxValue}
-                      />
-                      <label htmlFor="floatingInputGroup1">Enter Amount</label>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col text-center">
-                      <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setTRXValue(trxBalance * 0.25)}>25%</button>
-                    </div>
-                    <div className="col text-center">
-                      <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setTRXValue(trxBalance * 0.5)}>50%</button>
-                    </div>
-                    <div className="col text-center">
-                      <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setTRXValue(trxBalance * 0.75)}>75%</button>
-                    </div>
-                    <div className="col text-center">
-                      <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setTRXValue(trxBalance * 0.95)}>95%</button>
-                    </div>
-                  </div>
-                  
-              </div>
-              <div className="col"></div>
-          </div>
+            <div className="row mb-4 mt-5">
+                <div className="col"></div>
 
-            <div className="row mt-1 mb-3 text-center">
-              <div className="col"></div>
-              <div className="col">
-                <button className="btn btn-outline-info" type="button" onClick={deposit}>Deposit</button>
-              
-              </div>
-              <div className="col">
-                <button className="btn btn-outline-vault-withdraw" type="button" onClick={withdraw}>Withdraw</button>
-              </div>
-              <div className="col"></div>            
+                <div className="col-md-8">
+                  <p className="small">Balance: <b>{display ? <span>{trxBalance}</span> : <span>{trxMyDeposits}</span>} TRX</b></p>
+                    <div className="input-group mb-2 mt-3">
+                      <div className="form-floating">
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="floatingInputGroup1"
+                          placeholder=""
+                          onChange={updateTRXValue}
+                          value={trxValue}
+                        />
+                        <label htmlFor="floatingInputGroup1">Enter Amount</label>
+                      </div>
+                    </div>
+                    {display ? <>
+                    <div className="row">
+                      <div className="col text-center">
+                        <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setTRXValue(trxBalance * 0.25)}>25%</button>
+                      </div>
+                      <div className="col text-center">
+                        <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setTRXValue(trxBalance * 0.50)}>50%</button>
+                      </div>
+                      <div className="col text-center">
+                        <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setTRXValue(trxBalance * 0.75)}>75%</button>
+                      </div>
+                      <div className="col text-center">
+                        <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setTRXValue(trxBalance * 0.95)}>95%</button>
+                      </div>
+                    </div>
+                      </> :
+                      <></>
+                    }
+                    <button
+                      className={`mt-5 btn w-100 ${display ? "btn-outline-info" : "btn-outline-vault-withdraw"}`}
+                      type="button"
+                      id="button-deposit"
+                      onClick={callVault}
+                    >
+                      {display ? "Deposit" : "Withdraw"}
+                    </button>
+ 
+                </div>
+                <div className="col"></div>
             </div>
 
-            <p className="small mt-5 mb-3 text-center">
-                {showLock ? <i className="fa-solid fa-lock"></i> : <i className="fa-solid fa-unlock text-sorrel-green"></i>} <br/>
-                {showLock && `Deposit Locked till XXXXX.`}
-            </p>
+              <p className="mt-5 mb-3 text-center">
+                  {showLock ? <i className="fa-solid fa-lock"></i> : <><i className="fa-solid fa-unlock text-sorrel-green"></i><br/><br/><span className="text-sorrel-green">Unlocked</span></>} <br/>
+                  {showLock && `Deposit Locked till XXXXX.`}
+              </p>
+
+
+          </div>
+          <div className="col"></div>
+      </div>
+
 
           </div>
         </div>

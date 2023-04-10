@@ -92,6 +92,7 @@ const OffcanvasWithdraw = () => {
                 className="form-control"
                 id="floatingInputGroup1"
                 onChange={updateAmount}
+                value={gStableAmount}
               />
               <label htmlFor="floatingInputGroup1">{selected?selected.label:""}</label>
             </div>

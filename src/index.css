@@ -152,7 +152,7 @@ font-weight: bold;
 .btn-web3 .wallet-addr {color: #7a45a5;}
 .btn-web3 .small {color: #109e77; font-size: 0.7rem;}
 
-.btn-web3 {
+.vault-item .nav-link.active, .btn-web3 {
   background: #2f3349!important;
 }
 
@@ -250,6 +250,6 @@ font-weight: bold;
 
 .form-floating.address input{height: 100px;}
 
-.addons .btn.disabled {
-    color: #c5c5c5;
+.addons .btn.disabled, .btn-outline-light:active {
+    color: #c5c5c5!important;
 }

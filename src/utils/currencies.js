@@ -18,6 +18,9 @@ import cupImg from "../img/gcup.png";
 import htgImg from "../img/ghtg.png";
 import eurImg from "../img/geur.png";
 import gbpImg from "../img/ggbp.png";
+import cnhImg from "../img/gcnh.png";
+import hkdImg from "../img/ghkd.png";
+import sgdImg from "../img/gsgd.png";
 
 class Currency {
   id = 0;
@@ -25,6 +28,7 @@ class Currency {
   label = null;
   text = null;
   icon = null;
+  symbol = null;
   gStableAddress = null;
   gStableContract_ = null;
   constructor(
@@ -33,6 +37,7 @@ class Currency {
     _label,
     _text,
     _icon,
+    _symbol,
     _gStableAddress,
   ) {
     this.id = _id;
@@ -40,6 +45,7 @@ class Currency {
     this.label = _label;
     this.text = _text;
     this.icon = _icon;
+    this.symbol = _symbol;
     this.gStableAddress = _gStableAddress;
   }
   gStableContract = async () => {
@@ -59,23 +65,26 @@ const CurrencyList = {
     "USDD",
     "Decentralized USD",
     usddImg,
-    "THJ6CYd8TyNzHFrdLTYQ1iAAZDrf5sEsZU" /*gStableAddress*/,
+     "&dollar;" /*Currency Symbol*/,
+    "THJ6CYd8TyNzHFrdLTYQ1iAAZDrf5sEsZU" /*gStableAddress Nile*/,
   ),
-  // USDT: new Currency(
-  //   1002,
-  //   "USDT",
-  //   "USDT",
-  //   "Tether USD",
-  //   usdtImg,
-  //   "TXLAQ63Xg1NAzckPwKHvzw7CSEmLMEqcdj" /*gStableAddress*/,
-  // ),
+  USDT: new Currency(
+    1002,
+    "USDT",
+    "USDT",
+    "Tether USD",
+    usdtImg,
+    "&dollar;" /*Currency Symbol*/,
+    "TXLAQ63Xg1NAzckPwKHvzw7CSEmLMEqcdj" /*gStableAddress Nile*/,
+  ),
   // USDC: new Currency(
   //   1003,
   //   "USDC",
   //   "USDC",
   //   "Circle USD",
   //   usdcImg,
-  //   "THJ6CYd8TyNzHFrdLTYQ1iAAZDrf5sEsZU" /*gStableAddress*/,
+  //   "&dollar;" /*Currency Symbol*/,
+  //   "----" /*gStableAddress Nile*/,
   // ),
   // TUSD: new Currency(
   //   1004,
@@ -83,7 +92,8 @@ const CurrencyList = {
   //   "TUSD",
   //   "True USD",
   //   tusdImg,
-  //   "THJ6CYd8TyNzHFrdLTYQ1iAAZDrf5sEsZU" /*gStableAddress*/,
+  //   "&dollar;" /*Currency Symbol*/,
+  //   "----" /*gStableAddress Nile*/,
   // ),
   TTDD: new Currency(
     1,
@@ -91,7 +101,8 @@ const CurrencyList = {
     "gTTD",
     "Trinidad & Tobago Dollar",
     ttddImg,
-    "TK95YwrjoB1Ui7jwjAPfjHiw2HuSm7ebS4" /*gStableAddress*/,
+    "&dollar;" /*Currency Symbol*/,
+    "TEhTXahLuKVgnBX1yWVmLaykLGeEZ8yq9K" /*gStableAddress Nile*/,
   ),
   XCD: new Currency(
     2,
@@ -99,7 +110,8 @@ const CurrencyList = {
     "gXCD",
     "Eastern Caribbean Dollar",
     xcddImg,
-    "TXTirC6WWYs7csuqUQuiQvKzrkSgZgU7x3" /*gStableAddress*/,
+    "&dollar;" /*Currency Symbol*/,
+    "TMqjGVksF4RLN67YugsUbbNHiZejzsSWq6" /*gStableAddress Nile*/,
   ),
   BBD: new Currency(
     3,
@@ -107,7 +119,8 @@ const CurrencyList = {
     "gBBD",
     "Barbadian Dollar",
     bbddImg,
-    "TWXi48ddESfk6wFjNXK4XwW1yvRMPSSnSB" /*gStableAddress*/,
+    "&dollar;" /*Currency Symbol*/,
+    "TNpqgkKcaKa7vZH5GC4nxSL6FMjMfdCRSn" /*gStableAddress Nile*/,
   ),
   // JMD: new Currency(
   //   4,
@@ -115,7 +128,8 @@ const CurrencyList = {
   //   "gJMD",
   //   "Jamaican Dollar",
   //   jmddImg,
-  //   "THVTLRiwWTUUeYMz1nSxdb1BVbUWmEzy3c" /*gStableAddress*/,
+  //   "&dollar;" /*Currency Symbol*/,
+  //   "TBeTCPQFXjgVk1xKpFw5b24MsgCkvLdBnk" /*gStableAddress Nile*/,
   // ),
   // AWG: new Currency(
   //   5,
@@ -123,7 +137,8 @@ const CurrencyList = {
   //   "gAWG",
   //   "Aruban Florin",
   //   awgdImg,
-  //   "TP7RNcfoSkmTSA5ZSdKeXfUnBb1KoU51VY" /*gStableAddress*/,
+  //   "&#x0192;" /*Currency Symbol*/,
+  //   "TQT5dFRmWCR2mJNpSrypVUfq4Rar4WSe8Y" /*gStableAddress Nile*/,
   // ),
   // BSD: new Currency(
   //   6,
@@ -131,7 +146,8 @@ const CurrencyList = {
   //   "gBSD",
   //   "Bahamian Dollar",
   //   bsdImg,
-  //   "TRN9LBmG1N3Vue1eidkn1s3bBFyAAabyC9" /*gStableAddress*/,
+  //   "&dollar;" /*Currency Symbol*/,
+  //   "TTQTdMtxiastmhKU8CkgWomYzwhBEfnNuX" /*gStableAddress Nile*/,
   // ),
   // KYD: new Currency(
   //   7,
@@ -139,7 +155,8 @@ const CurrencyList = {
   //   "gKYD",
   //   "Cayman Islands Dollar",
   //   kydImg,
-  //   "TRpvxootqXTB5omn919BGFEiiAqBjGPqzt" /*gStableAddress*/,
+  //   "&dollar;" /*Currency Symbol*/,
+  //   "TTWSqDo9g5K86G5xQVLhBEzWwgy8tgURHQ" /*gStableAddress Nile*/,
   // ),
   // DOP: new Currency(
   //   8,
@@ -147,7 +164,8 @@ const CurrencyList = {
   //   "gDOP",
   //   "Dominican Peso",
   //   dopImg,
-  //   "TQkp7SKM6UEYNJmQQfC7YeYYUdsnkq9Xb5" /*gStableAddress*/,
+  //   "&#x20B1;" /*Currency Symbol*/,
+  //   "TUpoXcrgPMMzvvzGdbtWwzcdU39D27ab8w" /*gStableAddress Nile*/,
   // ),
   // CUP: new Currency(
   //   9,
@@ -155,7 +173,8 @@ const CurrencyList = {
   //   "gCUP",
   //   "Cuban Peso",
   //   cupImg,
-  //   "TNsZegdPzUWKbBQ52o7ruF5gGe5NqyALCQ" /*gStableAddress*/,
+  //   "&#x20B1;" /*Currency Symbol*/,
+  //   "TUMPPfnX5jnKvJbh8CtDAeUKTUXSv9Bhkx" /*gStableAddress Nile*/,
   // ),
   // HTG: new Currency(
   //   10,
@@ -163,7 +182,8 @@ const CurrencyList = {
   //   "gHTG",
   //   "Haitian Gourde",
   //   htgImg,
-  //   "TMuABgZr5rStDa639CKaxEoNc1sVEgEoKF" /*gStableAddress*/,
+  //   "&#x20A4;" /*Currency Symbol*/,
+  //   "THyUafLhw1w4bJzSvH2BDGA4ph5iRaqeyV" /*gStableAddress Nile*/,
   // ),
   // EUR: new Currency(
   //   11,
@@ -171,7 +191,8 @@ const CurrencyList = {
   //   "gEUR",
   //   "Euro",
   //   eurImg,
-  //   "TBWqK2pQXxRxmei95Xo6hA35YNzkdGuynR" /*gStableAddress*/,
+  //   "&euro;" /*Currency Symbol*/,
+  //   "TNLtM7F696Qjcc7Lj5krBqCAoXNzS2enQH" /*gStableAddress Nile*/,
   // ),
   // GBP: new Currency(
   //   12,
@@ -179,7 +200,35 @@ const CurrencyList = {
   //   "gGBP",
   //   "British Pound",
   //   gbpImg,
-  //   "TJBhh6JPtBoDWPQqdRXzR27SEJooBvfJ7r" /*gStableAddress*/,
+  //   "&pound;" /*Currency Symbol*/,
+  //   "TVnCkaJUjrek5H2xcVq9azLMVBLiyUAnvx" /*gStableAddress Nile*/,
+  // ),
+  CNH: new Currency(
+    13,
+    "CNH",
+    "gCNH",
+    "Chinese Offshore Yuan",
+    cnhImg,
+    "&#xA5;" /*Currency Symbol*/,
+    "TPhaYXi9Vsiy8mHB3XmVhdw81oK3mTh22j" /*gStableAddress Nile*/,
+  ),
+  HKD: new Currency(
+    14,
+    "HKD",
+    "gHKD",
+    "Hong Kong Dollar",
+    hkdImg,
+    "&dollar;" /*Currency Symbol*/,
+    "TMtFngpiqqMbD3bBr4Q52H5ode8htZYUVx" /*gStableAddress Nile*/,
+  ),
+  // SGD: new Currency(
+  //   15,
+  //   "SGD",
+  //   "gSGD",
+  //   "Singaporean Dollar",
+  //   sgdImg,
+  //   "&dollar;" /*Currency Symbol*/,
+  //   "TCgmFarW3w4ggbYcnShnSTfA1xF7YWmuxB" /*gStableAddress Nile*/,
   // ),
 
 };

@@ -57,7 +57,7 @@ const OffcanvasExchange = () => {
   const clear = () => {
     setGStableAmount(0);
     setTrxId("");
-  }
+  };
 
   const exchange = async () => {
     try {
@@ -129,6 +129,7 @@ const OffcanvasExchange = () => {
               id="floatingInputGroup1"
               placeholder="Enter Amount"
               onChange={updateAmount}
+              value={gStableAmount}
             />
             <label htmlFor="floatingInputGroup1">Enter Amount</label>
           </div>

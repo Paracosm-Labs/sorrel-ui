@@ -4,7 +4,8 @@ const VaultUSDDContractAddress = "TSYeLYe2GJJZ9Nhf8aWSmsKJRzTkvA6DJW";
 const MarketContractAddress = "TQq9o4PahyoLociVzCnBMRRDdPZrNNkW1f";
 
 const SwapGStableContractAddress = "TB2ZNssD5WvGa2HSLHiYwe4xbsqW7ywcHN";
-const DepositoryContractAddress = "TFLyb4QUodxvAb94CAm3bm3zfRE9R9KKHn";
-const TransferComptrollerAddress = "TDttYLx4rFyQoz2BsiW4hwwBVN975MpYAX";
+const DepositoryContractAddress = "TD8QD1xuU26rN9ue3W297Ry7pp5bu6XENn";
+const TransferComptrollerAddress = "TYNSvdTaz1TvzReMHWFb7kG6YK8scyMX5c";
+const ConvertComptrollerAddress = "TY9m7hvgwRPzfoYcDbPp2x1Y5vXruC4eJ6";
 
-export {gStableManagerContractAddress, SwapUSDDContractAddress, VaultUSDDContractAddress, MarketContractAddress, SwapGStableContractAddress, DepositoryContractAddress, TransferComptrollerAddress}
+export {gStableManagerContractAddress, SwapUSDDContractAddress, VaultUSDDContractAddress, MarketContractAddress, SwapGStableContractAddress, DepositoryContractAddress, TransferComptrollerAddress, ConvertComptrollerAddress}

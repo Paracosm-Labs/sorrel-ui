@@ -5,7 +5,6 @@ import { depositoryContract } from '../contracts/depositoryContract';
 import { DepositoryContractAddress } from '../utils/contractAddress';
 import axios from 'axios';
 import serverURL from '../utils/server';
-// import { tcListener } from './deleted/transferComptrollerListener';
 
 const OffcanvasTransfer = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
@@ -61,11 +60,6 @@ const OffcanvasTransfer = () => {
     setGStableAmount(0);
     setTrxId("");
     setToAddress("");
-    // setSelected(selectDefault);
-  }
-
-  const updateExecutionTrxData = (trx, sig, executeTrxId_) => {
-    setExecuteTrxId(executeTrxId_);
   }
 
   const send = () => {
@@ -85,9 +79,6 @@ const OffcanvasTransfer = () => {
         .then((response) => {
           console.log(response);
           setTrxId(response.data.trxId);
-
-          // tcListener.listenForTrxhash(response.data.trxId, tx, updateExecutionTrxData);
-
         })
         .catch((error) => {
           console.log(error);
@@ -160,7 +151,7 @@ const OffcanvasTransfer = () => {
             <button className="btn btn-outline-info" onClick={send}>Send</button>
           </div>
           </div>
-          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction has been initiated!<br/><span className="small text-decoration-underline">View this on Tronscan</span></a></div> : <></>}</div>
+          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction initiated...<br/><span className="small text-decoration-underline">View this on Tronscan</span></a></div> : <></>}</div>
         </div>
       </div>
       </>

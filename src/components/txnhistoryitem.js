@@ -11,7 +11,6 @@ const TxnHistoryItem = ({tx}) => {
   let from  = window.tronLink.tronWeb.address.fromHex(tx.from);
   let to  = window.tronLink.tronWeb.address.fromHex(tx.to);
     const confirm = async () => {
-      debugger;
         let signer = new Web3Signer();
         let sig = await signer.sign(tx);
         if(sig){
@@ -28,7 +27,6 @@ const TxnHistoryItem = ({tx}) => {
     const cancel = async () => {
       let tc = new TransferComptroller();
       await tc.init();
-      debugger;
       await tc.cancel(tx.from, tx.to,tx.gStableId, tx.value, tx.nonce);
     } 
 

@@ -19,11 +19,13 @@ const CurrencyDeposit = ({currency, walletData, depositoryData}) => {
             </div>
             <div className="col-md-9">
                 <h5 className="card-title">{currency.label}</h5>
-                <h6 className="card-subtitle mb-2">Sorrel: {depositoryBalance}</h6>
-                <h6 className="card-subtitle mb-2">Wallet: {walletBalance}</h6>
+                <h1 className="card-title">{depositoryBalance}</h1>
             </div>
         </div>
     </div>
+    <div class="card-footer text-muted" style={{fontSize : ".9rem"}}>
+    Wallet: {walletBalance} {currency.label}
+  </div>
 </div>)
 }
 

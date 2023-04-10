@@ -4,6 +4,8 @@ import Select from "react-select";
 import SwapGStableFactory from "../utils/swapGStableFactory";
 import {usddContract} from "../contracts/usdContract";
 import {SwapUSDDContractAddress} from "../utils/contractAddress";
+import axios from 'axios';
+import serverURL from '../utils/server';
 
 const OffcanvasExchange = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
@@ -62,18 +64,41 @@ const OffcanvasExchange = () => {
       if(!selectedSource || !selectedDest){
         return;
       }
-      let usd = await usddContract();
-      await usd.approve(SwapUSDDContractAddress, 1000);
-      console.log("approved");
-      let swapGStableContract = await SwapGStableFactory.getSwapGStable();
-      let currencySource = getCurrency(selectedSource.value);
-      let currencyDest = getCurrency(selectedDest.value);
-      console.log(`Exchanging ${gStableAmount} in ${selectedSource.label} (${selectedSource.value}) to ${selectedDest.label} (${selectedDest.value})`);
-      let trxId = await swapGStableContract.swap(currencySource.id, gStableAmount, currencyDest.id);
-      setTrxId(trxId);
-      document.querySelectorAll('input').forEach(input => {
-          input.value = '';
-      });
+      if (window.tronWeb.ready) {
+        let srcCurrency = getCurrency(selectedSource.value);
+        let toCurrency = getCurrency(selectedDest.value);
+        console.log(`Sending ${gStableAmount} in ${selectedSource.label} (${selectedSource.value}) to ${selectedDest.label} (${selectedDest.value})`);
+
+        let tx = {
+          hodler : window.tronWeb.defaultAddress.base58,
+          fromId: srcCurrency.id,
+          toId: toCurrency.id,
+          fromTokens: gStableAmount,
+        };
+
+        axios.post(`${serverURL}/exc/init`,tx)
+        .then((response) => {
+          console.log(response);
+          setTrxId(response.data.trxId);
+        })
+        .catch((error) => {
+          console.log(error);
+        });        
+      }      
+
+
+
+
+
+      // let usd = await usddContract();
+      // await usd.approve(SwapUSDDContractAddress, 1000);
+      // console.log("approved");
+      // let swapGStableContract = await SwapGStableFactory.getSwapGStable();
+      // let currencySource = getCurrency(selectedSource.value);
+      // let currencyDest = getCurrency(selectedDest.value);
+      // console.log(`Exchanging ${gStableAmount} in ${selectedSource.label} (${selectedSource.value}) to ${selectedDest.label} (${selectedDest.value})`);
+      // let trxId = await swapGStableContract.swap(currencySource.id, gStableAmount, currencyDest.id);
+      // setTrxId(trxId);
     } catch (error) {
       console.error(error);
     }
@@ -81,7 +106,7 @@ const OffcanvasExchange = () => {
 
   return (
     <>
-    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExchange" aria-labelledby="offcanvasRightLabel" ref={offCanvasExchangeRef}>
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExchange" ref={offCanvasExchangeRef}>
   <div className="offcanvas-header bg-info">
     <h5 id="offcanvasRightLabel">
       <i className="fa-solid fa-repeat" data-toggle="tooltip" title="Convert your gStables to another easily"></i>&nbsp;&nbsp;Convert&nbsp;&nbsp;
@@ -116,12 +141,6 @@ const OffcanvasExchange = () => {
         <Select options={options} onChange={handleChangeDestination} autoFocus={true} />
       </div>
     </div>
-    <div className="row mt-3 text-center">
-      <div className="col"><b>Rate</b>: 1 USDD ≈ 6.7859 gTTD</div>
-    </div>
-    <div className="row text-center">
-      <div className="col"><b>Fee 0.4%</b>: ≈ 0.80</div>
-    </div>
     <div className="row mt-5">
       <div className="col"></div>
       <div className="col justify-content-middle">
@@ -129,7 +148,7 @@ const OffcanvasExchange = () => {
     	</div>
       <div className="col"></div>
   	</div>
-    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a onClick={clear} href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Transaction Successful!<br/><span className="small">View Tronscan</span></a></div> : <></>}</div>
+    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Conversion Initiated...<br/><span className="small text-decoration-underline">View this on Tronscan</span></a></div> : <></>}</div>
   </div>
 </div>
 </>

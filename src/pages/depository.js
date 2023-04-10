@@ -6,6 +6,7 @@ import OffcanvasDeposit from "../components/offcanvas-deposit";
 import OffcanvasWithdraw from "../components/offcanvas-withdraw";
 import OffcanvasTransfer from "../components/offcanvas-transfer";
 import BalanceCardUSDD from "../components/balancesUSDD";
+import ConvertHistory from '../components/convertHistory';
 
 const Depository = () => {
   return (
@@ -64,6 +65,9 @@ const Depository = () => {
         <div className="row mt-3 mx-3">
           <TransactionHistory></TransactionHistory>
         </div>
+        <div className="row mt-3 mx-3">
+          <ConvertHistory></ConvertHistory>
+        </div>        
       </div>
       <OffcanvasExchange></OffcanvasExchange>
       <OffcanvasDeposit></OffcanvasDeposit>

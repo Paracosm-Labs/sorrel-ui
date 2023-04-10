@@ -9,6 +9,8 @@ const BalanceCardUSDD = () => {
     const [walletData, setWalletData] = useState({gStableBalances : []});
     const [depositoryData, setDepositoryData] = useState({gStableBalances : []});
     const [depositoryBalanceUSD, setDepositoryBalanceUSD] = useState(0);
+    const [isAnimated, setIsAnimated] = useState(false);
+
 
     useEffect(() => {
         connectWallet();
@@ -47,12 +49,28 @@ const BalanceCardUSDD = () => {
     };
 
 
+    //function to handle the logic of making the value animate then back to normal.
+    const handleValueAnimate = () => {
+      // set the value to animation
+      setIsAnimated(true);
+      
+      // after 1 second, set the value back to normal
+      setTimeout(() => {
+        setIsAnimated(false);
+      }, 1500);
+    }
+
+    useEffect(() => {
+      if (depositoryBalanceUSD !== 0) {
+        handleValueAnimate();
+      }
+    }, [depositoryBalanceUSD]);
 
 
     return(
     <div className="col-sm text-center">
         <h3>Sorrel Balance</h3>
-        <h2>{depositoryBalanceUSD}</h2>
+        <h2 className={isAnimated ? 'vibrate-sorrel-balance' : '' }>{depositoryBalanceUSD}</h2>
     </div>
     )
 }

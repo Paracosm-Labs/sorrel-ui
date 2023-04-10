@@ -20,9 +20,6 @@ const NavMenu = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto nav-items">
             <NavItem>
-              <Nav.Link href="https://nile.gostables.org/faucets" target="_blank"><i className="fa-solid fa-faucet-drip"></i>&nbsp;&nbsp;Faucets</Nav.Link>
-            </NavItem>
-            <NavItem>
               <Nav.Link href="/accounts"><i className="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;Accounts</Nav.Link>
             </NavItem>
             <NavItem>
@@ -36,6 +33,9 @@ const NavMenu = () => {
             </NavItem>
             <NavItem>
               <Nav.Link href="/addons"><i className="fa-solid fa-puzzle-piece"></i>&nbsp;&nbsp;Addons</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <Nav.Link href="https://nile.gostables.org/faucets" target="_blank"><i className="fa-solid fa-faucet-drip"></i>&nbsp;&nbsp;Faucets</Nav.Link>
             </NavItem>
           </Nav>
           <Nav className="ml-auto">

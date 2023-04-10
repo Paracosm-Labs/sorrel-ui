@@ -65,25 +65,25 @@ const CurrencyList = {
     "USDD",
     "Decentralized USD",
     usddImg,
-     "&dollar;" /*Currency Symbol*/,
+     "$" /*Currency Symbol*/,
     "THJ6CYd8TyNzHFrdLTYQ1iAAZDrf5sEsZU" /*gStableAddress Nile*/,
   ),
-  USDT: new Currency(
-    1002,
-    "USDT",
-    "USDT",
-    "Tether USD",
-    usdtImg,
-    "&dollar;" /*Currency Symbol*/,
-    "TXLAQ63Xg1NAzckPwKHvzw7CSEmLMEqcdj" /*gStableAddress Nile*/,
-  ),
+  // USDT: new Currency(
+  //   1002,
+  //   "USDT",
+  //   "USDT",
+  //   "Tether USD",
+  //   usdtImg,
+  //   "$" /*Currency Symbol*/,
+  //   "----" /*gStableAddress Nile*/,
+  // ),
   // USDC: new Currency(
   //   1003,
   //   "USDC",
   //   "USDC",
   //   "Circle USD",
   //   usdcImg,
-  //   "&dollar;" /*Currency Symbol*/,
+  //   "$" /*Currency Symbol*/,
   //   "----" /*gStableAddress Nile*/,
   // ),
   // TUSD: new Currency(
@@ -92,7 +92,7 @@ const CurrencyList = {
   //   "TUSD",
   //   "True USD",
   //   tusdImg,
-  //   "&dollar;" /*Currency Symbol*/,
+  //   "$" /*Currency Symbol*/,
   //   "----" /*gStableAddress Nile*/,
   // ),
   TTDD: new Currency(
@@ -101,8 +101,8 @@ const CurrencyList = {
     "gTTD",
     "Trinidad & Tobago Dollar",
     ttddImg,
-    "&dollar;" /*Currency Symbol*/,
-    "TEhTXahLuKVgnBX1yWVmLaykLGeEZ8yq9K" /*gStableAddress Nile*/,
+    "TT$" /*Currency Symbol*/,
+    "TK95YwrjoB1Ui7jwjAPfjHiw2HuSm7ebS4" /*gStableAddress Nile*/,
   ),
   XCD: new Currency(
     2,
@@ -110,8 +110,8 @@ const CurrencyList = {
     "gXCD",
     "Eastern Caribbean Dollar",
     xcddImg,
-    "&dollar;" /*Currency Symbol*/,
-    "TMqjGVksF4RLN67YugsUbbNHiZejzsSWq6" /*gStableAddress Nile*/,
+    "EC$" /*Currency Symbol*/,
+    "TXTirC6WWYs7csuqUQuiQvKzrkSgZgU7x3" /*gStableAddress Nile*/,
   ),
   BBD: new Currency(
     3,
@@ -119,7 +119,7 @@ const CurrencyList = {
     "gBBD",
     "Barbadian Dollar",
     bbddImg,
-    "&dollar;" /*Currency Symbol*/,
+    "BB$" /*Currency Symbol*/,
     "TNpqgkKcaKa7vZH5GC4nxSL6FMjMfdCRSn" /*gStableAddress Nile*/,
   ),
   // JMD: new Currency(
@@ -128,7 +128,7 @@ const CurrencyList = {
   //   "gJMD",
   //   "Jamaican Dollar",
   //   jmddImg,
-  //   "&dollar;" /*Currency Symbol*/,
+  //   "JM$" /*Currency Symbol*/,
   //   "TBeTCPQFXjgVk1xKpFw5b24MsgCkvLdBnk" /*gStableAddress Nile*/,
   // ),
   // AWG: new Currency(
@@ -137,7 +137,7 @@ const CurrencyList = {
   //   "gAWG",
   //   "Aruban Florin",
   //   awgdImg,
-  //   "&#x0192;" /*Currency Symbol*/,
+  //   "ƒ" /*Currency Symbol*/,
   //   "TQT5dFRmWCR2mJNpSrypVUfq4Rar4WSe8Y" /*gStableAddress Nile*/,
   // ),
   // BSD: new Currency(
@@ -146,7 +146,7 @@ const CurrencyList = {
   //   "gBSD",
   //   "Bahamian Dollar",
   //   bsdImg,
-  //   "&dollar;" /*Currency Symbol*/,
+  //   "B$" /*Currency Symbol*/,
   //   "TTQTdMtxiastmhKU8CkgWomYzwhBEfnNuX" /*gStableAddress Nile*/,
   // ),
   // KYD: new Currency(
@@ -155,7 +155,7 @@ const CurrencyList = {
   //   "gKYD",
   //   "Cayman Islands Dollar",
   //   kydImg,
-  //   "&dollar;" /*Currency Symbol*/,
+  //   "CI$" /*Currency Symbol*/,
   //   "TTWSqDo9g5K86G5xQVLhBEzWwgy8tgURHQ" /*gStableAddress Nile*/,
   // ),
   // DOP: new Currency(
@@ -164,7 +164,7 @@ const CurrencyList = {
   //   "gDOP",
   //   "Dominican Peso",
   //   dopImg,
-  //   "&#x20B1;" /*Currency Symbol*/,
+  //   "₱" /*Currency Symbol*/,
   //   "TUpoXcrgPMMzvvzGdbtWwzcdU39D27ab8w" /*gStableAddress Nile*/,
   // ),
   // CUP: new Currency(
@@ -173,7 +173,7 @@ const CurrencyList = {
   //   "gCUP",
   //   "Cuban Peso",
   //   cupImg,
-  //   "&#x20B1;" /*Currency Symbol*/,
+  //   "₱" /*Currency Symbol*/,
   //   "TUMPPfnX5jnKvJbh8CtDAeUKTUXSv9Bhkx" /*gStableAddress Nile*/,
   // ),
   // HTG: new Currency(
@@ -182,7 +182,7 @@ const CurrencyList = {
   //   "gHTG",
   //   "Haitian Gourde",
   //   htgImg,
-  //   "&#x20A4;" /*Currency Symbol*/,
+  //   "G₵" /*Currency Symbol*/,
   //   "THyUafLhw1w4bJzSvH2BDGA4ph5iRaqeyV" /*gStableAddress Nile*/,
   // ),
   // EUR: new Currency(
@@ -191,7 +191,7 @@ const CurrencyList = {
   //   "gEUR",
   //   "Euro",
   //   eurImg,
-  //   "&euro;" /*Currency Symbol*/,
+  //   "€" /*Currency Symbol*/,
   //   "TNLtM7F696Qjcc7Lj5krBqCAoXNzS2enQH" /*gStableAddress Nile*/,
   // ),
   // GBP: new Currency(
@@ -200,7 +200,7 @@ const CurrencyList = {
   //   "gGBP",
   //   "British Pound",
   //   gbpImg,
-  //   "&pound;" /*Currency Symbol*/,
+  //   "£" /*Currency Symbol*/,
   //   "TVnCkaJUjrek5H2xcVq9azLMVBLiyUAnvx" /*gStableAddress Nile*/,
   // ),
   CNH: new Currency(
@@ -209,7 +209,7 @@ const CurrencyList = {
     "gCNH",
     "Chinese Offshore Yuan",
     cnhImg,
-    "&#xA5;" /*Currency Symbol*/,
+    "¥" /*Currency Symbol*/,
     "TPhaYXi9Vsiy8mHB3XmVhdw81oK3mTh22j" /*gStableAddress Nile*/,
   ),
   HKD: new Currency(
@@ -218,7 +218,7 @@ const CurrencyList = {
     "gHKD",
     "Hong Kong Dollar",
     hkdImg,
-    "&dollar;" /*Currency Symbol*/,
+    "HK$" /*Currency Symbol*/,
     "TMtFngpiqqMbD3bBr4Q52H5ode8htZYUVx" /*gStableAddress Nile*/,
   ),
   // SGD: new Currency(
@@ -227,7 +227,7 @@ const CurrencyList = {
   //   "gSGD",
   //   "Singaporean Dollar",
   //   sgdImg,
-  //   "&dollar;" /*Currency Symbol*/,
+  //   "SG$" /*Currency Symbol*/,
   //   "TCgmFarW3w4ggbYcnShnSTfA1xF7YWmuxB" /*gStableAddress Nile*/,
   // ),
 

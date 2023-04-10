@@ -30,9 +30,9 @@ const CurrencyDeposit = ({currency, walletData, depositoryData}) => {
         return <></>
     }
 
-    return (<div className="card m-3 col-md-3 p-0" id={currency.label}>
+    return (<div className="card currency m-3 col-md-3 p-0" id={currency.label}>
     <div className="card-body">
-        <div className="row">
+        <div className="row align-items-center">
             <div className="col-md-3">
                 <img src={currency.icon}
                 width="42"
@@ -40,13 +40,12 @@ const CurrencyDeposit = ({currency, walletData, depositoryData}) => {
                 className="flex-shrink-0" />
             </div>
             <div className="col-md-9">
-                <h5 className="card-title">{currency.label}</h5>
-                <h4 className="card-title"><span className={isAnimated ? 'vibrate-1' : '' }>{depositoryBalance}</span></h4>
+                <h4 className="card-title"><span className={isAnimated ? 'vibrate-1' : '' }><span className="text-xs">{currency.symbol}&nbsp;</span>{depositoryBalance}</span></h4>
             </div>
         </div>
     </div>
     <div className="card-footer" style={{fontSize : ".9rem"}}>
-    Wallet: {walletBalance} {currency.label}
+    In Wallet: {walletBalance} {currency.label}
   </div>
 </div>)
 }

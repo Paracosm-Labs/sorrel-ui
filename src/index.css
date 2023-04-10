@@ -248,6 +248,15 @@ font-weight: bold;
 }
 
 
+.currency .card {
+  padding-top: 1em!important;
+  padding-bottom: 1em!important;
+}
+
+.currency .card-title {border-bottom: 0px!important;}
+
+.currency h4 .text-xs {font-size: 17px;}
+
 .form-floating.address input{height: 100px;}
 
 .addons .btn.disabled, .btn-outline-light:active {
@@ -320,8 +329,8 @@ font-weight: bold;
   font-size: 2.2rem;
   color: #109e77;
   font-weight: 900;
-  transition-timing-function: ease;
-  transition: 0.5s;
+  transition-timing-function: ease-out;
+  transition: 1s;
 }
 
 @-webkit-keyframes vibrate-1 {

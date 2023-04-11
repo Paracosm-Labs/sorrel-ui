@@ -64,6 +64,25 @@ const OffcanvasExchange = () => {
       if(!selectedSource || !selectedDest){
         return;
       }
+      let usd = await usddContract();
+      await usd.approve(SwapUSDDContractAddress, 1000);
+      console.log("approved");
+      let swapGStableContract = await SwapGStableFactory.getSwapGStable();
+      let currencySource = getCurrency(selectedSource.value);
+      let currencyDest = getCurrency(selectedDest.value);
+      console.log(`Exchanging ${gStableAmount} in ${selectedSource.label} (${selectedSource.value}) to ${selectedDest.label} (${selectedDest.value})`);
+      let trxId = await swapGStableContract.swap(currencySource.id, gStableAmount, currencyDest.id);
+      setTrxId(trxId);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const exchangeGL = async () => {
+    try {
+      if(!selectedSource || !selectedDest){
+        return;
+      }
       if (window.tronWeb.ready) {
         let srcCurrency = getCurrency(selectedSource.value);
         let toCurrency = getCurrency(selectedDest.value);
@@ -85,24 +104,10 @@ const OffcanvasExchange = () => {
           console.log(error);
         });        
       }      
-
-
-
-
-
-      // let usd = await usddContract();
-      // await usd.approve(SwapUSDDContractAddress, 1000);
-      // console.log("approved");
-      // let swapGStableContract = await SwapGStableFactory.getSwapGStable();
-      // let currencySource = getCurrency(selectedSource.value);
-      // let currencyDest = getCurrency(selectedDest.value);
-      // console.log(`Exchanging ${gStableAmount} in ${selectedSource.label} (${selectedSource.value}) to ${selectedDest.label} (${selectedDest.value})`);
-      // let trxId = await swapGStableContract.swap(currencySource.id, gStableAmount, currencyDest.id);
-      // setTrxId(trxId);
     } catch (error) {
       console.error(error);
     }
-  };
+  };  
 
   return (
     <>
@@ -143,11 +148,8 @@ const OffcanvasExchange = () => {
       </div>
     </div>
     <div className="row mt-5">
-      <div className="col"></div>
-      <div className="col justify-content-middle">
-      	<button className="btn btn-outline-info" onClick={exchange}>Convert</button>
-    	</div>
-      <div className="col"></div>
+      <div className="col"><button className="btn btn-outline-info" onClick={exchange}>Convert</button></div>
+      <div className="col"><button className="btn btn-outline-info" onClick={exchangeGL}>Convert GL</button></div>
   	</div>
     <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Conversion Initiated...<br/><span className="small text-decoration-underline">View this on Tronscan</span></a></div> : <></>}</div>
   </div>

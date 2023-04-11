@@ -62,7 +62,7 @@ const OffcanvasTransfer = () => {
     setToAddress("");
   }
 
-  const send = () => {
+  const sendGL = async () => {
     try {
       if (window.tronWeb.ready && selected) {
         let currency = getCurrency(selected.value);
@@ -84,16 +84,22 @@ const OffcanvasTransfer = () => {
           console.log(error);
         });        
       }
-      
-      // let dc = await depositoryContract();
-      // let currency = getCurrency(selected.value);
-      // console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
-      // let trxId = await dc.transfer(currency.id, gStableAmount, toAddress);
-      // setTrxId(trxId);
     } catch (error) {
       console.error(error);
     }
   };
+
+  const send = async () => {
+    try {
+      let dc = await depositoryContract();
+      let currency = getCurrency(selected.value);
+      console.log(`Sending ${gStableAmount} in ${selected.label} (${selected.value}) to ${toAddress}`);
+      let trxId = await dc.transfer(currency.id, gStableAmount, toAddress);
+      setTrxId(trxId);
+    } catch (error) {
+      console.error(error);
+    }
+  };  
   return (
     <>
       <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasTransfer" ref={offCanvasTransferRef}>
@@ -147,9 +153,12 @@ const OffcanvasTransfer = () => {
           </div>
 
           <div className="row mt-5">
-          <div className="col text-center">
+          <div className="col">
             <button className="btn btn-outline-info" onClick={send}>Send</button>
           </div>
+          <div className="col">
+            <button className="btn btn-outline-info" onClick={sendGL}>Send GL</button>
+          </div>          
           </div>
           <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction initiated...<br/><span className="small text-decoration-underline">View this on Tronscan</span></a></div> : <></>}</div>
         </div>

@@ -111,7 +111,7 @@ const CurrencyList = {
     "Eastern Caribbean Dollar",
     xcddImg,
     "EC$" /*Currency Symbol*/,
-    "TXTirC6WWYs7csuqUQuiQvKzrkSgZgU7x3" /*gStableAddress Nile*/,
+    "TMqjGVksF4RLN67YugsUbbNHiZejzsSWq6" /*gStableAddress Nile*/,
   ),
   // BBD: new Currency(
   //   3,

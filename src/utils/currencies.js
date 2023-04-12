@@ -102,7 +102,7 @@ const CurrencyList = {
     "Trinidad & Tobago Dollar",
     ttddImg,
     "TT$" /*Currency Symbol*/,
-    "TK95YwrjoB1Ui7jwjAPfjHiw2HuSm7ebS4" /*gStableAddress Nile*/,
+    "TEhTXahLuKVgnBX1yWVmLaykLGeEZ8yq9K" /*gStableAddress Nile*/,
   ),
   XCD: new Currency(
     2,
@@ -111,7 +111,7 @@ const CurrencyList = {
     "Eastern Caribbean Dollar",
     xcddImg,
     "EC$" /*Currency Symbol*/,
-    "TXTirC6WWYs7csuqUQuiQvKzrkSgZgU7x3" /*gStableAddress Nile*/,
+    "TMqjGVksF4RLN67YugsUbbNHiZejzsSWq6" /*gStableAddress Nile*/,
   ),
   // BBD: new Currency(
   //   3,

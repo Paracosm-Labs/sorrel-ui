@@ -36,13 +36,25 @@ const SharedResources = () => {
       setEnergyUsed(resourceBalance.EnergyUsed);
 
       setBandwidthBalance(resourceBalance.NetLimit);
-      setBandwidthUsed(resourceBalance.NetUsed);
+      if(resourceBalance.NetUsed){
+        setBandwidthUsed(resourceBalance.NetUsed);
+      }
 
       setEnergyDiff(resourceBalance.EnergyLimit - resourceBalance.EnergyUsed);
-      setBandwidthDiff(resourceBalance.NetLimit - resourceBalance.NetUsed);
+      if(resourceBalance.NetUsed){
+        setBandwidthDiff(resourceBalance.NetLimit - resourceBalance.NetUsed);
+      } else {
+        setBandwidthDiff(resourceBalance.NetLimit);
+      }
+      
 
       setEnergyRatio((resourceBalance.EnergyLimit - resourceBalance.EnergyUsed) / resourceBalance.EnergyLimit * 100);
-      setBandwidthRatio((resourceBalance.NetLimit - resourceBalance.NetUsed) / resourceBalance.NetLimit * 100);
+      if(resourceBalance.NetUsed){
+        setBandwidthRatio((resourceBalance.NetLimit - resourceBalance.NetUsed) / resourceBalance.NetLimit * 100);
+      } else {
+        setBandwidthRatio(100);
+      }
+      
 };
 
 

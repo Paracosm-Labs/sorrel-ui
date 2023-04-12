@@ -68,7 +68,7 @@ const SharedResources = () => {
                   <span className="progress-bar bg-bandwidth-guage" role="progressbar" aria-valuenow={bandwidthRatio} aria-valuemin={0} aria-valuemax={100} style={{width:`${bandwidthRatio}%`}}>
                   </span>
                   
-                </span><p className="text-xs text-muted">Bandwidth: {bandwidthAvail} / {bandwidthBalance}</p>
+                </span><p className="text-xs text-muted">Bandwidth: {bandwidthBalance} / {bandwidthAvail}</p>
               </Col>
               <div className="col"></div>
             </Row>

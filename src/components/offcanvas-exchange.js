@@ -124,7 +124,8 @@ const OffcanvasExchange = () => {
       <p className="text-left">Source</p>
       <Select options={options} onChange={handleChangeSource} autoFocus={true}/>
   </div>
-    <div className="row mt-3">
+    <div className="row mt-4">
+    <p className="text-left sorrel-bal">Sorrel Balance: XXXX</p>
       <div className="col">
         <div className="input-group mb-1" key={1}>
           <div className="form-floating">
@@ -147,9 +148,27 @@ const OffcanvasExchange = () => {
         <Select options={options} onChange={handleChangeDestination} autoFocus={true} />
       </div>
     </div>
-    <div className="row mt-5">
-      <div className="col"><button className="btn btn-outline-info" onClick={exchange}>Convert</button></div>
-      <div className="col"><button className="btn btn-outline-info" onClick={exchangeGL}>Convert GL</button></div>
+    <div className="row mt-3">
+      <div className="col">
+        <div className="input-group mb-1">
+          <div className="form-floating">
+            <input disabled
+              type="text"
+              className="form-control"
+              id="floatingInputGroup2"
+              placeholder="Enter Amount"
+              onChange="{updateAmount}"
+              value="--"
+            />
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div className="row mt-5 text-center">
+      {/* <div className="col"><button className="btn btn-outline-info" onClick={exchange}>Convert</button></div> */}
+      <div className="col"><button className="btn btn-outline-info" onClick={exchangeGL}>
+        Convert <i className="fa-solid fa-bolt fa-beat lite"></i>
+      </button></div>
   	</div>
     <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Conversion Initiated - <span className="small text-decoration-underline">View Tronscan</span></a></div> : <></>}</div>
   </div>

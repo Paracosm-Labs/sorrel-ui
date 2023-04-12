@@ -185,7 +185,7 @@ const TronVaultItem = () => {
           <div className="accordion-body">
           <div className="row">
             <div className="col border-bottom pb-3">
-              Support Sorrel by delegating Tron Resources to facilitate energy free transactions for fellow Sorrel members. Earn rewards in a variety of stablecoins, credited to your Sorrel account monthly.<br/><br/>
+              Support Sorrel by staking TRX for Tron Resources to facilitate energy free transactions for fellow Sorrel members. Earn rewards in a variety of stablecoins, credited to your Sorrel account monthly.<br/><br/>
               <div className="text-center"><b>Deposits are locked for 3 days.</b></div>
             </div>
           </div>

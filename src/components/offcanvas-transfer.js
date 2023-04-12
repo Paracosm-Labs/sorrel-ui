@@ -117,7 +117,7 @@ const OffcanvasTransfer = () => {
       </div>
       <div className="row mt-5">
         <div className="col">
-        <p className="text-left">Enter Amount</p>
+        <p className="text-left sorrel-bal">Sorrel Balance: XXX</p>
             <div className="input-group mb-1 mt-3">
               <div className="form-floating">
                 <input
@@ -152,12 +152,14 @@ const OffcanvasTransfer = () => {
           </div>
           </div>
 
-          <div className="row mt-5">
-          <div className="col">
+          <div className="row mt-5 text-center">
+          {/* <div className="col">
             <button className="btn btn-outline-info" onClick={send}>Send</button>
-          </div>
+          </div> */}
           <div className="col">
-            <button className="btn btn-outline-info" onClick={sendGL}>Send GL</button>
+            <button className="btn btn-outline-info" onClick={sendGL}>
+              Send <i className="fa-solid fa-bolt fa-beat lite"></i>
+            </button>
           </div>          
           </div>
           <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transfer Initiated - <span className="small text-decoration-underline">View Tronscan</span></a></div> : <></>}</div>

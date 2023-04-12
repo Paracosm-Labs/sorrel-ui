@@ -16,10 +16,9 @@ const TronVaultItem = () => {
   const [delegateTxId, setDelegateTxId] = useState();
   const [unfreezeTxId, setUnfreezeTxId] = useState();
   const [undelegateTxId, setUndelegateTxId] = useState();
-  
-  let web3 = new Web3();
 
   useEffect(() => {
+    updateWalletData();
     walletPublisher.attach(updateWalletData);
       return () => {
           console.log("Unmounting Resource Delegator");
@@ -28,7 +27,7 @@ const TronVaultItem = () => {
   }, []);
 
 
-  const updateWalletData = async (walletData) => {
+  const updateWalletData = async () => {
       let trxBalance = await window.tronWeb.trx.getAccount(window.tronWeb.defaultAddress.base58);
       setTRXBalance(window.tronWeb.fromSun(trxBalance.balance));
       const delegationInfo = await window.tronWeb.trx.getDelegatedResourceV2(window.tronWeb.defaultAddress.base58, DepositoryOwnerAddress);

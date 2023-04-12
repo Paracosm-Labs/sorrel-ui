@@ -7,14 +7,14 @@ const Cards = () => {
     <>
     <div className="d-flex bg-sorrel pb-8">
         <div className="container content">
-            <div className="row mt-3">
+            <div className="row mt-3 text-center">
               <div className="col d-none d-lg-block">
-                <h1>Cards</h1>
-                <p>Get you Sorrel NFC Wallet Card</p>
+                <h3>Get Your Sorrel NFC Wallet Card</h3>
+                <h5>[Coming Soon]</h5>
               </div>
-              <div className="col text-center d-lg-none pb-8">
-                <h1>Cards</h1>
-                <p>Get you Sorrel NFC Wallet Card</p>
+              <div className="col d-lg-none pb-8">
+                <h3>Get Your Sorrel NFC Wallet Card</h3>
+                <h5>[Coming Soon]</h5>
               </div>
             </div>
 
@@ -28,7 +28,7 @@ const Cards = () => {
         <div className="col-md-8 text-center">
                 <img
                   src={CardsImg}
-                  alt="Sorrel Wallet NFC Card"
+                  alt="Sorrel NFC Wallet Card"
                   width="550"
                   className="sorrel-card"
                 />
@@ -39,31 +39,20 @@ const Cards = () => {
         <div className="col"></div>
         <div className="col-md-8">
 
-
-
               <div className="row p-3">
                 <div className="col">
 
                   <div className="accordion" id="accordionCards">
                     <WalletCard></WalletCard>
-
-
                   </div>
-
 
                 </div>
                 <div className="row p-3">
-                <div className="col">
-
-
+                  <div className="col">
+                  </div>
                 </div>
-                </div>
-                <div className="col">
 
-
-                </div>
               </div>
-
 
             </div>
 

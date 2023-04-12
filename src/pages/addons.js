@@ -11,11 +11,11 @@ const Addons = () => {
           <div className="row mt-3">
             <div className="col d-none d-lg-block">
               <h1>Addons</h1>
-              <p>Use your gStables to crowdfund addons that improve your Sorrel experience.</p>
+              <p>Use your gStables to crowdfund addons that enhances your Sorrel experience.</p>
             </div>
             <div className="col text-center d-lg-none">
               <h1>Addons</h1>
-              <p>Use your gStables to crowdfund addons that improve your Sorrel experience.</p>
+              <p>Use your gStables to crowdfund addons that enhances your Sorrel experience.</p>
             </div>
           </div>
 

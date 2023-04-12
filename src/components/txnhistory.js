@@ -32,7 +32,7 @@ const TxnHistory = () => {
                             <th></th>
                             <th>Amount</th>
                             <th>Initiated</th>
-                            <th>Executed</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>

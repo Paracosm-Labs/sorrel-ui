@@ -8,16 +8,7 @@ const Delegator = ()  => {
 
     <div className="d-flex bg-sorrel pb-8">
       <div className="container vaults content">
-          <div className="row mt-3">
-            <div className="col d-none d-lg-block">
-              <h1>Earn Rewards</h1>
-              <p>Earn gStables by staking your digital assets to support Sorrel Banq.</p>
-            </div>
-            <div className="col text-center d-lg-none">
-              <h1>Delegator</h1>
-              <p>Earn gStables by staking your digital assets to support Sorrel Banq.</p>
-            </div>
-          </div>
+
       </div>
     </div>
 

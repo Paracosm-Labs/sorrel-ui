@@ -36,7 +36,7 @@ const OffcanvasTransfer = () => {
     return {value : currency.key, label : currency.label}
   });
 
-  let defaultCurrency = getCurrency("BBD");
+  let defaultCurrency = getCurrency("TTD");
   const selectDefault = {value : defaultCurrency.key, label : defaultCurrency.label}
 
   const [selected, setSelected] = useState(selectDefault);
@@ -160,7 +160,7 @@ const OffcanvasTransfer = () => {
             <button className="btn btn-outline-info" onClick={sendGL}>Send GL</button>
           </div>          
           </div>
-          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transaction initiated...<br/><span className="small text-decoration-underline">View this on Tronscan</span></a></div> : <></>}</div>
+          <div id="alertTransferMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer" >Transfer Initiated - <span className="small text-decoration-underline">View Tronscan</span></a></div> : <></>}</div>
         </div>
       </div>
       </>

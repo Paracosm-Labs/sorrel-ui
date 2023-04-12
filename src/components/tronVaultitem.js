@@ -1,31 +1,32 @@
+import Web3 from "web3";
 import { useEffect, useState } from "react";
 import React  from 'react';
 import TRXImg from "../img/trx.png";
+import walletPublisher from '../publishers/wallet';
+import { DepositoryContractAddress, DepositoryOwnerAddress } from "../utils/contractAddress";
 
-const TRXVaultItem = () => {
+const TronVaultItem = () => {
   const [display, setDisplay] = useState(true);
   const [trxValue, setTRXValue] = useState(0);
-  const [trxBalance, setTRXBalance] = useState(30333.69);
+  const [trxBalance, setTRXBalance] = useState(0);
   const [trxMyDeposits, setTRXMyDeposits] = useState(0);
   const [showLock, setShowLock] = useState(false);
   
-  const [trxVaultDetails, setTRXVaultDetails] = useState({
-    interval: "",
-  });
+  let web3 = new Web3();
 
-  const [trxVaultContract, setTRXVaultContract] = useState({});
   useEffect(() => {
-    initTRXVaultContract();
-    return () => {
-      console.log("unmounting TRX Vault");
-    };
+    walletPublisher.attach(updateWalletData);
+      return () => {
+          console.log("Unmounting Resource Delegator");
+          walletPublisher.detach(updateWalletData);
+      }
   }, []);
 
 
-
-  const initTRXVaultContract = async () => {
-
-  };
+  const updateWalletData = async (walletData) => {
+      let trxBalance = await window.tronWeb.trx.getAccount(window.tronWeb.defaultAddress.base58);
+      setTRXBalance(window.tronWeb.fromSun(trxBalance.balance));
+  }
 
     const clear = () => {
       setTRXValue("");
@@ -38,10 +39,12 @@ const TRXVaultItem = () => {
     };
 
   const deposit = async () => {
+    debugger;
+    let transaction  = await window.tronWeb.transactionBuilder.delegateResource(window.tronWeb.toSun(trxValue), DepositoryOwnerAddress, "ENERGY", window.tronWeb.defaultAddress.base58, true);
+    const signedtxn = await window.tronWeb.trx.sign(transaction);
+    const receipt = await window.tronWeb.trx.sendRawTransaction(signedtxn);
+    console.log(receipt.txid);
      setShowLock(true);
-     setTRXBalance(trxBalance - trxValue);
-     setTRXMyDeposits(trxMyDeposits + trxValue);
-     clear();
   };
 
   const withdraw = async () => {
@@ -55,12 +58,9 @@ const TRXVaultItem = () => {
   const callVault = async () => {
     display ? await deposit() : await withdraw();
   };
-
   const active = "active";
-
   return (
-
-    <>
+   <>
 
       <div className="accordion-item vault-item mt-3">
         <h2 className="accordion-header" id="headingOne">
@@ -70,8 +70,8 @@ const TRXVaultItem = () => {
                 <img
                   src={TRXImg}
                   alt="TRX"
-                  width="32"
-                  height="32"
+                  width="42"
+                  height="42"
                   className="flex-shrink-0"
                 />
                 <div className="currency-name">
@@ -183,9 +183,8 @@ const TRXVaultItem = () => {
 
 
     </>
-
   );
 };
 
 
-export default TRXVaultItem;
+export default TronVaultItem;

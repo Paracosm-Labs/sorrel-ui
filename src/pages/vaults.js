@@ -13,11 +13,11 @@ const Vaults = ()  => {
           <div className="row mt-3">
             <div className="col d-none d-lg-block">
               <h1>Vaults</h1>
-              <p>Earn gStables by staking your digital assets to support Sorrel Banq.</p>
+              <p>Earn gStables by delegating your Assets or Tron Resources to support Sorrel Banq.</p>
             </div>
             <div className="col text-center d-lg-none">
               <h1>Vaults</h1>
-              <p>Earn gStables by staking your digital assets to support Sorrel Banq.</p>
+              <p>Earn gStables by staking your Assets or Tron Resources to support Sorrel Banq.</p>
             </div>
           </div>
       </div>

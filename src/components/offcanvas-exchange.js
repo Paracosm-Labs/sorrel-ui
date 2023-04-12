@@ -151,7 +151,7 @@ const OffcanvasExchange = () => {
       <div className="col"><button className="btn btn-outline-info" onClick={exchange}>Convert</button></div>
       <div className="col"><button className="btn btn-outline-info" onClick={exchangeGL}>Convert GL</button></div>
   	</div>
-    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Conversion Initiated...<br/><span className="small text-decoration-underline">View this on Tronscan</span></a></div> : <></>}</div>
+    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Conversion Initiated - <span className="small text-decoration-underline">View Tronscan</span></a></div> : <></>}</div>
   </div>
 </div>
 </>

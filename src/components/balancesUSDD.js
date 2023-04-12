@@ -70,7 +70,7 @@ const BalanceCardUSDD = () => {
     return(
     <div className="col-sm text-center">
         <h3>Sorrel Balance</h3>
-        <h2 className={isAnimated ? 'vibrate-sorrel-balance' : '' }>{depositoryBalanceUSD}</h2>
+        <h1 className={isAnimated ? 'vibrate-sorrel-balance' : '' }>{depositoryBalanceUSD}</h1>
     </div>
     )
 }

@@ -34,13 +34,13 @@ const ConvertHistoryItem = ({tx}) => {
       switch (tx.status) {
         case 1: {
           let returnJSX = (<>
-          <button type="button" className="btn btn-outline-primary btn-sm" style={{fontSize : ".8rem"}} onClick={confirm}>Confirm</button>
-            <button type="button" className="btn btn-outline-danger btn-sm" style={{fontSize : ".8rem"}}  onClick={cancel}>Cancel</button>
+          <button type="button" className="btn btn-convert-confirm btn-sm" style={{fontSize : ".8rem"}} onClick={confirm}>Confirm</button>
+            <button type="button" className="btn btn-convert-cancel btn-sm" style={{fontSize : ".8rem"}}  onClick={cancel}>Cancel</button>
             </>)
             return returnJSX;
            }
          case 2:
-          return (<><span className='text-danger'>Cancelled!</span></>)
+          return (<><span className='text-sorrel-normal'>Cancelled</span></>)
           case 33:
             return (<><span className='text-danger'>Not enough balance!</span></>)
         default:

@@ -7,26 +7,19 @@ import OffcanvasWithdraw from "../components/offcanvas-withdraw";
 import OffcanvasTransfer from "../components/offcanvas-transfer";
 import BalanceCardUSDD from "../components/balancesUSDD";
 import ConvertHistory from '../components/convertHistory';
+import SharedResources from '../components/shared-resources';
 
 const Depository = () => {
   return (
     <>
       <div className="d-flex bg-sorrel pb-8">
         <div className="container accounts-info content">
-          <div className="row mt-3">
-            <div className="col d-none d-lg-block">
-              <h1>Accounts</h1>
-              <p>Easily manage your digital currencies.</p>
-            </div>
-            <div className="col text-center d-lg-none">
-              <h1>Accounts</h1>
-              <p>Easily manage your digital currencies.</p>
-            </div>
+
+          <div className="row mt-5 mx-3">
+            <BalanceCardUSDD></BalanceCardUSDD>
+            <SharedResources></SharedResources>
           </div>
 
-          <div className="row mt-3 mx-3">
-          <BalanceCardUSDD></BalanceCardUSDD>
-          </div>
         </div>
       </div>
       <div className="container accounts content">

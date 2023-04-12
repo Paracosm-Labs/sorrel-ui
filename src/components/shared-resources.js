@@ -11,7 +11,7 @@ const SharedResources = () => {
   const [energyUsed, setEnergyUsed] = useState(0);
 
   const [bandwidthBalance, setBandwidthBalance] = useState(0);
-  const [bandwidthUsed, setBandwidthUsed] = useState(0);
+  const [bandwidthAvail, setBandwidthAvail] = useState(0);
 
   const [energyDiff, setEnergyDiff] = useState(0);
   const [bandwidthDiff, setBandwidthDiff] = useState(0);
@@ -32,29 +32,17 @@ const SharedResources = () => {
   //tried something here..
   const updateSorrelResources = async (resourceData) => {
       let resourceBalance = await window.tronWeb.trx.getAccountResources(DepositoryOwnerAddress);
+      let bandwithBal = await window.tronWeb.trx.getBandwidth(DepositoryOwnerAddress);
       setEnergyBalance(resourceBalance.EnergyLimit);
       setEnergyUsed(resourceBalance.EnergyUsed);
 
-      setBandwidthBalance(resourceBalance.NetLimit);
-      if(resourceBalance.NetUsed){
-        setBandwidthUsed(resourceBalance.NetUsed);
-      }
+      setBandwidthBalance(bandwithBal);
+      setBandwidthAvail(resourceBalance.NetLimit);
 
       setEnergyDiff(resourceBalance.EnergyLimit - resourceBalance.EnergyUsed);
-      if(resourceBalance.NetUsed){
-        setBandwidthDiff(resourceBalance.NetLimit - resourceBalance.NetUsed);
-      } else {
-        setBandwidthDiff(resourceBalance.NetLimit);
-      }
-      
 
       setEnergyRatio((resourceBalance.EnergyLimit - resourceBalance.EnergyUsed) / resourceBalance.EnergyLimit * 100);
-      if(resourceBalance.NetUsed){
-        setBandwidthRatio((resourceBalance.NetLimit - resourceBalance.NetUsed) / resourceBalance.NetLimit * 100);
-      } else {
-        setBandwidthRatio(100);
-      }
-      
+      setBandwidthRatio(bandwithBal / resourceBalance.NetLimit * 100);
 };
 
 
@@ -80,7 +68,7 @@ const SharedResources = () => {
                   <span className="progress-bar bg-bandwidth-guage" role="progressbar" aria-valuenow={bandwidthRatio} aria-valuemin={0} aria-valuemax={100} style={{width:`${bandwidthRatio}%`}}>
                   </span>
                   
-                </span><p className="text-xs text-muted">Bandwidth: {bandwidthDiff} / {bandwidthBalance}</p>
+                </span><p className="text-xs text-muted">Bandwidth: {bandwidthAvail} / {bandwidthBalance}</p>
               </Col>
               <div className="col"></div>
             </Row>

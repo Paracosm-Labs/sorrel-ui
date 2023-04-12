@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { readDepositoryGStableBalance } from '../publishers/depository';
 import { readWalletGStableBalance } from '../publishers/wallet';
+import TronLinkLogo from "../img/tronlink-logo.png";
 
 const CurrencyDeposit = ({currency, walletData, depositoryData}) => {
     let depositoryBalance = readDepositoryGStableBalance(depositoryData,currency);
@@ -46,7 +47,14 @@ const CurrencyDeposit = ({currency, walletData, depositoryData}) => {
         <div className="row align-items-center">
             <div className="col-md-3"></div>
             <div className="col-md-9">
-                <span style={{fontSize : ".85rem"}}>Wallet:<br/> {walletBalance} {currency.label}</span>
+                <span style={{fontSize : ".85rem"}}>
+                  <img
+                    width="14"
+                    height="14"
+                    alt="Tronlink"
+                    src={TronLinkLogo}
+                  /> {walletBalance} {currency.label}
+                </span>
             </div>
         </div>
     </div>

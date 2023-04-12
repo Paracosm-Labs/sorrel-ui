@@ -4,12 +4,12 @@ const VaultUSDDContractAddress = "TArnA3jJaZLgqstK953Ct3Dz4tSo93YZe3";
 const MarketContractAddress = "TQq9o4PahyoLociVzCnBMRRDdPZrNNkW1f";
 
 const SwapGStableContractAddress = "TB2ZNssD5WvGa2HSLHiYwe4xbsqW7ywcHN";
-const DepositoryContractAddress = "TD8QD1xuU26rN9ue3W297Ry7pp5bu6XENn";
-const TransferComptrollerAddress = "TYNSvdTaz1TvzReMHWFb7kG6YK8scyMX5c";
-const ConvertComptrollerAddress = "TY9m7hvgwRPzfoYcDbPp2x1Y5vXruC4eJ6";
-const VaultTRXContractAddress = "TWa8Y6Lq9Pjy99nVvYaKZFLpGsP3oNLAwh";
 
-const DepositoryOwnerAddress = "TWNrWMLv3axBkvT2cN8a3CebBXRgEXARMr";
+const DepositoryContractAddress = "TLumYZM6rRs5xHSZEzD6EQG9Kbwa2qvCym";
+const TransferComptrollerAddress = "TGWs2QiZsoi4B1muRepSgEzJjQHiZjHEY9";
+const ConvertComptrollerAddress = "TFuXJa7Hk47ny5Xa5W6ePRoK6GdXMcateh";
+
+const DepositoryOwnerAddress = "TCiJCtTBhGSw8mMYYts67vCXUjdoFLLuYw";
 
 export {gStableManagerContractAddress, 
     SwapUSDDContractAddress, 
@@ -19,6 +19,5 @@ export {gStableManagerContractAddress,
     DepositoryContractAddress, 
     TransferComptrollerAddress, 
     ConvertComptrollerAddress,
-    VaultTRXContractAddress,
     DepositoryOwnerAddress
 }

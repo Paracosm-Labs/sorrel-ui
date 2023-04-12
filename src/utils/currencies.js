@@ -102,7 +102,7 @@ const CurrencyList = {
     "Trinidad & Tobago Dollar",
     ttddImg,
     "TT$" /*Currency Symbol*/,
-    "TK95YwrjoB1Ui7jwjAPfjHiw2HuSm7ebS4" /*gStableAddress Nile*/,
+    "TEhTXahLuKVgnBX1yWVmLaykLGeEZ8yq9K" /*gStableAddress Nile*/,
   ),
   XCD: new Currency(
     2,

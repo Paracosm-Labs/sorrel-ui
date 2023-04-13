@@ -184,16 +184,10 @@ const OffcanvasExchange = () => {
     <button type="button" className="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onClick={clear}></button>
   </div>
   <div className="offcanvas-body mx-3">
-  <div className="row mt-3">
+  <div className="mt-3">
       <p className="text-left">Source</p>
       <Select options={options} onChange={handleChangeSource} autoFocus={true}/>
   </div>
-    <div className="row mt-3">
-      <div className="col">
-        <p className="text-left">Destination</p>
-        <Select options={options} onChange={handleChangeDestination} autoFocus={true} />
-      </div>
-    </div>
     <div className="row mt-4">
     <p className="text-left sorrel-bal">Sorrel Balance: {getSourceSymbol()} {formatM(sorrelBalance)}</p>
       <div className="col">
@@ -211,6 +205,12 @@ const OffcanvasExchange = () => {
           </div>
         </div>
       </div>  
+    </div>
+    <div className="row mt-3">
+      <div className="col">
+        <p className="text-left">Destination</p>
+        <Select options={options} onChange={handleChangeDestination} autoFocus={true} />
+      </div>
     </div>
     <div className="row mt-3">
       <div className="col">

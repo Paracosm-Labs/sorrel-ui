@@ -182,6 +182,10 @@ font-weight: bold;
     right: 0px;
 }
 
+.no-currencies:first-child {display:block;}
+.no-currencies .fa-user-astronaut {color: #7b8ab8!important;}
+
+.no-currencies{display: none;}
 
 
 .offcanvas .fa-bolt, .accounts-info .fa-bolt {

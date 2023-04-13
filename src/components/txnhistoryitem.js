@@ -61,7 +61,7 @@ const TxnHistoryItem = ({tx}) => {
                 <td><img src={getCurrencyById(tx.gStableId).icon}
                 width="22"
                 height="22"
-                className="flex-shrink-0" /> {getCurrencyById(tx.gStableId).symbol}{tx.value}
+                className="flex-shrink-0" /> {getCurrencyById(tx.gStableId).symbol}&nbsp;{tx.value}
                 </td>
                 <td>{getDate(tx.initiatedTime)}</td>
                 <td>{getStatusJSX(tx)}</td>

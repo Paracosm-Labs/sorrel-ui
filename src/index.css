@@ -188,7 +188,7 @@ font-weight: bold;
 .no-currencies{display: none;}
 
 
-.offcanvas .fa-bolt, .accounts-info .fa-bolt {
+.offcanvas .fa-bolt, .accounts-info .fa-bolt, .vaults.content .fa-bolt{
     color: #7a45a5;
     margin-top: 14px;
 }
@@ -282,7 +282,7 @@ font-weight: bold;
 
 .progress-bar.bg-bandwidth-guage{background-color: #7a45a5;}
 
-.accounts-info .progress{height: 1.1em;}
+.accounts-info .progress, .vaults.content .progress{height: 1.1em;}
 
 .shared-resources .text-xs{
   font-size: 12px;

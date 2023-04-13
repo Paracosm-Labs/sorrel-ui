@@ -1,4 +1,5 @@
 import ResourceDelegator from "../components/resourceDelegator";
+import SharedResources from '../components/shared-resources';
 import React  from 'react';
 
 
@@ -13,13 +14,16 @@ const Delegator = ()  => {
               <h1>Vaults</h1>
               
             </div>
+            <div className="row mt-5">
+              <SharedResources></SharedResources>
+            </div>
           </div>
       </div>
     </div>
 
 
     <div className="container vaults content">
-      <div className="row mt-n10">
+      <div className="row mt-3">
         <div className="col"></div>
         <div className="col-md-8">
 

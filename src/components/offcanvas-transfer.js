@@ -5,12 +5,14 @@ import { depositoryContract } from '../contracts/depositoryContract';
 import { DepositoryContractAddress } from '../utils/contractAddress';
 import axios from 'axios';
 import serverURL from '../utils/server';
+import { formatM } from '../utils/currencyFormatter';
 
 const OffcanvasTransfer = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [toAddress, setToAddress] = useState("");
   const [trxId, setTrxId] = useState("");
   const [executeTrxId, setExecuteTrxId] = useState("");
+  const [sorrelBalance, setSorrelBalance] = useState(0);
 
   // Canvas related
   const offCanvasTransferRef = useRef(null);
@@ -31,6 +33,26 @@ const OffcanvasTransfer = () => {
   }, []);
   // Canvas related ends
 
+  const updateBalance = async (currencyKey) => {
+    try {
+      debugger;
+      let currency = getCurrency(currencyKey);
+      // Wallet Balance
+      // let gStableContract = await currency.gStableContract();
+      // let gStableBal = await gStableContract.balanceOf(window.tronWeb.defaultAddress.base58);
+  
+      // Sorrel Balance
+      let dc = await depositoryContract();
+      debugger;
+      let gStableBal = await dc.balanceOf(currency.id, window.tronWeb.defaultAddress.base58);
+      
+      setSorrelBalance(gStableBal);      
+    } catch (error) {
+      console.error(error);
+    }
+  
+  }
+
 // Select Currency Dropdown related
   const options = getCurrencies().map(currency => {
     return {value : currency.key, label : currency.label}
@@ -40,12 +62,17 @@ const OffcanvasTransfer = () => {
   const selectDefault = {value : defaultCurrency.key, label : defaultCurrency.label}
 
   const [selected, setSelected] = useState(selectDefault);
+  
 
   const handleChange = (selectedOption) => {
     setSelected(selectedOption);
     console.log(`Option selected:`, selectedOption);
+    updateBalance(selectedOption.value);
   };
 // Select Currency Dropdown related ends
+
+
+
   const updateAmount = (e) => {
     console.log("DepositValue : ", e.target.value);
     setGStableAmount(e.target.value);
@@ -99,7 +126,16 @@ const OffcanvasTransfer = () => {
     } catch (error) {
       console.error(error);
     }
-  };  
+  }; 
+  
+  const getSymbol = () => {
+    if(selected){
+      let currency = getCurrency(selected.value);
+      return currency.symbol;
+    } 
+    return "";
+  } 
+
   return (
     <>
       <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasTransfer" ref={offCanvasTransferRef}>
@@ -117,7 +153,7 @@ const OffcanvasTransfer = () => {
       </div>
       <div className="row mt-5">
         <div className="col">
-        <p className="text-left sorrel-bal">Sorrel Balance: XXX</p>
+        <p className="text-left sorrel-bal">Sorrel Balance: {getSymbol()} {formatM(sorrelBalance)}</p>
             <div className="input-group mb-1 mt-3">
               <div className="form-floating">
                 <input

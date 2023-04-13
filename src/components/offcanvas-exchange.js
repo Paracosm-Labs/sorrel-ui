@@ -6,10 +6,17 @@ import {usddContract} from "../contracts/usdContract";
 import {SwapUSDDContractAddress} from "../utils/contractAddress";
 import axios from 'axios';
 import serverURL from '../utils/server';
+import { depositoryContract } from '../contracts/depositoryContract';
+import { formatM } from '../utils/currencyFormatter';
+import { gStableManagerContract } from '../contracts/gStableManagerContract';
 
 const OffcanvasExchange = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
   const [trxId, setTrxId] = useState("");
+  const [sorrelBalance, setSorrelBalance] = useState(0);
+  const [selectedSource, setSelectedSource] = useState(null);
+  const [selectedDest, setSelectedDest] = useState(null);
+  const [convertedVal, setConvertedVal] = useState(0);
 
   // Canvas related
   const offCanvasExchangeRef = useRef(null);
@@ -37,21 +44,42 @@ const OffcanvasExchange = () => {
   });
 
 
-  const [selectedSource, setSelectedSource] = useState(null);
-  const [selectedDest, setSelectedDest] = useState(null);
+  const updateBalance = async (currencyKey) => {
+    try {
+      debugger;
+      let currency = getCurrency(currencyKey);
+      // Wallet Balance
+      // let gStableContract = await currency.gStableContract();
+      // let gStableBal = await gStableContract.balanceOf(window.tronWeb.defaultAddress.base58);
+
+      // Sorrel Balance
+      let dc = await depositoryContract();
+      debugger;
+      let gStableBal = await dc.balanceOf(currency.id, window.tronWeb.defaultAddress.base58);
+      
+      setSorrelBalance(gStableBal);      
+    } catch (error) {
+      console.error(error);
+    }
+
+  }
 
   const handleChangeSource = (selectedOption) => {
     setSelectedSource(selectedOption);
     console.log(`Option selected:`, selectedOption);
+    updateBalance(selectedOption.value);
+    updateConvertedVal();
   };
   const handleChangeDestination = (selectedOption) => {
     setSelectedDest(selectedOption);
     console.log(`Option selected:`, selectedOption);
+    updateConvertedVal();
   };
 
   const updateAmount = (e) => {
     console.log("DepositValue : ", e.target.value);
     setGStableAmount(e.target.value);
+    updateConvertedVal();
   };
 
   const clear = () => {
@@ -109,6 +137,42 @@ const OffcanvasExchange = () => {
     }
   };  
 
+  const getSourceSymbol = () => {
+    if(selectedSource){
+      let srcCurrency = getCurrency(selectedSource.value);
+      return srcCurrency.symbol;
+    } 
+    return "";
+  } 
+  const getDestSymbol = () => {
+    if(selectedDest){
+      let dstCurrency = getCurrency(selectedDest.value);
+      return dstCurrency.symbol;
+    } 
+    return "";
+  } 
+
+  const updateConvertedVal = async() => {
+    debugger;
+    if(!gStableAmount){
+      return 0;
+    }
+
+    let srcCurrency = getCurrency(selectedSource.value);
+    if(!srcCurrency){
+      return 0;
+    }
+    let dstCurrency = getCurrency(selectedDest.value);
+    if(!dstCurrency){
+      return 0;
+    }
+
+    let gsmc = await gStableManagerContract();
+    let cSrc = await gsmc.getConversion(srcCurrency.id);
+    let cDst = await gsmc.getConversion(dstCurrency.id);
+    setConvertedVal(gStableAmount * cDst/cSrc)
+  }
+
   return (
     <>
     <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExchange" ref={offCanvasExchangeRef}>
@@ -125,7 +189,7 @@ const OffcanvasExchange = () => {
       <Select options={options} onChange={handleChangeSource} autoFocus={true}/>
   </div>
     <div className="row mt-4">
-    <p className="text-left sorrel-bal">Sorrel Balance: XXXX</p>
+    <p className="text-left sorrel-bal">Sorrel Balance: {getSourceSymbol()} {formatM(sorrelBalance)}</p>
       <div className="col">
         <div className="input-group mb-1" key={1}>
           <div className="form-floating">
@@ -137,7 +201,7 @@ const OffcanvasExchange = () => {
               onChange={updateAmount}
               value={gStableAmount}
             />
-            <label htmlFor="floatingInputGroup1">Enter Amount</label>
+            <label htmlFor="floatingInputGroup1">{selectedSource?selectedSource.label:""}</label>
           </div>
         </div>
       </div>  
@@ -156,9 +220,7 @@ const OffcanvasExchange = () => {
               type="text"
               className="form-control"
               id="floatingInputGroup2"
-              placeholder="Enter Amount"
-              onChange="{updateAmount}"
-              value="--"
+              value={`≈ ${getDestSymbol()} ${formatM(convertedVal)}`}
             />
           </div>
         </div>

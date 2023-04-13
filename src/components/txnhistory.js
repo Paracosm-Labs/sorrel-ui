@@ -21,6 +21,9 @@ const TxnHistory = () => {
         }
 
     } 
+    if(!trxs.length){
+        return <></>;
+    }
   return (
     <>
         <div className="row mt-5 transaction-history">

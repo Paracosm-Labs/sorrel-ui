@@ -3,6 +3,7 @@ import depositoryPublisher from '../publishers/depository';
 import walletPublisher from '../publishers/wallet';
 import { getCurrencies } from '../utils/currencies';
 import CurrencyDeposit from './currencyDeposit';
+import Welcome from './welcome';
 
 
 const CurrencyAccounts = () => {
@@ -22,6 +23,25 @@ const CurrencyAccounts = () => {
         walletPublisher.attach(setWalletData);
         depositoryPublisher.attach(setDepositoryData);
     }
+
+    const checkDepositoryGStableBalances = (depositoryData) => {
+          let result = depositoryData.gStableBalances.filter(gsb => gsb.balance > 0);
+          if(result.length> 0){
+            return true;
+          } else return false;
+    }
+    const checkWalletGStableBalances = (walletData) => {
+        let result = walletData.gStableBalances.filter(gsb => gsb.balance > 0);
+        if(result.length> 0){
+          return true;
+        } else return false;
+  }    
+    if(depositoryData && depositoryData.gStableBalances && walletData && walletData.gStableBalances){
+        if(!checkDepositoryGStableBalances(depositoryData) && !checkWalletGStableBalances(walletData)){
+            return <Welcome></Welcome>
+        }
+    }
+
 
     return (<>
         <div className="row d-flex justify-content-center">

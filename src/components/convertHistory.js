@@ -19,8 +19,12 @@ const ConvertHistory = () => {
         } else {
             console.error(`trxs ${trxs}`);
         }
-
     } 
+
+    if(!trxs.length){
+        return <></>;
+    }
+
   return (
     <>
         <div className="row mt-2 transaction-history">

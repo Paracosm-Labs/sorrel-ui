@@ -5,9 +5,13 @@ import Web3Signer from '../utils/web3Signer';
 import axios from 'axios';
 import serverURL from '../utils/server';
 import ConvertComptroller from '../contracts/convertComptroller';
+import { gStableManagerContract } from '../contracts/gStableManagerContract';
+import { formatM } from '../utils/currencyFormatter';
 
 
 const ConvertHistoryItem = ({tx}) => {
+  const [convertedVal, setConvertedVal] = useState(0);
+
   let hodler  = window.tronLink.tronWeb.address.fromHex(tx.hodler);
     const confirm = async () => {
         let signer = new Web3Signer();
@@ -24,7 +28,6 @@ const ConvertHistoryItem = ({tx}) => {
     } 
 
     const cancel = async () => {
-      debugger;
       let cc = new ConvertComptroller();
       await cc.init();
       await cc.cancel(hodler, tx.fromId, tx.fromTokens, tx.toId, tx.nonce);
@@ -48,15 +51,30 @@ const ConvertHistoryItem = ({tx}) => {
       }
     }
 
+    const updateConvertedVal = async() => {
+      let gsmc = await gStableManagerContract();
+      let cSrc = await gsmc.getConversion(tx.fromId);
+      let cDst = await gsmc.getConversion(tx.toId);
+      setConvertedVal(tx.fromTokens * cDst/cSrc)
+    }
+    useEffect(() => {
+      updateConvertedVal();  
+      return () => {
+        console.log("Unmounting ");
+      };
+    }, []);
+
     return (<tr style={{fontSize : ".9rem"}}>
-                <td>Convert <img src={getCurrencyById(tx.fromId).icon}
+                <td style={{width : "10%"}}><img src={getCurrencyById(tx.fromId).icon}
                 width="22"
                 height="22"
-                className="flex-shrink-0 mx-2" />{getCurrencyById(tx.fromId).symbol} {tx.fromTokens} <span className='mx-1'>into</span>
+                className="flex-shrink-0 mx-2" />{getCurrencyById(tx.fromId).symbol} {tx.fromTokens}</td>
+                <td style={{width : "25%"}}>
+                <span className='mx-1'><i class="fa-sharp fa-solid fa-arrow-right"></i></span>
                 <img src={getCurrencyById(tx.toId).icon}
                 width="22"
                 height="22"
-                className="flex-shrink-0 mx-2" /> {getCurrencyById(tx.toId).label}
+                className="flex-shrink-0 mx-2" /> {getCurrencyById(tx.toId).symbol} {formatM(convertedVal)} 
                 </td>                
                 <td>{getDate(tx.initiatedTime)}</td>
                 <td>{getStatusJSX(tx)}</td>

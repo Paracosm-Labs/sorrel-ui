@@ -30,8 +30,9 @@ const ConvertHistory = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Initiated</th>
-                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>

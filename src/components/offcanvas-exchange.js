@@ -39,8 +39,8 @@ const OffcanvasExchange = () => {
 
 
 // Select Currency Dropdown related
-  const options = getCurrencies().map(currency => {
-    return {value : currency.key, label : currency.label}
+  const options = getCurrencies().filter(currency => !currency.isStableCoin).map(currency => {
+    return {value : currency.key, label : currency.label};
   });
 
 

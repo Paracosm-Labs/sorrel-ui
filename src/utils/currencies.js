@@ -31,6 +31,7 @@ class Currency {
   symbol = null;
   gStableAddress = null;
   gStableContract_ = null;
+  isStableCoin = false;
   constructor(
     _id,
     _key,
@@ -39,6 +40,7 @@ class Currency {
     _icon,
     _symbol,
     _gStableAddress,
+    _isStableCoin = false,
   ) {
     this.id = _id;
     this.key = _key;
@@ -47,6 +49,7 @@ class Currency {
     this.icon = _icon;
     this.symbol = _symbol;
     this.gStableAddress = _gStableAddress;
+    this.isStableCoin = _isStableCoin;
   }
   gStableContract = async () => {
     if (!this.gStableContract_) {
@@ -67,6 +70,7 @@ const CurrencyList = {
     usddImg,
      "$" /*Currency Symbol*/,
     "THJ6CYd8TyNzHFrdLTYQ1iAAZDrf5sEsZU" /*USDDStableAddress Nile*/,
+    true,
   ),
   USDT: new Currency(
     1002,
@@ -76,6 +80,7 @@ const CurrencyList = {
     usdtImg,
     "$" /*Currency Symbol*/,
     "TMWEUK2VzCKb8J1KqzYSyenWgj9MfrhZjm" /*USDTStableAddress Nile*/,
+    true,
   ),
   // USDC: new Currency(
   //   1003,

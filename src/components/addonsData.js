@@ -22,7 +22,7 @@ const addonsData = [
   {
     id: 3,
     label: "Sorrel AIA Concierge",
-    details: "Jes, Sorrel's AIA Concierge will be able to provide our customers with support, tailored advice and recommendations based on their individual needs and preferences.",
+    details: "Jes, Sorrel's AIA Concierge will be able to provide members with support, tailored advice and recommendations based on their individual needs and preferences.",
     fundGoal: "$15,000+",
     link: "https://docs.sorrelbanq.org/addons/concierge",
   },

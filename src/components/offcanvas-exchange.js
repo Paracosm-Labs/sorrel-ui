@@ -46,7 +46,6 @@ const OffcanvasExchange = () => {
 
   const updateBalance = async (currencyKey) => {
     try {
-      debugger;
       let currency = getCurrency(currencyKey);
       // Wallet Balance
       // let gStableContract = await currency.gStableContract();
@@ -54,7 +53,6 @@ const OffcanvasExchange = () => {
 
       // Sorrel Balance
       let dc = await depositoryContract();
-      debugger;
       let gStableBal = await dc.balanceOf(currency.id, window.tronWeb.defaultAddress.base58);
       
       setSorrelBalance(gStableBal);      

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import depositoryPublisher from '../publishers/depository';
 import walletPublisher from '../publishers/wallet';
-import { getCurrency } from '../utils/currencies';
+import { getCurrencies, getCurrency } from '../utils/currencies';
 import { formatM, formatUSD } from '../utils/currencyFormatter';
 import SwapUSDDFactory from "../utils/swapUSDDFactory";
+import Select from 'react-select';
 
 const BalanceCardUSDD = () => {
     const [walletData, setWalletData] = useState({gStableBalances : []});
     const [depositoryData, setDepositoryData] = useState({gStableBalances : []});
     const [depositoryBalanceUSD, setDepositoryBalanceUSD] = useState(0);
+    const [depositoryBalance, setDepositoryBalance] = useState(0);
     const [isAnimated, setIsAnimated] = useState(false);
 
 
@@ -42,7 +44,7 @@ const BalanceCardUSDD = () => {
               depositoryBalanceUSD += data.gStableBalances[i].balance/conversionRatio;
             }
         }
-        setDepositoryBalanceUSD(formatUSD(depositoryBalanceUSD));
+        setDepositoryBalanceUSD(depositoryBalanceUSD);
       } catch (error) {
         console.error(error);
       }
@@ -67,10 +69,70 @@ const BalanceCardUSDD = () => {
     }, [depositoryBalanceUSD]);
 
 
+    //Currency dropdown related
+    const [selectedOption, setSelectedOption] = useState(null);
+    useEffect(() => {
+      updateBalancePerCurrency();      
+      return () => {
+        console.log("BalancesUSDD unmounted");
+      };
+    }, [depositoryBalanceUSD, selectedOption]);
+
+    const updateBalancePerCurrency = async () => {
+      debugger;
+      if(!selectedOption){
+        setDepositoryBalance(formatM(depositoryBalanceUSD));
+      }
+      if (depositoryBalanceUSD !== 0 && selectedOption) {
+        try {
+          let swapContract = await SwapUSDDFactory.getSwapUSDD();
+          let currency = getCurrency(selectedOption.value); 
+          let conversionRatio = await swapContract.getConversion(currency.id);
+          setDepositoryBalance(depositoryBalanceUSD * conversionRatio);
+        } catch (error) {
+          console.error(error);
+        }        
+      }
+    }
+
+    const data = getCurrencies().map(currency => {
+      return {value : currency.key, text : currency.symbol, icon :<img src={currency.icon} width="20" height="20" className="flex-shrink-0" />}
+    });
+ 
+    // handle onChange event of the dropdown
+    const handleChange = e => {
+      setSelectedOption(e);
+    }
+
+    const getSymbol = () => {
+      if(selectedOption) {
+        let currency = getCurrency(selectedOption.value); 
+        return currency.symbol;
+      } 
+      return "$";
+    }
+   //Currency dropdown related ends
+
+
+
     return(
     <div className="col-sm text-center">
         <h3>Sorrel Balance</h3>
-        <h1 className={isAnimated ? 'vibrate-sorrel-balance' : '' }>{depositoryBalanceUSD}</h1>
+        <div className='d-flex justify-content-center'>
+            <div className='px-2 pt-1'><Select
+            placeholder="Select"
+            value={selectedOption}
+            options={data}
+            onChange={handleChange}
+            getOptionLabel={e => (
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                {e.icon}
+                <span style={{ marginLeft: 10 }}>{e.text}</span>
+              </div>
+            )}
+          /></div>
+            <div className='px-1'><div className={isAnimated ? 'vibrate-sorrel-balance h1' : 'h1' }><span className='px-2'>{getSymbol()}</span>{formatM(depositoryBalance)}</div></div>
+        </div>
     </div>
     )
 }

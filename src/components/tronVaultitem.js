@@ -39,7 +39,6 @@ const TronVaultItem = () => {
     };
 
   const deposit = async () => {
-    debugger;
     let transaction  = await window.tronWeb.transactionBuilder.delegateResource(window.tronWeb.toSun(trxValue), DepositoryOwnerAddress, "ENERGY", window.tronWeb.defaultAddress.base58, true);
     const signedtxn = await window.tronWeb.trx.sign(transaction);
     const receipt = await window.tronWeb.trx.sendRawTransaction(signedtxn);

@@ -1,10 +1,10 @@
-import Web3 from "web3";
 import { useEffect, useState } from "react";
 import React  from 'react';
 import TRXImg from "../img/trx.png";
 import walletPublisher from '../publishers/wallet';
-import { DepositoryContractAddress, DepositoryOwnerAddress } from "../utils/contractAddress";
+import { DepositoryOwnerAddress } from "../utils/contractAddress";
 import { getDate } from "../utils/date";
+import { ThreeDots } from "react-loader-spinner";
 
 const TronVaultItem = () => {
   const [display, setDisplay] = useState(true);
@@ -16,6 +16,7 @@ const TronVaultItem = () => {
   const [delegateTxId, setDelegateTxId] = useState();
   const [unfreezeTxId, setUnfreezeTxId] = useState();
   const [undelegateTxId, setUndelegateTxId] = useState();
+  const [processing, setProcessing] = useState(false);
 
   useEffect(() => {
     updateWalletData();
@@ -75,8 +76,15 @@ const TronVaultItem = () => {
       setTRXValue(e.target.value);
     };
 
+    const depositSync = () => {
+      setProcessing(true);
+      deposit();
+    }
 
     const deposit = async () => {
+      // setTimeout(() => {
+      //   setProcessing(false);
+      // }, 10 * 1000);
       try {
         let freezeTx = await window.tronWeb.transactionBuilder.freezeBalanceV2(window.tronWeb.toSun(trxValue), "ENERGY", window.tronWeb.defaultAddress.base58);
         const signedFreezeTxn = await window.tronWeb.trx.sign(freezeTx);
@@ -87,12 +95,23 @@ const TronVaultItem = () => {
         const signedDelegateTxn = await window.tronWeb.trx.sign(delegateTx);
         const delegatereceipt = await window.tronWeb.trx.sendRawTransaction(signedDelegateTxn);
         setDelegateTxId(delegatereceipt.txid);
+
+        setProcessing(false);
       } catch (error) {
         console.error(error);
+        setProcessing(false);
       }
     };
+
+    const withdrawSync = () => {
+      setProcessing(true);
+      withdraw();
+    }
   
     const withdraw = async () => {
+      // setTimeout(() => {
+      //   setProcessing(false);
+      // }, 10 * 1000);
       try {
         let undelegateTx  = await window.tronWeb.transactionBuilder.undelegateResource(window.tronWeb.toSun(trxValue), DepositoryOwnerAddress, "ENERGY", window.tronWeb.defaultAddress.base58);
         const signedUndelegateTxn = await window.tronWeb.trx.sign(undelegateTx);
@@ -103,8 +122,11 @@ const TronVaultItem = () => {
         const signedUnfreezeTxn = await window.tronWeb.trx.sign(unfreezeTx);
         const unfreezereceipt = await window.tronWeb.trx.sendRawTransaction(signedUnfreezeTxn);
         setFreezeTxId(unfreezereceipt.txid);
+
+        setProcessing(false);
       } catch (error) {
         console.error(error);
+        setProcessing(false);
       }
     };
 
@@ -121,6 +143,18 @@ const TronVaultItem = () => {
     }
 
     const getButtonJSX = () => {
+      if(processing){
+        return <div className="d-flex justify-content-center mt-3"> <ThreeDots 
+        height="80" 
+        width="80" 
+        radius="9"
+        color="#4fa94d" 
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+         /></div>
+      }
       return (<button
         className={`mt-5 btn w-100 ${display ? "btn-outline-info" : "btn-outline-vault-withdraw"}`}
         type="button"
@@ -148,7 +182,8 @@ const TronVaultItem = () => {
     }
 
   const callVault = async () => {
-    display ? await deposit() : await withdraw();
+    // display ? await deposit() : await withdraw();
+    display ? depositSync() : withdrawSync();
   };
   const active = "active";
   return (

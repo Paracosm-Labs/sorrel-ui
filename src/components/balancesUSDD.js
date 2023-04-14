@@ -131,7 +131,7 @@ const BalanceCardUSDD = () => {
               </div>
             )}
           /></div>
-            <div className='px-1'><div className={isAnimated ? 'vibrate-sorrel-balance h1' : 'h1' }><span className='px-2'>{getSymbol()}</span>{formatM(depositoryBalance)}</div></div>
+            <div className='px-1 h1'><div className={isAnimated ? 'vibrate-sorrel-balance' : '' }><span className='px-2'>{getSymbol()}</span>{formatM(depositoryBalance)}</div></div>
         </div>
     </div>
     )

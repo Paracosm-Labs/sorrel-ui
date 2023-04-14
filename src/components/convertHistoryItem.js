@@ -52,6 +52,7 @@ const ConvertHistoryItem = ({tx}) => {
     }
 
     const updateConvertedVal = async() => {
+      debugger;
       let gsmc = await gStableManagerContract();
       let cSrc = await gsmc.getConversion(tx.fromId);
       let cDst = await gsmc.getConversion(tx.toId);
@@ -74,7 +75,7 @@ const ConvertHistoryItem = ({tx}) => {
                 <img src={getCurrencyById(tx.toId).icon}
                 width="22"
                 height="22"
-                className="flex-shrink-0 mx-2" /> 
+                className="flex-shrink-0 mx-2" /> ≈ {getCurrencyById(tx.toId).symbol} {formatM(convertedVal)} 
                 </td>                
                 <td>{getDate(tx.initiatedTime)}</td>
                 <td>{getStatusJSX(tx)}</td>

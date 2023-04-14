@@ -70,11 +70,11 @@ const ConvertHistoryItem = ({tx}) => {
                 height="22"
                 className="flex-shrink-0 mx-2" />{getCurrencyById(tx.fromId).symbol} {tx.fromTokens}</td>
                 <td style={{width : "25%"}}>
-                <span className='mx-1'><i class="fa-sharp fa-solid fa-arrow-right"></i></span>
+                <span className='mx-1'><i className="fa-sharp fa-solid fa-arrow-right"></i></span>
                 <img src={getCurrencyById(tx.toId).icon}
                 width="22"
                 height="22"
-                className="flex-shrink-0 mx-2" /> {getCurrencyById(tx.toId).symbol} {formatM(convertedVal)} 
+                className="flex-shrink-0 mx-2" /> ≈ {getCurrencyById(tx.toId).symbol} {formatM(convertedVal)} 
                 </td>                
                 <td>{getDate(tx.initiatedTime)}</td>
                 <td>{getStatusJSX(tx)}</td>

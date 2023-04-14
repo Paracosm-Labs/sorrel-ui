@@ -236,7 +236,12 @@ const OffcanvasExchange = () => {
         Convert <i className="fa-solid fa-bolt fa-beat lite"></i>
       </button></div>
   	</div>
-    <div id="alertExchangeMsg">{trxId? <div className="mt-4 alert sorrel-success" role="alert"><a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Conversion Initiated - <span className="small text-decoration-underline">View Tronscan</span></a></div> : <></>}</div>
+    <div id="alertExchangeMsg">{trxId? 
+      <div className="mt-4 alert sorrel-success" role="alert">
+        <a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Conversion Initiated - 
+          <span className="small text-decoration-underline">View Tronscan</span></a><br/>
+          <span className="">Please Confirm this transaction from your Accounts Page</span>
+      </div> : <></>}</div>
   </div>
 </div>
 </>

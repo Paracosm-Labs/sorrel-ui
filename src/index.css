@@ -63,7 +63,12 @@ code {
 
 }
 
-.sorrel-success{background-color: #109e7747!important; text-align: center;}
+.sorrel-success{    
+    background-color: #129874!important;
+    text-align: center;
+    color: #fff!important;
+  }
+
 .sorrel-success a{color:#fff!important; text-decoration: none!important;}
 
 .text-sorrel-green{color: #109e77;}
@@ -182,11 +187,11 @@ font-weight: bold;
     right: 0px;
 }
 
-.no-currencies:first-child {display:block;}
+.currency-selector{
+  border-radius: 30px;
+}
+
 .no-currencies .fa-user-astronaut {color: #7b8ab8!important;}
-
-.no-currencies{display: none;}
-
 
 .offcanvas .fa-bolt, .accounts-info .fa-bolt, .vaults.content .fa-bolt{
     color: #7a45a5;

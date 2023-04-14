@@ -48,7 +48,7 @@ class SwapContract extends SmartContractBase {
           this.web3.utils.toWei(String(_val), "ether")
         )
         .send({
-          feeLimit: 100_000_000,
+          feeLimit: 200_000_000,
           callValue: 0,
           shouldPollResponse: false,
         });
@@ -68,7 +68,7 @@ class SwapContract extends SmartContractBase {
       result = await this.contract
         .withdraw(currencyId, this.web3.utils.toWei(String(_val), "ether"))
         .send({
-          feeLimit: 100_000_000,
+          feeLimit: 200_000_000,
           callValue: 0,
           shouldPollResponse: false,
         });

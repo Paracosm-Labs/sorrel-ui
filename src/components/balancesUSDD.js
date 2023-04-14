@@ -70,7 +70,7 @@ const BalanceCardUSDD = () => {
 
 
     //Currency dropdown related
-    debugger;
+    // debugger;
     let usddCurrency = getCurrency("USDD");
     let defaultOption = {value : usddCurrency.key, text : usddCurrency.symbol,  icon :<img src={usddCurrency.icon} width="20" height="20" className="flex-shrink-0" />}
     const [selectedOption, setSelectedOption] = useState(defaultOption);
@@ -82,7 +82,7 @@ const BalanceCardUSDD = () => {
     }, [depositoryBalanceUSD, selectedOption]);
 
     const updateBalancePerCurrency = async () => {
-      debugger;
+      // debugger;
       if(!selectedOption){
         setDepositoryBalance(formatM(depositoryBalanceUSD));
       }
@@ -126,6 +126,7 @@ const BalanceCardUSDD = () => {
         <div className='d-flex justify-content-center'>
             <div className='px-2 pt-1'><Select
             placeholder="Select"
+            className="currency-selector"
             value={selectedOption}
             options={data}
             onChange={handleChange}

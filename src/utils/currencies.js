@@ -22,6 +22,20 @@ import cnhImg from "../img/gcnh.png";
 import hkdImg from "../img/ghkd.png";
 import sgdImg from "../img/gsgd.png";
 
+import cadImg from "../img/gcad.png";
+import audImg from "../img/gaud.png";
+import aedImg from "../img/gaed.png";
+import ghsImg from "../img/gghs.png";
+import copImg from "../img/gcop.png";
+import zarImg from "../img/gzar.png";
+import ngnImg from "../img/gngn.png";
+import kesImg from "../img/gkes.png";
+import inrImg from "../img/ginr.png";
+import rubImg from "../img/grub.png";
+import uahImg from "../img/guah.png";
+import gelImg from "../img/ggel.png";
+
+
 class Currency {
   id = 0;
   key = null;
@@ -226,16 +240,135 @@ const CurrencyList = {
     "HK$" /*Currency Symbol*/,
     "TMtFngpiqqMbD3bBr4Q52H5ode8htZYUVx" /*gStableAddress Nile*/,
   ),
-  // SGD: new Currency(
-  //   15,
-  //   "SGD",
-  //   "gSGD",
-  //   "Singaporean Dollar",
-  //   sgdImg,
-  //   "SG$" /*Currency Symbol*/,
-  //   "TCgmFarW3w4ggbYcnShnSTfA1xF7YWmuxB" /*gStableAddress Nile*/,
-  // ),
-
+//   SGD: new Currency(
+//     15,
+//     "SGD",
+//     "gSGD",
+//     "Singaporean Dollar",
+//     sgdImg,
+//     "SG$" /*Currency Symbol*/,
+//     "TCgmFarW3w4ggbYcnShnSTfA1xF7YWmuxB" /*gStableAddress Nile*/,
+//   ),
+//   INR: new Currency(
+//     18,
+//     "INR",
+//     "gINR",
+//     "Indian Rupee",
+//     inrImg,
+//     "₹" /*Currency Symbol*/,
+//     "TNEkYuizmQmtRebkoVh6X3b7ABMGXxuSbA" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   CAD: new Currency(
+//     19,
+//     "CAD",
+//     "gCAD",
+//     "Canadian Dollar",
+//     cadImg,
+//     "CA$" /*Currency Symbol*/,
+//     "TSxJPmq2E3x8dkjKH3WXHiP98LsL8Q8WtJ" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   AUD: new Currency(
+//     20,
+//     "AUD",
+//     "gAUD",
+//     "Australian Dollar",
+//     audImg,
+//     "A$" /*Currency Symbol*/,
+//     "TSZNuSom4zZoqysjyRJS5KfuycSPYhrrqG" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   AED: new Currency(
+//     40,
+//     "AED",
+//     "gAED",
+//     "UAE Dirham",
+//     aedImg,
+//     "د.إ" /*Currency Symbol*/,
+//     "TM9hBrFdzRUai5gfm1LvQqMAckNoNmYvAf" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   GHS: new Currency(
+//     41,
+//     "GHS",
+//     "gGHS",
+//     "Ghanaian Cedi",
+//     ghsImg,
+//     "GH₵" /*Currency Symbol*/,
+//     "TNYsoACVMVWwSPpj358HAu8EBEc5quzW3W" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   ZAR: new Currency(
+//     30,
+//     "ZAR",
+//     "gZAR",
+//     "South African Rand",
+//     zarImg,
+//     "R" /*Currency Symbol*/,
+//     "TY2h18u8w7MDYZPJTqqzWbZx64YYqSY71y" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   NGN: new Currency(
+//     31,
+//     "NGN",
+//     "gNGN",
+//     "Nigerian Naira",
+//     ngnImg,
+//     "₦" /*Currency Symbol*/,
+//     "TSPYHAkk1dGSrzbePavZpAz61EnUtYTFYn" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   KES: new Currency(
+//     32,
+//     "KES",
+//     "gKES",
+//     "Kenyan Shilling",
+//     kesImg,
+//     "KSh" /*Currency Symbol*/,
+//     "TFtHWkmp6snaJk6AuEsUATLUdGjFdfhcBu" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   RUB: new Currency(
+//     33,
+//     "RUB",
+//     "gRUB",
+//     "Russian Ruble",
+//     rubImg,
+//     "₽" /*Currency Symbol*/,
+//     "TUbfqwY9hoiNaeQufPfvz5FXD7w2jGLzQX" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   UAH: new Currency(
+//     34,
+//     "UAH",
+//     "gUAH",
+//     "Ukranian Hyrvnia",
+//     uahImg,
+//     "₴" /*Currency Symbol*/,
+//     "TLmBGyZjkghA4CwM7qjKUpS6PyHmeSU3hb" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   GEL: new Currency(
+//     35,
+//     "GEL",
+//     "gGEL",
+//     "Georgian Lari",
+//     gelImg,
+//     "₾" /*Currency Symbol*/,
+//     "TRJLh5ihgREmvMyScQQyW75F4zvUAsWSWD" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
+//   COP: new Currency(
+//     44,
+//     "COP",
+//     "gCOP",
+//     "Colombian Peso",
+//     copImg,
+//     "$" /*Currency Symbol*/,
+//     "TXnWSBPDgdb1DY4AviLYzBs6He69kyzTrd" /*gStableAddress nile*/,
+// //   "---" /*gStableAddress mainnet*/,
+//   ),
 };
 
 export const getCurrencies = () => {

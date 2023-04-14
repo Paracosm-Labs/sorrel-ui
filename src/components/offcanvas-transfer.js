@@ -151,10 +151,9 @@ const OffcanvasTransfer = () => {
       <p className="text-left">Select Currency</p>
       <Select options={options} onChange={handleChange} autoFocus={true} defaultValue={selectDefault}/>
       </div>
-      <div className="row mt-5">
+      <div className="row mt-3">
         <div className="col">
-        <p className="text-left sorrel-bal">Sorrel Balance: {getSymbol()} {formatM(sorrelBalance)}</p>
-            <div className="input-group mb-1 mt-3">
+            <div className="input-group mb-1 mt-0">
               <div className="form-floating">
                 <input
                   type="text"
@@ -166,11 +165,12 @@ const OffcanvasTransfer = () => {
                 <label htmlFor="floatingInputGroup1">{selected?selected.label:""}</label>
               </div>
             </div>
+            <p className="text-left sorrel-bal">Sorrel Balance: {getSymbol()} {formatM(sorrelBalance)}</p>
         </div>
       </div>
-          <div className="row mt-5">
+          <div className="row mt-3">
           <div className="col">
-              <p className="text-left">Enter Destination</p>
+              <p className="text-left">Destination</p>
               
               <div className="input-group mb-1 mt-3">
                 <div className="form-floating">

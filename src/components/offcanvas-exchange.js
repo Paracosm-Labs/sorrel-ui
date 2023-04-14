@@ -68,19 +68,23 @@ const OffcanvasExchange = () => {
     setSelectedSource(selectedOption);
     console.log(`Option selected:`, selectedOption);
     updateBalance(selectedOption.value);
-    updateConvertedVal();
   };
   const handleChangeDestination = (selectedOption) => {
     setSelectedDest(selectedOption);
     console.log(`Option selected:`, selectedOption);
-    updateConvertedVal();
   };
 
   const updateAmount = (e) => {
     console.log("DepositValue : ", e.target.value);
     setGStableAmount(e.target.value);
-    updateConvertedVal();
   };
+
+  useEffect(() => {
+    updateConvertedVal();
+    return () => {
+      console.log("OffcanvasExchange unmounted");
+    };
+  }, [selectedSource, selectedDest, gStableAmount]);
 
   const clear = () => {
     setGStableAmount(0);
@@ -185,17 +189,10 @@ const OffcanvasExchange = () => {
   </div>
   <div className="offcanvas-body mx-3">
   <div className="row mt-3">
-      <p className="text-left">Source</p>
+      <p className="text-left">From</p>
       <Select options={options} onChange={handleChangeSource} autoFocus={true}/>
   </div>
-    <div className="row mt-3">
-      <div className="col">
-        <p className="text-left">Destination</p>
-        <Select options={options} onChange={handleChangeDestination} autoFocus={true} />
-      </div>
-    </div>
-    <div className="row mt-4">
-    <p className="text-left sorrel-bal">Sorrel Balance: {getSourceSymbol()} {formatM(sorrelBalance)}</p>
+  <div className="row mt-3">
       <div className="col">
         <div className="input-group mb-1" key={1}>
           <div className="form-floating">
@@ -210,8 +207,16 @@ const OffcanvasExchange = () => {
             <label htmlFor="floatingInputGroup1">{selectedSource?selectedSource.label:""}</label>
           </div>
         </div>
+        <p className="text-left sorrel-bal">Sorrel Balance: {getSourceSymbol()} {formatM(sorrelBalance)}</p>
       </div>  
     </div>
+    <div className="row mt-3">
+      <div className="col">
+        <p className="text-left">To</p>
+        <Select options={options} onChange={handleChangeDestination} autoFocus={true} />
+      </div>
+    </div>
+
     <div className="row mt-3">
       <div className="col">
         <div className="input-group mb-1">

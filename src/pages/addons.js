@@ -9,13 +9,9 @@ const Addons = () => {
     <div className="d-flex bg-sorrel pb-8">
       <div className="container content">
           <div className="row mt-3">
-            <div className="col d-none d-lg-block">
+            <div className="col text-center">
               <h1>Addons</h1>
-              <p>Use your gStables to crowdfund addons that enhances your Sorrel experience.</p>
-            </div>
-            <div className="col text-center d-lg-none">
-              <h1>Addons</h1>
-              <p>Use your gStables to crowdfund addons that enhances your Sorrel experience.</p>
+              <p>Use your gStables to crowdfund us to build addons that enhances everyone's Sorrel experience.</p>
             </div>
           </div>
 

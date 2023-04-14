@@ -32,7 +32,7 @@ const Delegator = ()  => {
                   <div className="accordion" id="accordionVaults">
 
                     <div className="card-header d-none d-lg-block">
-                      <div className="row mt-4 mx-3 pt-3 pe-4 text-white">
+                      <div className="row mt-1 mx-3 pt-1 pe-4 text-white">
                         <div className="col text-center">
                           Asset
                         </div>

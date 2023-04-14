@@ -5,18 +5,18 @@ const addonsData = [
 
   {
     id: 1,
-    label: "Sorrel Wallet Cards",
-    details: "Sorrel Wallet Cards are hardware wallets that store private keys securely on an NFC chip. These cards allow our members to easily access and manage their funds as well as sign transactions by simply tapping them on NFC enabled Android phones.",
-    fundGoal: "$15,000+",
-    link: "https://docs.sorrelbanq.org/addons/cards",
+    label: "Administrative Services",
+    details: "Generate official e-statements, bank letters and other recurring administrative tasks on your Sorrel account for extended utility and possible use in the real world.",
+    fundGoal: "$6,500+",
+    link: "https://docs.sorrelbanq.org/addons/administrative",
   },
 
   {
     id: 2,
-    label: "Administrative Services",
-    details: "Generate official e-statements, bank letters and other administrative tasks on your Sorrel account for extended utility and possible use in the real world.",
-    fundGoal: "$5,000+",
-    link: "https://docs.sorrelbanq.org/addons/administrative",
+    label: "Sorrel Wallet Cards",
+    details: "Sorrel Wallet Cards are hardware wallets that store private keys securely on an NFC chip. These cards allow our members to easily access and manage their funds as well as sign transactions by simply tapping them on NFC enabled Android phones.",
+    fundGoal: "$15,000+",
+    link: "https://docs.sorrelbanq.org/addons/cards",
   },
 
   {

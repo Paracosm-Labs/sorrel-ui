@@ -15,7 +15,7 @@ const TxnHistory = () => {
 
     const updateTrxs = (trxs) => {
         if(trxs && Array.isArray(trxs)){
-            setTrxs(trxs);
+            setTrxs(trxs.reverse());
         } else {
             console.error(`trxs ${trxs}`);
         }

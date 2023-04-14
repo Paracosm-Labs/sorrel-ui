@@ -70,7 +70,10 @@ const BalanceCardUSDD = () => {
 
 
     //Currency dropdown related
-    const [selectedOption, setSelectedOption] = useState(null);
+    debugger;
+    let usddCurrency = getCurrency("USDD");
+    let defaultOption = {value : usddCurrency.key, text : usddCurrency.symbol,  icon :<img src={usddCurrency.icon} width="20" height="20" className="flex-shrink-0" />}
+    const [selectedOption, setSelectedOption] = useState(defaultOption);
     useEffect(() => {
       updateBalancePerCurrency();      
       return () => {
@@ -94,6 +97,8 @@ const BalanceCardUSDD = () => {
         }        
       }
     }
+
+
 
     const data = getCurrencies().map(currency => {
       return {value : currency.key, text : currency.symbol, icon :<img src={currency.icon} width="20" height="20" className="flex-shrink-0" />}

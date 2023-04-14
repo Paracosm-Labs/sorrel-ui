@@ -88,6 +88,7 @@ const OffcanvasExchange = () => {
 
   const clear = () => {
     setGStableAmount(0);
+    setConvertedVal(0);
     setTrxId("");
   };
 

@@ -20,7 +20,7 @@ const WalletCard = () => {
           <div className="accordion-body">
           <div className="row">
             <div className="col border-bottom pb-3 border-width-2">
-              To Pre-Order your Sorrel NFC Wallet Card - Alpha Edition, you can <a href="/addons">crowdfund this addon</a> with a minimum of $30 USD value in any supported stablecoin on Sorrel.<br/><br/>Once funding goal is met, the functional mechanics will be implemented on Mainnet. 50% of fund goal will be redistributed to members staked in the Sorrel TRX Vault.
+              To Pre-Order your Sorrel NFC Wallet Card - Alpha Edition, you can <a href="/addons">crowdfund this addon</a> with a minimum of $30 USD value in any supported stablecoin on Sorrel.<br/><br/>Once funding goal is met, the functional mechanics will be implemented on Mainnet. Up to 50% of fund goal will be redistributed to members staked in the Sorrel TRX Vault.
             </div>
           </div>
 

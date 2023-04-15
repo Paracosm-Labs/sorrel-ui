@@ -93,7 +93,7 @@ const CurrencyList = {
   //   "Tether USD",
   //   usdtImg,
   //   "$" /*Currency Symbol*/,
-  //   "TMWEUK2VzCKb8J1KqzYSyenWgj9MfrhZjm" /*USDTStableAddress Nile*/,
+  //   "----" /*USDTStableAddress Nile*/,
   //   true,
   // ),
   // USDC: new Currency(
@@ -103,7 +103,7 @@ const CurrencyList = {
   //   "Circle USD",
   //   usdcImg,
   //   "$" /*Currency Symbol*/,
-  //   "----" /*gStableAddress Nile*/,
+  //   "----" /*USDCStableAddress Nile*/,
   // ),
   // TUSD: new Currency(
   //   1004,
@@ -112,7 +112,7 @@ const CurrencyList = {
   //   "True USD",
   //   tusdImg,
   //   "$" /*Currency Symbol*/,
-  //   "----" /*gStableAddress Nile*/,
+  //   "----" /*TUSDStableAddress Nile*/,
   // ),
   TTD: new Currency(
     1,

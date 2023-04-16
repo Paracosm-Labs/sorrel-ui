@@ -10,11 +10,7 @@ const Bridge = () => {
     <div className="d-flex bg-sorrel pb-8">
       <div className="container content">
           <div className="row mt-3">
-            <div className="col d-none d-lg-block">
-              <h1>Bridge</h1>
-              <p>Convert your stablecoins into the real world</p>
-            </div>
-            <div className="col text-center d-lg-none">
+            <div className="col text-center">
               <h1>Bridge</h1>
               <p>Convert your stablecoins into the real world</p>
             </div>
@@ -88,7 +84,6 @@ const Bridge = () => {
                     <option value="6">ACH</option>
                     <option value="7">Visa</option>
                     <option value="8">Mastercard</option>
-                    <option value="8">Paywise</option>
                     <option value="9">Alipay</option>
                     <option value="10">Google Pay</option>
                   </select>

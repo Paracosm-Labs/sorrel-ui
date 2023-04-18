@@ -1,5 +1,5 @@
 const sendParams = {
-    feeLimit: 1000000000,
+    feeLimit: 200000000,
     callValue: 0,
     shouldPollResponse: false,
   }

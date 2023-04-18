@@ -3,7 +3,7 @@ import { Row, Col, ProgressBar, Button } from 'react-bootstrap';
 import { addonsData } from "../components/addonsData";
 import DappLogo from "../img/sorrel-logo.png";
 
-const Addons = ({ key, item }) => {
+const Addons = ({ id, item }) => {
 
   return (
     <>

@@ -59,7 +59,7 @@ const SharedResources = () => {
                   <span className="progress-bar bg-energy-guage" role="progressbar" aria-valuenow={energyRatio} aria-valuemin={0} aria-valuemax={100} style={{width:`${energyRatio}%`}}>
                   </span>
                   
-                </span><p className="text-xs text-muted">Energy: {formatM(energyRatio)}%<span className="d-none"> {energyDiff} / {energyBalance}</span></p>
+                </span><p className="text-xs text-muted">Energy: {formatM(energyRatio)}% | <span className="dnone"> {energyDiff} / {energyBalance}</span></p>
               </Col>
               <Col xs={1}>
               <i className="fa-solid fa-bolt fa-beat" data-toggle="tooltip" title="Enjoy Energy Free transactions when available!"></i>
@@ -69,7 +69,7 @@ const SharedResources = () => {
                   <span className="progress-bar bg-bandwidth-guage" role="progressbar" aria-valuenow={bandwidthRatio} aria-valuemin={0} aria-valuemax={100} style={{width:`${bandwidthRatio}%`}}>
                   </span>
                   
-                </span><p className="text-xs text-muted">Bandwidth: {formatM(bandwidthRatio)}%<span className="d-none"> - {bandwidthBalance} / {bandwidthAvail}</span></p>
+                </span><p className="text-xs text-muted">Bandwidth: {formatM(bandwidthRatio)}% | <span className="dnone"> {bandwidthBalance} / {bandwidthAvail}</span></p>
               </Col>
               <div className="col"></div>
             </Row>

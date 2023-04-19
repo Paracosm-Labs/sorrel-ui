@@ -55,7 +55,7 @@ const OffcanvasDeposit = () => {
       let dc = await depositoryContract();
       let currency = getCurrency(selected.value);
       let gStableContract = await currency.gStableContract();
-      await gStableContract.approve(DepositoryContractAddress, gStableAmount * 2);
+      await gStableContract.approve(DepositoryContractAddress, gStableAmount * 1);
       console.log(`Depositing ${gStableAmount} in ${selected.label} (${selected.value})`);
       let trxId = await dc.deposit(currency.id, gStableAmount);
       setTrxId(trxId);

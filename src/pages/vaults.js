@@ -1,5 +1,8 @@
 import TRXVault from "../components/tronVaultitem";
+import NRGVault from "../components/nrgVaultitem";
+import ERGVault from "../components/ergVaultitem";
 import USDDVault from "../components/usddVaultitem";
+import SharedResources from '../components/shared-resources';
 // import CurrencyVaultList from "../components/currencyVaultList";
 import React  from 'react';
 
@@ -13,7 +16,9 @@ const Vaults = ()  => {
           <div className="row mt-3">
             <div className="col text-center">
               <h1>Vaults</h1>
-              <p>Earn gStables by staking your Assets or Tron Resources to support Sorrel Banq.</p>
+            </div>
+            <div className="row mt-5">
+              <SharedResources></SharedResources>
             </div>
           </div>
       </div>
@@ -21,7 +26,7 @@ const Vaults = ()  => {
 
 
     <div className="container vaults content">
-      <div className="row mt-n10">
+      <div className="row mt-3">
         <div className="col"></div>
         <div className="col-md-8">
 
@@ -45,6 +50,8 @@ const Vaults = ()  => {
                     </div>
                     
                     <TRXVault></TRXVault>
+                    <NRGVault></NRGVault>
+                    <ERGVault></ERGVault>
                     <USDDVault></USDDVault>
 
                   </div>

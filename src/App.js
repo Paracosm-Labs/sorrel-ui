@@ -10,6 +10,7 @@ import Addons from './pages/addons';
 import React  from 'react';
 import Accounts from './pages/depository';
 import Delegator from './pages/delegator';
+import Vaults from './pages/vaults';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path = "/accounts" element={<Accounts/>} />
         <Route path = "/cards" element={<Cards/>} />
         <Route path = "/vaults" element={<Delegator/>} />
+        <Route path = "/vaultsx" element={<Vaults/>} />
         <Route path = "/bridge" element={<Bridge/>} />
         <Route path = "/addons" element={<Addons/>} />
         <Route path = "*" element={<Accounts/>} />

@@ -138,6 +138,7 @@ font-weight: bold;
 .vault-item img{
   margin-top: -20px!important;
   margin-right: 10px!important;
+  border-radius: 30px;
 }
 
 .mt-n10 {margin-top: -10rem !important;}

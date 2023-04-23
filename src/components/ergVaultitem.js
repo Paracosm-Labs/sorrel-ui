@@ -1,58 +1,58 @@
 import { useEffect, useState } from "react";
 import React  from 'react';
-import USDDImg from "../img/usdd.png";
+import ERGImg from "../img/erg.png";
 
-const USDDVaultItem = () => {
+const ERGVaultItem = () => {
   const [display, setDisplay] = useState(true);
-  const [usddValue, setUSDDValue] = useState(0);
-  const [usddBalance, setUSDDBalance] = useState(30333.69);
-  const [usddMyDeposits, setUSDDMyDeposits] = useState(0);
+  const [ergValue, setERGValue] = useState(0);
+  const [ergBalance, setERGBalance] = useState(30333.69);
+  const [ergMyDeposits, setERGMyDeposits] = useState(0);
   const [showLock, setShowLock] = useState(false);
   
-  const [usddVaultDetails, setUSDDVaultDetails] = useState({
+  const [ergVaultDetails, setERGVaultDetails] = useState({
     interval: "",
   });
 
-  const [usddVaultContract, setUSDDVaultContract] = useState({});
+  const [ergVaultContract, setERGVaultContract] = useState({});
   useEffect(() => {
-    initUSDDVaultContract();
+    initERGVaultContract();
     return () => {
-      console.log("unmounting USDD Vault");
+      console.log("unmounting ERG Vault");
     };
   }, []);
 
 
 
-  const initUSDDVaultContract = async () => {
+  const initERGVaultContract = async () => {
 
   };
 
     const clear = () => {
-      setUSDDValue("");
+      setERGValue("");
     }
 
 
-    const updateUSDDValue = (e) => {
-      console.log("DepositUSDDValue : ", e.target.value);
-      setUSDDValue(e.target.value);
+    const updateERGValue = (e) => {
+      console.log("DepositERGValue : ", e.target.value);
+      setERGValue(e.target.value);
     };
 
   const deposit = async () => {
      setShowLock(true);
-     setUSDDBalance(usddBalance - usddValue);
-     setUSDDMyDeposits(usddMyDeposits + usddValue);
+     setERGBalance(ergBalance - ergValue);
+     setERGMyDeposits(ergMyDeposits + ergValue);
      clear();
   };
 
   const withdraw = async () => {
      setShowLock(false);
-     setUSDDBalance(usddBalance + usddValue);
-     setUSDDMyDeposits(usddMyDeposits - usddValue);
+     setERGBalance(ergBalance + ergValue);
+     setERGMyDeposits(ergMyDeposits - ergValue);
      clear();
   };
 
 
-  const callUSDDVault = async () => {
+  const callERGVault = async () => {
     display ? await deposit() : await withdraw();
   };
 
@@ -63,20 +63,20 @@ const USDDVaultItem = () => {
     <>
 
       <div className="accordion-item vault-item mt-3">
-        <h2 className="accordion-header" id="headingFour">
-          <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" onClick={clear}>
+        <h2 className="accordion-header" id="headingThree">
+          <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onClick={clear}>
             <div className="container row mx-1 pt-2">
               <div className="col-md-4 col-sm-12">
                 <img
-                  src={USDDImg}
-                  alt="USDD"
+                  src={ERGImg}
+                  alt="ERG"
                   width="42"
                   height="42"
-                  className="flex-shrink-0"
+                  className="flex-shrink-0 erg"
                 />
                 <div className="currency-name">
-                  <b>USDD</b>
-                  <p className="small">Decentralized USD</p>
+                  <b>ERG</b>
+                  <p className="small">USTX ERG</p>
                 </div>
               </div>
               <div className="col text-center apr-info">
@@ -86,16 +86,16 @@ const USDDVaultItem = () => {
 
               <div className="col text-center">
                 <b className="d-lg-none">My Deposit</b>
-                <h6><b>${usddMyDeposits}</b></h6>
+                <h6><b>{ergMyDeposits} ERG</b></h6>
               </div>
             </div>
           </button>
         </h2>
-        <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionVaults">
+        <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionVaults">
           <div className="accordion-body">
           <div className="row">
             <div className="col border-bottom pb-3">
-              Support goStables Protocol by Staking USDD to help increase the protocol's over-collateralization and stability for its gStables. Earn Vault rewards in a variety of stablecoins which are credited to your Sorrel account monthly.<br/><br/>
+              Support Sorrel Banq by Staking ERG to facilitate energy free transactions for fellow Sorrel members. Earn Vault rewards in a variety of stablecoins which are credited to your Sorrel account bi-monthly.<br/><br/>
               <div className="text-center"><b>New Deposits are locked for 30 days.</b></div>
             </div>
           </div>
@@ -121,7 +121,7 @@ const USDDVaultItem = () => {
               <div className="col"></div>
 
               <div className="col-md-8">
-                <p className="small">Balance: <b>{display ? <span>{usddBalance}</span> : <span>{usddMyDeposits}</span>} USDD</b></p>
+                <p className="small">Balance: <b>{display ? <span>{ergBalance}</span> : <span>{ergMyDeposits}</span>} ERG</b></p>
                   <div className="input-group mb-2 mt-3">
                     <div className="form-floating">
                       <input
@@ -129,8 +129,8 @@ const USDDVaultItem = () => {
                         className="form-control"
                         id="floatingInputGroup1"
                         placeholder=""
-                        onChange={updateUSDDValue}
-                        value={usddValue}
+                        onChange={updateERGValue}
+                        value={ergValue}
                       />
                       <label htmlFor="floatingInputGroup1">Enter Amount</label>
                     </div>
@@ -138,16 +138,16 @@ const USDDVaultItem = () => {
                     {display ? <>
                     <div className="row">
                       <div className="col text-center">
-                        <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setUSDDValue(usddBalance * 0.25)}>25%</button>
+                        <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setERGValue(ergBalance * 0.25)}>25%</button>
                       </div>
                       <div className="col text-center">
-                        <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setUSDDValue(usddBalance * 0.50)}>50%</button>
+                        <button type="button" className="btn btn-outline-light btn-sm mr-2 w-100" onClick={() => setERGValue(ergBalance * 0.50)}>50%</button>
                       </div>
                       <div className="col text-center">
-                        <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setUSDDValue(usddBalance * 0.75)}>75%</button>
+                        <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setERGValue(ergBalance * 0.75)}>75%</button>
                       </div>
                       <div className="col text-center">
-                        <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setUSDDValue(usddBalance * 1)}>100%</button>
+                        <button type="button" className="btn btn-outline-light btn-sm w-100" onClick={() => setERGValue(ergBalance * 1)}>100%</button>
                       </div>
                     </div>
                       </> :
@@ -158,7 +158,7 @@ const USDDVaultItem = () => {
                     className={`mt-5 btn w-100 ${display ? "btn-outline-info" : "btn-outline-vault-withdraw"}`}
                     type="button"
                     id="button-deposit"
-                    onClick={callUSDDVault}
+                    onClick={callERGVault}
                   >
                     {display ? "Deposit" : "Withdraw"}
                   </button>
@@ -192,4 +192,4 @@ const USDDVaultItem = () => {
 };
 
 
-export default USDDVaultItem;
+export default ERGVaultItem;

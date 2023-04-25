@@ -14,7 +14,7 @@ const NavMenu = () => {
             height="55"
             alt="Sorrel Banq"
           />
-          
+          <br/><span className="badge badge-network">Nile Testnet</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

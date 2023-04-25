@@ -28,6 +28,13 @@ code {
   border-radius: 10px;
 }
 
+.bg-sorrel-nav .badge-network {
+    margin-left: 55px;
+    position: absolute;
+    margin-top: -14px;
+    background-color: #2f3349;
+    padding: 5px;
+}
 
 .offcanvas{
   background-color: #2f3349!important;

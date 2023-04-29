@@ -43,6 +43,9 @@ import krwImg from "../img/gkrw.png";
 import tryImg from "../img/gtry.png";
 import ilsImg from "../img/gils.png";
 import brlImg from "../img/gbrl.png";
+import nprImg from "../img/gnpr.png";
+import omrImg from "../img/gomr.png";
+import myrImg from "../img/gmyr.png";
 
 class Currency {
   id = 0;
@@ -457,6 +460,37 @@ const CurrencyList = {
 //     "TXx98qV2e7cQ2KFVavjjkHSChi9yrr7CJL" /*gStableAddress nile*/,
 // //   "---" /*gStableAddress mainnet*/,
 //   ),
+  NPR: new Currency(
+    46,
+    "NPR",
+    "gNPR",
+    "Nepali Rupee",
+    nprImg,
+    "रू" /*Currency Symbol*/,
+    "TZ5Ro1dwnf1zqPDSnYkUK9Gk6BAu9aZoB5" /*gStableAddress nile*/,
+//   "---" /*gStableAddress mainnet*/,
+  ),
+  OMR: new Currency(
+    47,
+    "OMR",
+    "gOMR",
+    "Omani Rial",
+    omrImg,
+    "ر.ع." /*Currency Symbol*/,
+    "TGobH9QMavFP8MJcGoNXBMAADQVgBE5Zuz" /*gStableAddress nile*/,
+//   "---" /*gStableAddress mainnet*/,
+  ),
+  MYR: new Currency(
+    48,
+    "MYR",
+    "gMYR",
+    "Malaysian Ringgit",
+    myrImg,
+    "RM" /*Currency Symbol*/,
+    "TF6Ep8972xWmZc2qHXAnJjvxiLY8vnxHPb" /*gStableAddress nile*/,
+//   "---" /*gStableAddress mainnet*/,
+  ),
+
 };
 
 export const getCurrencies = () => {

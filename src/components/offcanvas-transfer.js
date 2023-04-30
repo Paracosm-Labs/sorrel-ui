@@ -187,9 +187,11 @@ const OffcanvasTransfer = () => {
           </div>
 
           <div className="row mt-5 text-center">
-          {/* <div className="col">
-            <button className="btn btn-outline-info" onClick={send}>Send</button>
-          </div> */}
+          <div className="col">
+            <button className="btn btn-outline-info" onClick={send}>
+              Send <i className="fa-solid fa-circle fa-xs"></i>
+            </button>
+          </div> 
           <div className="col">
             <button className="btn btn-outline-info" onClick={sendGL}>
               Send <i className="fa-solid fa-bolt fa-beat lite"></i>

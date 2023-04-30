@@ -9,6 +9,7 @@ import serverURL from '../utils/server';
 import { depositoryContract } from '../contracts/depositoryContract';
 import { formatM } from '../utils/currencyFormatter';
 import { gStableManagerContract } from '../contracts/gStableManagerContract';
+import ConvertHistory from '../components/convertHistory';
 
 const OffcanvasExchange = () => {
   const [gStableAmount, setGStableAmount] = useState(0);
@@ -236,12 +237,15 @@ const OffcanvasExchange = () => {
         Convert <i className="fa-solid fa-bolt fa-beat lite"></i>
       </button></div>
   	</div>
-    <div id="alertExchangeMsg">{trxId? 
+    <div id="alertExchangeMsg">{trxId? <>
       <div className="mt-4 alert sorrel-success" role="alert">
         <a href={`https://nile.tronscan.org/#/transaction/${trxId}`} target="_blank"  rel="noreferrer">Conversion Initiated - 
           <span className="small text-decoration-underline">View Tronscan</span></a><br/>
-          <span className="">Please Confirm this transaction from your Accounts Page</span>
-      </div> : <></>}</div>
+          <span className="">Please Confirm Transaction</span>
+      </div> <ConvertHistory></ConvertHistory>
+      </>
+       : <><ConvertHistory></ConvertHistory></>
+      }</div>
   </div>
 </div>
 </>

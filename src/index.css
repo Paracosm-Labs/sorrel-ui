@@ -40,6 +40,14 @@ code {
   background-color: #2f3349!important;
 }
 
+.offcanvas .btn-convert-cancel, .offcanvas .transaction-history h4, .offcanvas .btn-transfer-cancel, 
+.offcanvas .transfers .trx-address,
+ .offcanvas .conversions th:first-child, .offcanvas td:nth-child(3), .offcanvas th:nth-child(3) {
+  display: none!important;
+
+}
+
+
 .mt-n2 {margin-top: -6em!important;}
 .mt-n4 {margin-top: -13em!important;}
 

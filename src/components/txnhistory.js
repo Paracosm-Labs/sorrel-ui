@@ -26,7 +26,7 @@ const TxnHistory = () => {
     }
   return (
     <>
-        <div className="row mt-5 transaction-history">
+        <div className="row mt-5 transaction-history transfers">
             <h4 className="text-sorrel-green">Transfers</h4>
             <div className="table-responsive">
                 <table className="table table-striped table-bordered">

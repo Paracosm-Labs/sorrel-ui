@@ -27,8 +27,8 @@ const ConvertHistory = () => {
 
   return (
     <>
-        <div className="row mt-2 transaction-history">
-            <h4 className="text-sorrel-green">Conversions</h4>
+        <div className="row mt-2 transaction-history conversions">
+            <h4 className="text-sorrel-green">Conversion</h4>
             <div className="table-responsive">
                 <table className="table table-striped table-bordered">
                     <thead>

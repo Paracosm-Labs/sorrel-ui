@@ -65,7 +65,7 @@ const ConvertHistoryItem = ({tx}) => {
       };
     }, []);
 
-    return (<tr style={{fontSize : ".9rem"}}>
+    return (<tr className={tx.status} style={{fontSize : ".9rem"}}>
                 <td style={{width : "10%"}}><img src={getCurrencyById(tx.fromId).icon}
                 width="22"
                 height="22"

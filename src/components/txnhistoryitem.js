@@ -54,10 +54,10 @@ const TxnHistoryItem = ({tx}) => {
       }
     }
 
-    return (<tr style={{fontSize : ".9rem"}}>
+    return (<tr className={tx.status} style={{fontSize : ".9rem"}}>
                 <td>{from.localeCompare(window.tronWeb.defaultAddress.base58) == 0 ? 
-                <><span className='text-sorrel-purple'><i class="fa-solid fa-share-from-square"></i></span> <span className="trx-address">{window.tronLink.tronWeb.address.fromHex(tx.to)}</span></> : 
-                <><span className='text-sorrel-green'><i class="fa-solid fa-right-to-bracket fa-rotate-90"></i></span> <span className="trx-address">{window.tronLink.tronWeb.address.fromHex(tx.from)}</span></> }</td>
+                <><span className='text-sorrel-purple'><i className="fa-solid fa-share-from-square"></i></span> <span className="trx-address">{window.tronLink.tronWeb.address.fromHex(tx.to)}</span></> : 
+                <><span className='text-sorrel-green'><i className="fa-solid fa-right-to-bracket fa-rotate-90"></i></span> <span className="trx-address">{window.tronLink.tronWeb.address.fromHex(tx.from)}</span></> }</td>
                 <td><img src={getCurrencyById(tx.gStableId).icon}
                 width="22"
                 height="22"

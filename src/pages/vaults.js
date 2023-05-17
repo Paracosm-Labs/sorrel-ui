@@ -4,6 +4,8 @@ import ERGVault from "../components/ergVaultitem";
 import USDDVault from "../components/usddVaultitem";
 import SharedResources from '../components/shared-resources';
 // import CurrencyVaultList from "../components/currencyVaultList";
+import SorrelPayButton from "../components/widgets/sorrelPayButton";
+import SorrelSubscribeButton from "../components/widgets/sorrelSubscribeButton";
 import React  from 'react';
 
 
@@ -53,6 +55,12 @@ const Vaults = ()  => {
                     <NRGVault></NRGVault>
                     <ERGVault></ERGVault>
                     <USDDVault></USDDVault>
+
+                    <div className="text-center mt-4">
+                    <h3>Merchant Widgets Demo</h3>
+                    <SorrelPayButton></SorrelPayButton>
+                    <SorrelSubscribeButton></SorrelSubscribeButton>
+                    </div>
 
                   </div>
                 </div>

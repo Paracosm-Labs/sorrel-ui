@@ -1,7 +1,7 @@
 import { StableCoinType, USDTAddress } from "../utils/stableCoins";
 import Web3 from "web3";
 
-class USDTontract {
+class USDTContract {
   address;
   stableCoinType;
   contract = null;

@@ -88,7 +88,7 @@ const WalletConnect = () => {
             alt="Tronlink"
             src={TronLinkLogo}
           />
-          <span className="text-sorrel-purple">{getMaskedAddress(address)}</span> | &nbsp;
+          <span className="text-sorrel">{getMaskedAddress(address)}</span> | &nbsp;
           <span className="small">{getNetworkName(network)}</span>
         </button>
       </div>

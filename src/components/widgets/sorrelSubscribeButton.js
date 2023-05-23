@@ -31,7 +31,7 @@ const SubscribeButton = () => {
           alt=""
           className="rounded-circle"
           height="42"
-        />&nbsp;<span className="text-sorrel-purple">Sorrel</span></h5></div>
+        />&nbsp;<span className="text-sorrel-purple">Sorrel</span>&nbsp;<span className="text-sorrel-green">Subscribe</span></h5></div>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">

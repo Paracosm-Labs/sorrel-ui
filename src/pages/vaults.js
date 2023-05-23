@@ -57,7 +57,7 @@ const Vaults = ()  => {
                     <USDDVault></USDDVault>
 
                     <div className="text-center mt-4">
-                    <h3>Merchant Widgets Demo</h3>
+                    <h3>Merchant Widgets Mockup</h3>
                     <SorrelPayButton></SorrelPayButton>
                     <SorrelSubscribeButton></SorrelSubscribeButton>
                     </div>

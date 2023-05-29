@@ -6,7 +6,7 @@ const USDTMarketContractAddress = "TDxevGBzrd7NQWH8T2reeAz63wPPMfRnKV";
 
 // const SwapGStableContractAddress = "TB2ZNssD5WvGa2HSLHiYwe4xbsqW7ywcHN";
 
-const DepositoryContractAddress = "TLumYZM6rRs5xHSZEzD6EQG9Kbwa2qvCym";
+const DepositoryContractAddress = "TQoiUFedkHM2RiBNCbDCMBFwAf8HTX8qKc";
 const TransferComptrollerAddress = "TGWs2QiZsoi4B1muRepSgEzJjQHiZjHEY9";
 const ConvertComptrollerAddress = "TFuXJa7Hk47ny5Xa5W6ePRoK6GdXMcateh";
 
